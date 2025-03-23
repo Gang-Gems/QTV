@@ -1,0 +1,721 @@
+@prefix ex: <http://example.org/resource/> .
+@prefix persp: <http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Perspectivisation_1 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_1 ;
+    persp:Cut ex:Cut_1 ;
+    persp:Lens ex:Lens_1 .
+
+ex:Perspectivisation_10 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_10 ;
+    persp:Cut ex:Cut_10 ;
+    persp:Lens ex:Lens_10 .
+
+ex:Perspectivisation_11 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_11 ;
+    persp:Cut ex:Cut_11 ;
+    persp:Lens ex:Lens_11 .
+
+ex:Perspectivisation_12 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_12 ;
+    persp:Cut ex:Cut_12 ;
+    persp:Lens ex:Lens_12 .
+
+ex:Perspectivisation_13 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_13 ;
+    persp:Cut ex:Cut_13 ;
+    persp:Lens ex:Lens_13 .
+
+ex:Perspectivisation_14 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_14 ;
+    persp:Cut ex:Cut_14 ;
+    persp:Lens ex:Lens_14 .
+
+ex:Perspectivisation_15 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_15 ;
+    persp:Cut ex:Cut_15 ;
+    persp:Lens ex:Lens_15 .
+
+ex:Perspectivisation_16 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_16 ;
+    persp:Cut ex:Cut_16 ;
+    persp:Lens ex:Lens_16 .
+
+ex:Perspectivisation_17 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_17 ;
+    persp:Cut ex:Cut_17 ;
+    persp:Lens ex:Lens_17 .
+
+ex:Perspectivisation_18 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_18 ;
+    persp:Cut ex:Cut_18 ;
+    persp:Lens ex:Lens_18 .
+
+ex:Perspectivisation_19 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_19 ;
+    persp:Cut ex:Cut_19 ;
+    persp:Lens ex:Lens_19 .
+
+ex:Perspectivisation_2 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_2 ;
+    persp:Cut ex:Cut_2 ;
+    persp:Lens ex:Lens_2 .
+
+ex:Perspectivisation_20 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_20 ;
+    persp:Cut ex:Cut_20 ;
+    persp:Lens ex:Lens_20 .
+
+ex:Perspectivisation_21 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_21 ;
+    persp:Cut ex:Cut_21 ;
+    persp:Lens ex:Lens_21 .
+
+ex:Perspectivisation_22 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_22 ;
+    persp:Cut ex:Cut_22 ;
+    persp:Lens ex:Lens_22 .
+
+ex:Perspectivisation_23 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_23 ;
+    persp:Cut ex:Cut_23 ;
+    persp:Lens ex:Lens_23 .
+
+ex:Perspectivisation_24 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_24 ;
+    persp:Cut ex:Cut_24 ;
+    persp:Lens ex:Lens_24 .
+
+ex:Perspectivisation_25 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_25 ;
+    persp:Cut ex:Cut_25 ;
+    persp:Lens ex:Lens_25 .
+
+ex:Perspectivisation_26 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_26 ;
+    persp:Cut ex:Cut_26 ;
+    persp:Lens ex:Lens_26 .
+
+ex:Perspectivisation_27 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_27 ;
+    persp:Cut ex:Cut_27 ;
+    persp:Lens ex:Lens_27 .
+
+ex:Perspectivisation_28 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_28 ;
+    persp:Cut ex:Cut_28 ;
+    persp:Lens ex:Lens_28 .
+
+ex:Perspectivisation_29 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_29 ;
+    persp:Cut ex:Cut_29 ;
+    persp:Lens ex:Lens_29 .
+
+ex:Perspectivisation_3 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_3 ;
+    persp:Cut ex:Cut_3 ;
+    persp:Lens ex:Lens_3 .
+
+ex:Perspectivisation_30 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_30 ;
+    persp:Cut ex:Cut_30 ;
+    persp:Lens ex:Lens_30 .
+
+ex:Perspectivisation_4 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_4 ;
+    persp:Cut ex:Cut_4 ;
+    persp:Lens ex:Lens_4 .
+
+ex:Perspectivisation_5 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_5 ;
+    persp:Cut ex:Cut_5 ;
+    persp:Lens ex:Lens_5 .
+
+ex:Perspectivisation_6 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_6 ;
+    persp:Cut ex:Cut_6 ;
+    persp:Lens ex:Lens_6 .
+
+ex:Perspectivisation_7 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_7 ;
+    persp:Cut ex:Cut_7 ;
+    persp:Lens ex:Lens_7 .
+
+ex:Perspectivisation_8 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_8 ;
+    persp:Cut ex:Cut_8 ;
+    persp:Lens ex:Lens_8 .
+
+ex:Perspectivisation_9 a persp:Perspectivisation ;
+    persp:Attitude ex:Attitude_9 ;
+    persp:Cut ex:Cut_9 ;
+    persp:Lens ex:Lens_9 .
+
+ex:Cut_1 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Jules Vaughn"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Positive role model for transgender youth, promoting understanding."^^xsd:string ;
+    ex:hasJustification "Multi-dimensional transgender character portrayed authentically with emotional depth."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (personal growth)"^^xsd:string ;
+    ex:hasShowTitle "Euphoria"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_10 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Max Chapman"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Breaks stereotypes by showing LGBTQ+ love in a positive light."^^xsd:string ;
+    ex:hasJustification "Bisexual character with an empowering love story and a rare happy ending."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Black Mirror: San Junipero"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_11 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Lito Rodriguez"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Highlights LGBTQ+ challenges in global contexts."^^xsd:string ;
+    ex:hasJustification "Gay character portrayed with depth, exploring his career struggles, relationship, and coming out."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Sense8"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_12 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Tara Maclay"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Controversial portrayal, perpetuating harmful LGBTQ+ tropes."^^xsd:string ;
+    ex:hasJustification "Lesbian character killed suddenly, reinforcing the \"bury your gays\" trope."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Death"^^xsd:string ;
+    ex:hasShowTitle "Buffy the Vampire Slayer"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "Yes"^^xsd:string .
+
+ex:Cut_13 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Nomi Marks"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "One of the first trans characters portrayed positively in mainstream sci-fi."^^xsd:string ;
+    ex:hasJustification "Transgender hacker portrayed with depth, exploring her relationships and challenges."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Sense8"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_14 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Omar Shanaa"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Highlights intersectionality, addressing sexuality in cultural contexts."^^xsd:string ;
+    ex:hasJustification "Gay Muslim character navigating societal and cultural pressures while pursuing a meaningful relationship."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Elite"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_15 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "David Rose"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Celebrates LGBTQ+ lives through humor and acceptance."^^xsd:string ;
+    ex:hasJustification "Pansexual character portrayed with humor and depth, showing evolving relationships."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Schitt�s Creek"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_16 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Casey Gardner"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Positively portrays bisexuality, showcasing complexity."^^xsd:string ;
+    ex:hasJustification "Explores the struggles and triumphs of a bisexual teenager navigating her identity and relationships."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (growth)"^^xsd:string ;
+    ex:hasShowTitle "Atypical"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_17 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Kat Edison"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Promotes bisexual visibility and challenges workplace discrimination."^^xsd:string ;
+    ex:hasJustification "Bisexual character with an empowering storyline and meaningful exploration of her sexual identity."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (career growth)"^^xsd:string ;
+    ex:hasShowTitle "The Bold Type"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_18 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Santana Lopez"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Normalized LGBTQ+ relationships in mainstream teen TV."^^xsd:string ;
+    ex:hasJustification "Lesbian character who evolves from repression and denial to pride and self-acceptance."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Glee"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_19 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Victor Salazar"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Highlights intersectionality and the nuances of coming out in traditional families."^^xsd:string ;
+    ex:hasJustification "Gay Latinx teenager navigating coming out and family acceptance in a conservative environment."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Love, Victor"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_2 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Eric Effiong"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Broadens intersectional representation, showing complexity."^^xsd:string ;
+    ex:hasJustification "Gay, Black character portrayed with depth, navigating relationships and family dynamics."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Sex Education"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_20 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Khaled"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Promotes diverse LGBTQ+ representation and addresses religious and cultural challenges."^^xsd:string ;
+    ex:hasJustification "Gay Muslim student portrayed with depth and resilience, navigating challenges of love and identity in a royal school setting."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (growth)"^^xsd:string ;
+    ex:hasShowTitle "Young Royals"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_21 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Ray Holt"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Subverts stereotypes and challenges workplace biases."^^xsd:string ;
+    ex:hasJustification "Gay Black police captain portrayed with dignity, humor, and depth."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Brooklyn Nine-Nine"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_22 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Syd"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Increases visibility for non-binary individuals and promotes acceptance."^^xsd:string ;
+    ex:hasJustification "Non-binary character portrayed authentically with respect and humor in a multi-generational family dynamic."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "One Day at a Time"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_23 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Mickey Dobbs"^^xsd:string ;
+    ex:hasAffirmation "No"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Lacks meaningful engagement with LGBTQ+ themes."^^xsd:string ;
+    ex:hasJustification "Queer character whose storyline remains ambiguous and underdeveloped, falling into tokenism."^^xsd:string ;
+    ex:hasNormalization "No"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Unresolved"^^xsd:string ;
+    ex:hasShowTitle "Love"^^xsd:string ;
+    ex:hasTokenism "Yes"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_24 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Omar Ayuso"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Challenges stereotypes of LGBTQ+ individuals in conservative communities."^^xsd:string ;
+    ex:hasJustification "Gay Muslim character whose relationships are portrayed with depth, showcasing struggles against societal and family expectations."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Elite"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_25 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Denise"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Challenges heteronormative narratives and broadens representation."^^xsd:string ;
+    ex:hasJustification "Lesbian Black woman exploring love, career, and friendships, portrayed with emotional complexity and humor."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Master of None"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_26 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Patrick Brewer"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Breaks stereotypes with a positive LGBTQ+ relationship on screen."^^xsd:string ;
+    ex:hasJustification "Gay character portrayed in a healthy, supportive, and normalized relationship."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Schitt�s Creek"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_27 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Theo Putnam"^^xsd:string ;
+    ex:hasAffirmation "No"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Missed opportunity to delve into meaningful trans representation."^^xsd:string ;
+    ex:hasJustification "Trans character whose storyline is largely underexplored and lacks emotional depth."^^xsd:string ;
+    ex:hasNormalization "No"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Unresolved"^^xsd:string ;
+    ex:hasShowTitle "Chilling Adventures of Sabrina"^^xsd:string ;
+    ex:hasTokenism "Yes"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_28 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Jules"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Tackles internal struggles and empowerment."^^xsd:string ;
+    ex:hasJustification "Queer character with a complex relationship to the protagonist, portraying both vulnerability and strength."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (healing)"^^xsd:string ;
+    ex:hasShowTitle "Sharp Objects"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_29 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:StereotypicalCharacterization,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Shane Harvey"^^xsd:string ;
+    ex:hasAffirmation "No"^^xsd:string ;
+    ex:hasGayBestFriend "Yes"^^xsd:string ;
+    ex:hasImpact "Reinforces outdated stereotypes without subverting them."^^xsd:string ;
+    ex:hasJustification "Gay best friend trope with little character depth or growth."^^xsd:string ;
+    ex:hasNormalization "No"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Unresolved"^^xsd:string ;
+    ex:hasShowTitle "Faking It"^^xsd:string ;
+    ex:hasTokenism "Yes"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_3 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Blaine Anderson"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Helped normalize LGBTQ+ relationships in mainstream media."^^xsd:string ;
+    ex:hasJustification "Central gay character with a detailed portrayal of relationships and identity struggles."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Glee"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_30 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Magnus Bane"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Celebrates LGBTQ+ identity with fantasy elements."^^xsd:string ;
+    ex:hasJustification "Bisexual character portrayed with emotional depth and a rich backstory, exploring love and conflict."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Shadowhunters"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_4 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:StereotypicalCharacterization,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Kevin Keller"^^xsd:string ;
+    ex:hasAffirmation "No"^^xsd:string ;
+    ex:hasGayBestFriend "Yes"^^xsd:string ;
+    ex:hasImpact "Reinforces clich�s, adding little to LGBTQ+ visibility."^^xsd:string ;
+    ex:hasJustification "Portrayed in the \"gay best friend\" trope with minimal character development."^^xsd:string ;
+    ex:hasNormalization "No"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Unresolved"^^xsd:string ;
+    ex:hasShowTitle "Riverdale"^^xsd:string ;
+    ex:hasTokenism "Yes"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_5 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Emily Fields"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Normalizes LGBTQ+ relationships, empowering LGBTQ+ women."^^xsd:string ;
+    ex:hasJustification "Lesbian character with nuanced relationships and complex storylines."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Happy ending"^^xsd:string ;
+    ex:hasShowTitle "Pretty Little Liars"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_6 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Adam Groff"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Highlights importance of addressing repression."^^xsd:string ;
+    ex:hasJustification "Subtle exploration of internalized homophobia and self-acceptance."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (self-growth)"^^xsd:string ;
+    ex:hasShowTitle "Sex Education"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_7 a persp:CharacterTransformation,
+        persp:PlotResolution,
+        persp:StaticRole,
+        persp:SuperficialPortrayal,
+        persp:UnfairRepresentation ;
+    rdfs:label "Lexa"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Sparked backlash for perpetuating harmful LGBTQ+ tropes."^^xsd:string ;
+    ex:hasJustification "Lesbian character killed off shortly after a meaningful relationship, reinforcing the \"bury your gays\" trope."^^xsd:string ;
+    ex:hasNormalization "No"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Death"^^xsd:string ;
+    ex:hasShowTitle "The 100"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "Yes"^^xsd:string .
+
+ex:Cut_8 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Connor Walsh"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Tackles issues of societal bias and personal redemption."^^xsd:string ;
+    ex:hasJustification "Gay character with complex relationships and moral struggles."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (growth)"^^xsd:string ;
+    ex:hasShowTitle "How to Get Away with Murder"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Cut_9 a persp:AuthenticCharacterization,
+        persp:CharacterTransformation,
+        persp:DetailedPortrayal,
+        persp:DynamicRole,
+        persp:FairRepresentation,
+        persp:PlotResolution ;
+    rdfs:label "Sophia Burset"^^xsd:string ;
+    ex:hasAffirmation "Yes"^^xsd:string ;
+    ex:hasGayBestFriend "No"^^xsd:string ;
+    ex:hasImpact "Illuminates systemic challenges for trans individuals, fostering empathy."^^xsd:string ;
+    ex:hasJustification "Transgender character navigating systemic discrimination in prison."^^xsd:string ;
+    ex:hasNormalization "Yes"^^xsd:string ;
+    ex:hasPlotResolutionDesc "Open-ended (resilience)"^^xsd:string ;
+    ex:hasShowTitle "Orange Is the New Black"^^xsd:string ;
+    ex:hasTokenism "No"^^xsd:string ;
+    ex:hasTragicTrope "No"^^xsd:string .
+
+ex:Lens_1 a persp:IdeologicalChallenge .
+
+ex:Lens_10 a persp:IdeologicalChallenge .
+
+ex:Lens_11 a persp:IdeologicalChallenge .
+
+ex:Lens_12 a persp:ProfitAndMassAppeal .
+
+ex:Lens_13 a persp:IdeologicalChallenge .
+
+ex:Lens_14 a persp:IdeologicalChallenge .
+
+ex:Lens_15 a persp:IdeologicalChallenge .
+
+ex:Lens_16 a persp:IdeologicalChallenge .
+
+ex:Lens_17 a persp:IdeologicalChallenge .
+
+ex:Lens_18 a persp:IdeologicalChallenge .
+
+ex:Lens_19 a persp:IdeologicalChallenge .
+
+ex:Lens_2 a persp:IdeologicalChallenge .
+
+ex:Lens_20 a persp:IdeologicalChallenge .
+
+ex:Lens_21 a persp:IdeologicalChallenge .
+
+ex:Lens_22 a persp:IdeologicalChallenge .
+
+ex:Lens_23 a persp:ProfitAndMassAppeal .
+
+ex:Lens_24 a persp:IdeologicalChallenge .
+
+ex:Lens_25 a persp:IdeologicalChallenge .
+
+ex:Lens_26 a persp:IdeologicalChallenge .
+
+ex:Lens_27 a persp:ProfitAndMassAppeal .
+
+ex:Lens_28 a persp:IdeologicalChallenge .
+
+ex:Lens_29 a persp:ProfitAndMassAppeal .
+
+ex:Lens_3 a persp:IdeologicalChallenge .
+
+ex:Lens_30 a persp:IdeologicalChallenge .
+
+ex:Lens_4 a persp:ProfitAndMassAppeal .
+
+ex:Lens_5 a persp:IdeologicalChallenge .
+
+ex:Lens_6 a persp:IdeologicalChallenge .
+
+ex:Lens_7 a persp:ProfitAndMassAppeal .
+
+ex:Lens_8 a persp:IdeologicalChallenge .
+
+ex:Lens_9 a persp:IdeologicalChallenge .
+
