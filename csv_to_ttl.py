@@ -23,7 +23,7 @@ g.bind("schema", schema)
 
 # Carica SOLO la tua ontologia locale con le importazioni già fatte in Protégé
 # Carica l'ontologia locale
-g.parse("LGBTQPortrayal.oww", format="xml")
+g.parse("LGBTQPortrayal.owx", format="xml")
 
 # aggiungere le classi e proprietà nuove
 g.add((LGBTQPortrayal.SexOrientation, RDF.type, OWL.Class))
@@ -215,10 +215,10 @@ try:
     if df.shape[1] == 1:  # Se c'è solo una colonna, forse il separatore è ";"
         df = pd.read_csv(file_path, sep=";", encoding="utf-8")
         
-    print("✅ File caricato con successo!")
+    print(" File caricato con successo!")
     print(df.head())  # Mostra le prime righe
 except Exception as e:
-    print(f"❌ Errore durante il caricamento del file: {e}")
+    print(f" Errore durante il caricamento del file: {e}")
 
 
 
