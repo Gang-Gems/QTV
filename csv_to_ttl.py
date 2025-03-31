@@ -202,29 +202,11 @@ g.add((RDFS.label, RDF.type, OWL.DatatypeProperty))
 
 
 # Load the data from our CSV file as pandas DataFrame
-#url = "C:/Users/vdant/Documents/DIGITAL HUMANITIES BOLOGONA/KNOWLEDGE REPRESENTATION AND EXTRACTION/LGBTQ-Rep/final_dataset.csv"
-#df = pd.read_csv(url,dtype=str).fillna("")
-
-
-# Percorso del file
-file_path = r"C:\Users\vdant\Documents\DIGITAL HUMANITIES BOLOGONA\KNOWLEDGE REPRESENTATION AND EXTRACTION\LGBTQ-Rep\final_dataset.csv"
-
-# Proviamo con diversi separatori per capire il formato corretto
-try:
-    df = pd.read_csv(file_path, sep=",", encoding="utf-8")  # Prova con virgola
-    if df.shape[1] == 1:  # Se c'è solo una colonna, forse il separatore è ";"
-        df = pd.read_csv(file_path, sep=";", encoding="utf-8")
-        
-    print(" File caricato con successo!")
-    print(df.head())  # Mostra le prime righe
-except Exception as e:
-    print(f" Errore durante il caricamento del file: {e}")
-
-
+df = pd.read_csv("final_dataset_comma.csv",dtype=str).fillna("")
 
 # Iterate over the DataFrame rows
-#for index, row in df.iterrows():
- #  character_uri = LGBTQPortrayal[f"Character_{index}"]  # Crea un URI univoco per ogni istanza
+for index, row in df.iterrows():
+  character_uri = LGBTQPortrayal[f"Character_{index}"]  # Crea un URI univoco per ogni istanza
   # g.add((character_uri, RDF.type, LGBTQPortrayal.PortrayalofLgbtqCharacter))
    #g.add((character_uri, schema.name, Literal(row["Name"], datatype=XSD.string)))
 
