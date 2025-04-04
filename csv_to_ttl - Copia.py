@@ -28,55 +28,55 @@ g.add((LGBTQPortrayal.SexOrientation, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.Gender, RDF.type, OWL.Class))
 g.add((FOAF.Person, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.Performer, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Performer, RDFS.subClassOf, LGBTQPortrayal.Person))
+g.add((LGBTQPortrayal.Performer, RDFS.subClassOf, FOAF.Person))
 g.add((LGBTQPortrayal.Creator, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Creator, RDFS.subClassOf, LGBTQPortrayal.Person))
+g.add((LGBTQPortrayal.Creator, RDFS.subClassOf, FOAF.Person))
 g.add((schema.Country, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.TvShow, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.Character, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.Genre, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.ProductionAndIndustryFactory, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Stereotypes, RDF.type, OWL.Class))
+g.add((LGBTQPortrayal.Stereotype, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.TragicTrope, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.TragicTrope, RDFS.subClassOf, persp.Stereotypes))
+g.add((LGBTQPortrayal.TragicTrope, RDFS.subClassOf, LGBTQPortrayal.Stereotype))
 g.add((LGBTQPortrayal.GayBestFriend, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.GayBestFriend, RDFS.subClassOf, persp.Stereotypes))
+g.add((LGBTQPortrayal.GayBestFriend, RDFS.subClassOf, LGBTQPortrayal.Stereotype))
 g.add((LGBTQPortrayal.LGBTQCommunityImpact, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.NegativeRoleModel, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.NegativeRoleModel, RDFS.subClassOf, persp.LGBTQCommunityImpact))
+g.add((LGBTQPortrayal.NegativeRoleModel, RDFS.subClassOf, LGBTQPortrayal.LGBTQCommunityImpact))
 g.add((LGBTQPortrayal.PositiveRoleModel, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.PositiveRoleModel, RDFS.subClassOf, persp.LGBTQCommunityImpact))
+g.add((LGBTQPortrayal.PositiveRoleModel, RDFS.subClassOf, LGBTQPortrayal.LGBTQCommunityImpact))
 
 
 #Eventuality
 g.add((LGBTQPortrayal.PortrayalofLgbtqCharacter, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.PortrayalofLgbtqCharacter, RDFS.subClassOf, persp.Eventuality))
 g.add((LGBTQPortrayal.RepresentationType, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.RepresentationType, RDFS.subClassOf, persp.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.RepresentationType, RDFS.subClassOf, LGBTQPortrayal.PortrayalofLgbtqCharacter))
 g.add((LGBTQPortrayal.CharacterDepth, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.CharacterDepth, RDFS.subClassOf, persp.RepresentationType))
+g.add((LGBTQPortrayal.CharacterDepth, RDFS.subClassOf, LGBTQPortrayal.RepresentationType))
 g.add((LGBTQPortrayal.FairRepresentation, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.FairRepresentation, RDFS.subClassOf, persp.RepresentationType))
+g.add((LGBTQPortrayal.FairRepresentation, RDFS.subClassOf, LGBTQPortrayal.RepresentationType))
 g.add((LGBTQPortrayal.UnfairRepresentation, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.UnfairRepresentation, RDFS.subClassOf, persp.RepresentationType))
+g.add((LGBTQPortrayal.UnfairRepresentation, RDFS.subClassOf, LGBTQPortrayal.RepresentationType))
 g.add((LGBTQPortrayal.PlotResolution, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.PlotResolution, RDFS.subClassOf, persp.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.PlotResolution, RDFS.subClassOf, LGBTQPortrayal.PortrayalofLgbtqCharacter))
 g.add((LGBTQPortrayal.NormalizationOfRelationship, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.NormalizationOfRelationship, RDFS.subClassOf, persp.PlotResolution))
+g.add((LGBTQPortrayal.NormalizationOfRelationship, RDFS.subClassOf, LGBTQPortrayal.PlotResolution))
 g.add((LGBTQPortrayal.AffirmationOfIdentity, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.AffirmationOfIdentity, RDFS.subClassOf, persp.PlotResolution))
+g.add((LGBTQPortrayal.AffirmationOfIdentity, RDFS.subClassOf, LGBTQPortrayal.PlotResolution))
 g.add((LGBTQPortrayal.Authenticity, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Authenticity, RDFS.subClassOf, persp.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.Authenticity, RDFS.subClassOf, LGBTQPortrayal.PortrayalofLgbtqCharacter))
 g.add((LGBTQPortrayal.SignificanceInPlot, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.SignificanceInPlot, RDFS.subClassOf, persp.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.SignificanceInPlot, RDFS.subClassOf, LGBTQPortrayal.PortrayalofLgbtqCharacter))
 g.add((LGBTQPortrayal.NarrativeRole, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.NarrativeRole, RDFS.subClassOf, persp.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.NarrativeRole, RDFS.subClassOf, LGBTQPortrayal.PortrayalofLgbtqCharacter))
 g.add((LGBTQPortrayal.CharacterTransformation, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.CharacterTransformation, RDFS.subClassOf, persp.NarrativeRole)) #see what they say
+g.add((LGBTQPortrayal.CharacterTransformation, RDFS.subClassOf, LGBTQPortrayal.NarrativeRole)) #see what they say
 g.add((LGBTQPortrayal.Dynamic, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Dynamic, RDFS.subClassOf, persp.NarrativeRole)) #see what they say
+g.add((LGBTQPortrayal.Dynamic, RDFS.subClassOf, LGBTQPortrayal.NarrativeRole)) #see what they say
 g.add((LGBTQPortrayal.Static, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.Static, RDFS.subClassOf, persp.NarrativeRole)) #see what they say
+g.add((LGBTQPortrayal.Static, RDFS.subClassOf, LGBTQPortrayal.NarrativeRole)) #see what they say
 
 
 #Lens
@@ -94,8 +94,8 @@ g.add((LGBTQPortrayal.Queerbaiting, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.Queerbaiting, RDFS.subClassOf, persp.Attitude))
 g.add((LGBTQPortrayal.EmpowermentRepresentation, RDF.type, OWL.Class))
 g.add((LGBTQPortrayal.EmpowermentRepresentation, RDFS.subClassOf, persp.Attitude))
-g.add((LGBTQPortrayal.ChallengingStereotypes, RDF.type, OWL.Class))
-g.add((LGBTQPortrayal.ChallengingStereotypes, RDFS.subClassOf, persp.Attitude))
+g.add((LGBTQPortrayal.ChallengingStereotype, RDF.type, OWL.Class))
+g.add((LGBTQPortrayal.ChallengingStereotype, RDFS.subClassOf, persp.Attitude))
 
 #Background
 g.add((LGBTQPortrayal.StreamingPolicies, RDF.type, OWL.Class))
@@ -300,7 +300,7 @@ for index, row in df.iterrows():
 
   # Creiamo un URI per il genere
   genre_uri = LGBTQPortrayal[f"Genre_{row['Genre of the tv-series'].replace(' ', '_')}"]
-  g.add((genre_uri, RDF.type, schema.Genre))
+  g.add((genre_uri, RDF.type, LGBTQPortrayal.Genre))
   g.add((genre_uri, RDFS.label, Literal(row["Genre of the tv-series"], datatype=XSD.string)))
 
   g.add((tvshow_uri, schema.genre, genre_uri))
@@ -354,35 +354,29 @@ for index, row in df.iterrows():
   if row["Authenticity"] == "Yes":
     authenticity_uri = LGBTQPortrayal[f"Authenticity_{row['Character Name'].replace(' ', '_')}"]
     g.add((authenticity_uri, RDF.type, LGBTQPortrayal.Authenticity))
-    g.add((portrayal_uri, RDFS.subClassOf, authenticity_uri))
 
   # PLOT RESOLUTION (Affirmation of Identity e Normalization of Relationship)
   if row["Affirmation of Identity"] == "Yes":
     affirmation_uri = LGBTQPortrayal[f"Affirmation_{row['Character Name'].replace(' ', '_')}"]
     g.add((affirmation_uri, RDF.type, LGBTQPortrayal.AffirmationOfIdentity))
-    g.add((portrayal_uri, RDFS.subClassOf, affirmation_uri))
 
   if row["Normalization of Relationship"] == "Yes":
     normalization_uri = LGBTQPortrayal[f"Normalization_{row['Character Name'].replace(' ', '_')}"]
     g.add((normalization_uri, RDF.type, LGBTQPortrayal.NormalizationOfRelationship))
-    g.add((portrayal_uri, RDFS.subClassOf, normalization_uri))
 
   # NARRATIVE ROLE (Dynamic o Static)
   if row["Dynamic Role"] == "Yes":
     dynamic_uri = LGBTQPortrayal[f"DynamicRole_{row['Character Name'].replace(' ', '_')}"]
     g.add((dynamic_uri, RDF.type, LGBTQPortrayal.Dynamic))
-    g.add((portrayal_uri, RDFS.subClassOf, dynamic_uri))
 
   if row["Static Role"] == "Yes":
     static_uri = LGBTQPortrayal[f"StaticRole_{row['Character Name'].replace(' ', '_')}"]
     g.add((static_uri, RDF.type, LGBTQPortrayal.Static))
-    g.add((portrayal_uri, RDFS.subClassOf, static_uri))
 
   # CHARACTER TRANSFORMATION (se ha una giustificazione)
   if row["Character Transformation"].strip():  # Se non è vuoto
     transformation_uri = LGBTQPortrayal[f"CharacterTransformation_{row['Character Name'].replace(' ', '_')}"]
     g.add((transformation_uri, RDF.type, LGBTQPortrayal.CharacterTransformation))
-    g.add((portrayal_uri, RDFS.subClassOf, transformation_uri))
     
     # Aggiungiamo la giustificazione come commento
     g.add((transformation_uri, RDFS.comment, Literal(row["Character Transformation"], datatype=XSD.string)))
@@ -391,7 +385,6 @@ for index, row in df.iterrows():
   if row["Plot Resolution"].strip():  # Se non è vuoto
     plot_resolution_uri = LGBTQPortrayal[f"PlotResolution_{row['Character Name'].replace(' ', '_')}"]
     g.add((plot_resolution_uri, RDF.type, LGBTQPortrayal.PlotResolution))
-    g.add((portrayal_uri, RDFS.subClassOf, plot_resolution_uri))
     
     # Aggiungiamo la giustificazione come commento
     g.add((plot_resolution_uri, RDFS.comment, Literal(row["Plot Resolution"], datatype=XSD.string)))
@@ -408,7 +401,7 @@ for index, row in df.iterrows():
   g.add((portrayal_uri, LGBTQPortrayal.viewedThroughLens, lens_uri))
 
 
-  # STEREOTYPES
+  # STEREOTYPE
   if row["Stereotypical Characterization"] == "Yes":
     stereotype_uri = LGBTQPortrayal[f"Stereotype_{row['Character Name'].replace(' ', '_')}"]
     g.add((stereotype_uri, RDF.type, LGBTQPortrayal.Stereotype))
@@ -486,7 +479,7 @@ for index, row in df.iterrows():
 
   
 # Salva il grafo RDF in un file
-g.serialize("LGBTQPortrayal_with_data.ttl", format="turtle")
+g.serialize("LGBTQPortrayal_with_data.ttl1", format="turtle")
 
 
 
