@@ -1,0 +1,1889 @@
+@prefix LGBTQPortrayal: <http://www.semanticweb.org/LGBTQPortrayal#> .
+@prefix RDFS: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.semanticweb.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix persp: <http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+LGBTQPortrayal:AudienceDemand a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:CensorshipLaws a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:ChallengingStereotype a owl:Class ;
+    RDFS:subClassOf persp:Attitude .
+
+LGBTQPortrayal:EmpowermentRepresentation a owl:Class ;
+    RDFS:subClassOf persp:Attitude .
+
+LGBTQPortrayal:FinancialRisk a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:GayBestFriend_Kevin_Keller a LGBTQPortrayal:GayBestFriend .
+
+LGBTQPortrayal:GayBestFriend_Shane_Harvey a LGBTQPortrayal:GayBestFriend .
+
+LGBTQPortrayal:HistoricalTrends a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:MarketFriendly a owl:Class ;
+    RDFS:subClassOf persp:Attitude .
+
+LGBTQPortrayal:QueerTheory a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:Queerbaiting a owl:Class ;
+    RDFS:subClassOf persp:Attitude .
+
+LGBTQPortrayal:SignificanceInPlot a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter .
+
+LGBTQPortrayal:StreamingPolicies a owl:Class ;
+    RDFS:subClassOf persp:Background .
+
+LGBTQPortrayal:Tokenization a owl:Class ;
+    RDFS:subClassOf persp:Attitude .
+
+LGBTQPortrayal:TragicTrope_Lexa a LGBTQPortrayal:TragicTrope .
+
+LGBTQPortrayal:TragicTrope_Tara_Maclay a LGBTQPortrayal:TragicTrope .
+
+LGBTQPortrayal:TvShow_Atypical a LGBTQPortrayal:TvShow ;
+    RDFS:label "Atypical"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Casey_Gardner ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Robia_Rashid ;
+    schema:datePublished "2017"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+<http://www.semanticweb.org/LGBTQPortrayal#TvShow_Black_Mirror:_San_Junipero> a LGBTQPortrayal:TvShow ;
+    RDFS:label "Black Mirror: San Junipero"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Kelly ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Owen_Harris ;
+    schema:datePublished "2016"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Science_Fiction_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Brooklyn_Nine-Nine a LGBTQPortrayal:TvShow ;
+    RDFS:label "Brooklyn Nine-Nine"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Ray_Holt ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Michael_Schur ;
+    schema:datePublished "2013"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy ;
+    schema:productionCompany <http://www.semanticweb.org/LGBTQPortrayal#Production_Fox/NBC> .
+
+LGBTQPortrayal:TvShow_Buffy_the_Vampire_Slayer a LGBTQPortrayal:TvShow ;
+    RDFS:label "Buffy the Vampire Slayer"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Tara_Maclay ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Joss_Whedon ;
+    schema:datePublished "1999"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Supernatural_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_The_WB .
+
+LGBTQPortrayal:TvShow_Chilling_Adventures_of_Sabrina a LGBTQPortrayal:TvShow ;
+    RDFS:label "Chilling Adventures of Sabrina"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Theo_Putnam ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Roberto_Aguirre-Sacasa ;
+    schema:datePublished "2018"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Drama_Horror_Fantasy ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Elite a LGBTQPortrayal:TvShow ;
+    RDFS:label "Elite"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Omar_Shanaa ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_Spain ;
+    schema:creator LGBTQPortrayal:Creator_Carlos_Montero ;
+    schema:datePublished "2018"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Thriller_Teen_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Euphoria a LGBTQPortrayal:TvShow ;
+    RDFS:label "Euphoria"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Jules_Vaughn ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Sam_Levinson ;
+    schema:datePublished "2019"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_HBO .
+
+LGBTQPortrayal:TvShow_Faking_It a LGBTQPortrayal:TvShow ;
+    RDFS:label "Faking It"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Shane_Harvey ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Dana_Min_Goodman ;
+    schema:datePublished "2014"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy_Drama_Romance ;
+    schema:productionCompany LGBTQPortrayal:Production_MTV .
+
+LGBTQPortrayal:TvShow_Glee a LGBTQPortrayal:TvShow ;
+    RDFS:label "Glee"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Blaine_Anderson,
+        LGBTQPortrayal:Character_Santana_Lopez ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Ryan_Murphy ;
+    schema:datePublished "2009"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Musical_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Fox .
+
+LGBTQPortrayal:TvShow_How_to_Get_Away_with_Murder a LGBTQPortrayal:TvShow ;
+    RDFS:label "How to Get Away with Murder"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Connor_Walsh ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Peter_Nowalk ;
+    schema:datePublished "2014"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Legal_Drama_Thriller ;
+    schema:productionCompany LGBTQPortrayal:Production_ABC .
+
+LGBTQPortrayal:TvShow_Love a LGBTQPortrayal:TvShow ;
+    RDFS:label "Love"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Mickey_Dobbs ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Judd_Apatow ;
+    schema:datePublished "2016"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Love_Victor a LGBTQPortrayal:TvShow ;
+    RDFS:label "Love, Victor"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Victor_Salazar ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Isaac_Aptaker ;
+    schema:datePublished "2020"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Teen_Drama_Romance ;
+    schema:productionCompany LGBTQPortrayal:Production_Hulu .
+
+LGBTQPortrayal:TvShow_Master_of_None a LGBTQPortrayal:TvShow ;
+    RDFS:label "Master of None"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Denise ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Aziz_Ansari ;
+    schema:datePublished "2015"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_One_Day_at_a_Time a LGBTQPortrayal:TvShow ;
+    RDFS:label "One Day at a Time"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Syd ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Gloria_Calderon_Kellett ;
+    schema:datePublished "2017"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Orange_Is_the_New_Black a LGBTQPortrayal:TvShow ;
+    RDFS:label "Orange Is the New Black"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Sophia_Burset ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Jenji_Leslie_Kohan ;
+    schema:datePublished "2013"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Pretty_Little_Liars a LGBTQPortrayal:TvShow ;
+    RDFS:label "Pretty Little Liars"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Emily_Fields ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Ina_Marlene_King ;
+    schema:datePublished "2010"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Drama_Mystery ;
+    schema:productionCompany LGBTQPortrayal:Production_Freeform .
+
+LGBTQPortrayal:TvShow_Riverdale a LGBTQPortrayal:TvShow ;
+    RDFS:label "Riverdale"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Kevin_Keller ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Roberto_Aguirre-Sacasa ;
+    schema:datePublished "2017"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Drama_Mystery ;
+    schema:productionCompany LGBTQPortrayal:Production_The_CW .
+
+<http://www.semanticweb.org/LGBTQPortrayal#TvShow_Schitt's_Creek> a LGBTQPortrayal:TvShow ;
+    RDFS:label "Schitt's Creek"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_David_Rose,
+        LGBTQPortrayal:Character_Patrick_Brewer ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_Canada ;
+    schema:creator LGBTQPortrayal:Creator_Eugene_Levy ;
+    schema:datePublished "2015"^^xsd:gYear,
+        "2017"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy ;
+    schema:productionCompany LGBTQPortrayal:Production_CBC .
+
+LGBTQPortrayal:TvShow_Sense8 a LGBTQPortrayal:TvShow ;
+    RDFS:label "Sense8"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Lito_Rodriguez,
+        LGBTQPortrayal:Character_Nomi_Marks ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Lana_e_Lilly_Wachowski ;
+    schema:datePublished "2015"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Science_Fiction_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Sex_Education a LGBTQPortrayal:TvShow ;
+    RDFS:label "Sex Education"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Adam_Groff,
+        LGBTQPortrayal:Character_Eric_Effiong ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_UK ;
+    schema:creator LGBTQPortrayal:Creator_Laurie_Nunn ;
+    schema:datePublished "2019"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:TvShow_Shadowhunters a LGBTQPortrayal:TvShow ;
+    RDFS:label "Shadowhunters"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Magnus_Bane ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Ed_Decter ;
+    schema:datePublished "2016"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Fantasy_Drama_Action ;
+    schema:productionCompany LGBTQPortrayal:Production_Freeform .
+
+LGBTQPortrayal:TvShow_Sharp_Objects a LGBTQPortrayal:TvShow ;
+    RDFS:label "Sharp Objects"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Alice ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Jean-Marc_Vallee ;
+    schema:datePublished "2018"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Drama_Thriller_Mystery ;
+    schema:productionCompany LGBTQPortrayal:Production_HBO .
+
+LGBTQPortrayal:TvShow_The_100 a LGBTQPortrayal:TvShow ;
+    RDFS:label "The 100"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Lexa ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Jason_Rothenberg ;
+    schema:datePublished "2014"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Science_Fiction_Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_The_CW .
+
+LGBTQPortrayal:TvShow_The_Bold_Type a LGBTQPortrayal:TvShow ;
+    RDFS:label "The Bold Type"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Kat_Edison ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
+    schema:creator LGBTQPortrayal:Creator_Sarah_Watson ;
+    schema:datePublished "2017"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Comedy-Drama ;
+    schema:productionCompany LGBTQPortrayal:Production_Freeform .
+
+LGBTQPortrayal:TvShow_Young_Royals a LGBTQPortrayal:TvShow ;
+    RDFS:label "Young Royals"^^xsd:string ;
+    schema:character LGBTQPortrayal:Character_Simon_Eriksson ;
+    schema:countryOfOrigin LGBTQPortrayal:Country_Sweden ;
+    schema:creator LGBTQPortrayal:Creator_Lisa_Ambjorn ;
+    schema:datePublished "2021"^^xsd:gYear ;
+    schema:genre LGBTQPortrayal:Genre_Teen_Drama_Romance ;
+    schema:productionCompany LGBTQPortrayal:Production_Netflix .
+
+LGBTQPortrayal:affectsPortrayal a owl:ObjectProperty .
+
+LGBTQPortrayal:associatedWith a owl:ObjectProperty .
+
+LGBTQPortrayal:emergesFrom a owl:ObjectProperty .
+
+LGBTQPortrayal:hasAttitude a owl:ObjectProperty .
+
+LGBTQPortrayal:hasCharacterDepth a owl:ObjectProperty .
+
+LGBTQPortrayal:hasGender a owl:ObjectProperty .
+
+LGBTQPortrayal:hasImpactOn a owl:ObjectProperty .
+
+LGBTQPortrayal:hasNarrativeFunction a owl:ObjectProperty .
+
+LGBTQPortrayal:hasPortrayal a owl:ObjectProperty .
+
+LGBTQPortrayal:hasSexOrientation a owl:ObjectProperty .
+
+LGBTQPortrayal:hasStereotype a owl:ObjectProperty .
+
+LGBTQPortrayal:hasTitle a owl:DatatypeProperty .
+
+LGBTQPortrayal:impactsCommunity a owl:ObjectProperty .
+
+LGBTQPortrayal:informedByBackground a owl:ObjectProperty .
+
+LGBTQPortrayal:isTransgender a owl:DatatypeProperty .
+
+LGBTQPortrayal:providesContextFor a owl:ObjectProperty .
+
+LGBTQPortrayal:shapedByAttitude a owl:ObjectProperty .
+
+LGBTQPortrayal:shapedByLens a owl:ObjectProperty .
+
+LGBTQPortrayal:viewedThroughLens a owl:ObjectProperty ;
+    RDFS:domain LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    RDFS:range persp:Lens .
+
+RDFS:label a owl:DatatypeProperty .
+
+schema:actor a owl:ObjectProperty .
+
+schema:character a owl:ObjectProperty .
+
+schema:countryOfOrigin a owl:ObjectProperty .
+
+schema:creator a owl:ObjectProperty .
+
+schema:datePublished a owl:DatatypeProperty .
+
+schema:genre a owl:ObjectProperty .
+
+schema:hasOccupation a owl:ObjectProperty .
+
+schema:productionCompany a owl:ObjectProperty .
+
+LGBTQPortrayal:CharacterTransformation_Adam_Groff a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Grows from repression to acceptance."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Alice a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Overcomes trauma and grows stronger."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Blaine_Anderson a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Learns resilience, finds love."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Casey_Gardner a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Gains confidence in her relationships."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Connor_Walsh a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Develops self-awareness and integrity."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_David_Rose a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Finds love and fulfillment."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Denise a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Grows into confidence and love."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Emily_Fields a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Gains confidence in identity."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Eric_Effiong a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Grows from self-doubt to confidence."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Jules_Vaughn a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Overcomes struggles and finds self-acceptance."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Kat_Edison a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Overcomes fears and takes control of her life."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Kelly a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Finds love and peace."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Kevin_Keller a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Static and stereotypical."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Lexa a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Dies before meaningful growth."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Lito_Rodriguez a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Moves from secrecy to pride."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Magnus_Bane a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Balances love and leadership."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Mickey_Dobbs a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Static and minimally impactful."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Nomi_Marks a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Gains confidence and security."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Omar_Shanaa a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Finds balance between love and identity."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Patrick_Brewer a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Becomes part of a loving community."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Ray_Holt a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Provides mentorship and breaks barriers."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Santana_Lopez a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Finds peace with her identity and love."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Shane_Harvey a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Static and stereotypical."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Simon_Eriksson a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Balances love and cultural identity."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Sophia_Burset a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Confronts systemic oppression."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Syd a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Gains family acceptance and self-confidence."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Tara_Maclay a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Dies abruptly."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Theo_Putnam a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Static and underdeveloped."^^xsd:string .
+
+LGBTQPortrayal:CharacterTransformation_Victor_Salazar a LGBTQPortrayal:CharacterTransformation ;
+    RDFS:comment "Overcomes internalized fear and bias."^^xsd:string .
+
+LGBTQPortrayal:Character_Adam_Groff a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Adam Groff"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Adam_Groff ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Questioning ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Connor_Swindells .
+
+LGBTQPortrayal:Character_Alice a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Alice"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Alice ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:NotSpecified ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Sydney_Sweeney .
+
+LGBTQPortrayal:Character_Blaine_Anderson a LGBTQPortrayal:Character,
+        LGBTQPortrayal:ComicSidekick ;
+    RDFS:label "Blaine Anderson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Blaine_Anderson ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Darren_Criss .
+
+LGBTQPortrayal:Character_Casey_Gardner a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Casey Gardner"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Casey_Gardner ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Brigette_Lundy-Paine .
+
+LGBTQPortrayal:Character_Connor_Walsh a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Connor Walsh"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Connor_Walsh ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Jack_Falahee .
+
+LGBTQPortrayal:Character_David_Rose a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "David Rose"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_David_Rose ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Pansexual ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Dan_Levy .
+
+LGBTQPortrayal:Character_Denise a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Denise"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Denise ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Lena_Waithe .
+
+LGBTQPortrayal:Character_Emily_Fields a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Emily Fields"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Emily_Fields ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Shay_Mitchell .
+
+LGBTQPortrayal:Character_Eric_Effiong a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Eric Effiong"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Eric_Effiong ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Ncuti_Gatwa .
+
+LGBTQPortrayal:Character_Jules_Vaughn a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Jules Vaughn"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Jules_Vaughn ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender true ;
+    schema:actor LGBTQPortrayal:Performer_Hunter_Schafer .
+
+LGBTQPortrayal:Character_Kat_Edison a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Kat Edison"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Kat_Edison ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Aisha_Dee .
+
+LGBTQPortrayal:Character_Kelly a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Kelly"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Kelly ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender true ;
+    schema:actor LGBTQPortrayal:Performer_Gugu_Mbatha-Raw .
+
+LGBTQPortrayal:Character_Kevin_Keller a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Kevin Keller"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Kevin_Keller ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Casey_Cott .
+
+LGBTQPortrayal:Character_Lexa a LGBTQPortrayal:Character,
+        LGBTQPortrayal:QueerProtagonistLeadRole ;
+    RDFS:label "Lexa"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Lexa ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Alycia_Debnam-Carey .
+
+LGBTQPortrayal:Character_Lito_Rodriguez a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Lito Rodriguez"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Lito_Rodriguez ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Miguel_Angel_Silvestre .
+
+LGBTQPortrayal:Character_Magnus_Bane a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Magnus Bane"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Magnus_Bane ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor <http://www.semanticweb.org/LGBTQPortrayal#Performer_Harry_Shum_Jr.> .
+
+LGBTQPortrayal:Character_Mickey_Dobbs a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Mickey Dobbs"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Mickey_Dobbs ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Gillian_Jacobs .
+
+LGBTQPortrayal:Character_Nomi_Marks a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Nomi Marks"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Nomi_Marks ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender true ;
+    schema:actor LGBTQPortrayal:Performer_Jamie_Clayton .
+
+LGBTQPortrayal:Character_Omar_Shanaa a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Omar Shanaa"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Omar_Shanaa ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Omar_Ayuso .
+
+LGBTQPortrayal:Character_Patrick_Brewer a LGBTQPortrayal:Character,
+        LGBTQPortrayal:ComicSidekick ;
+    RDFS:label "Patrick Brewer"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Patrick_Brewer ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Noah_Reid .
+
+LGBTQPortrayal:Character_Ray_Holt a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Ray Holt"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Ray_Holt ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Andre_Braugher .
+
+LGBTQPortrayal:Character_Santana_Lopez a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Santana Lopez"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Santana_Lopez ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Naya_Rivera .
+
+LGBTQPortrayal:Character_Shane_Harvey a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Shane Harvey"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Shane_Harvey ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Michael_Willett .
+
+LGBTQPortrayal:Character_Simon_Eriksson a LGBTQPortrayal:Character,
+        LGBTQPortrayal:QueerProtagonistLeadRole ;
+    RDFS:label "Simon Eriksson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Simon_Eriksson ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Omar_Rudberg .
+
+LGBTQPortrayal:Character_Sophia_Burset a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Sophia Burset"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Sophia_Burset ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender true ;
+    schema:actor LGBTQPortrayal:Performer_Laverne_Cox .
+
+LGBTQPortrayal:Character_Syd a LGBTQPortrayal:AuthenticRepresentation,
+        LGBTQPortrayal:Character ;
+    RDFS:label "Syd"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:NonBinary ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Syd ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Sheridan_Pierce .
+
+LGBTQPortrayal:Character_Tara_Maclay a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Tara Maclay"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Tara_Maclay ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Amber_Benson .
+
+LGBTQPortrayal:Character_Theo_Putnam a LGBTQPortrayal:Character,
+        LGBTQPortrayal:TokenCharacter ;
+    RDFS:label "Theo Putnam"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Theo_Putnam ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender true ;
+    schema:actor LGBTQPortrayal:Performer_Lachlan_Watson .
+
+LGBTQPortrayal:Character_Victor_Salazar a LGBTQPortrayal:Character,
+        LGBTQPortrayal:QueerProtagonistLeadRole ;
+    RDFS:label "Victor Salazar"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Victor_Salazar ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false ;
+    schema:actor LGBTQPortrayal:Performer_Michael_Cimino .
+
+LGBTQPortrayal:Country_Canada a schema:Country ;
+    RDFS:label "Canada"^^xsd:string .
+
+LGBTQPortrayal:Country_Spain a schema:Country ;
+    RDFS:label "Spain"^^xsd:string .
+
+LGBTQPortrayal:Country_Sweden a schema:Country ;
+    RDFS:label "Sweden"^^xsd:string .
+
+LGBTQPortrayal:Country_UK a schema:Country ;
+    RDFS:label "UK"^^xsd:string .
+
+LGBTQPortrayal:Creator_Aziz_Ansari a LGBTQPortrayal:Creator ;
+    RDFS:label "Aziz Ansari"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Carlos_Montero a LGBTQPortrayal:Creator ;
+    RDFS:label "Carlos Montero"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Dana_Min_Goodman a LGBTQPortrayal:Creator ;
+    RDFS:label "Dana Min Goodman"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Ed_Decter a LGBTQPortrayal:Creator ;
+    RDFS:label "Ed Decter"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Eugene_Levy a LGBTQPortrayal:Creator ;
+    RDFS:label "Eugene Levy"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Gloria_Calderon_Kellett a LGBTQPortrayal:Creator ;
+    RDFS:label "Gloria Calderon Kellett"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Creator_Ina_Marlene_King a LGBTQPortrayal:Creator ;
+    RDFS:label "Ina Marlene King"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Isaac_Aptaker a LGBTQPortrayal:Creator ;
+    RDFS:label "Isaac Aptaker"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Jason_Rothenberg a LGBTQPortrayal:Creator ;
+    RDFS:label "Jason Rothenberg"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Jean-Marc_Vallee a LGBTQPortrayal:Creator ;
+    RDFS:label "Jean-Marc Vallee"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Jenji_Leslie_Kohan a LGBTQPortrayal:Creator ;
+    RDFS:label "Jenji Leslie Kohan"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Joss_Whedon a LGBTQPortrayal:Creator ;
+    RDFS:label "Joss Whedon"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Judd_Apatow a LGBTQPortrayal:Creator ;
+    RDFS:label "Judd Apatow"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Lana_e_Lilly_Wachowski a LGBTQPortrayal:Creator ;
+    RDFS:label "Lana e Lilly Wachowski"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Lesbian ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Creator_Laurie_Nunn a LGBTQPortrayal:Creator ;
+    RDFS:label "Laurie Nunn"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Lisa_Ambjorn a LGBTQPortrayal:Creator ;
+    RDFS:label "Lisa Ambjorn"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Michael_Schur a LGBTQPortrayal:Creator ;
+    RDFS:label "Michael Schur"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Owen_Harris a LGBTQPortrayal:Creator ;
+    RDFS:label "Owen Harris"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Peter_Nowalk a LGBTQPortrayal:Creator ;
+    RDFS:label "Peter Nowalk"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Robia_Rashid a LGBTQPortrayal:Creator ;
+    RDFS:label "Robia Rashid"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Ryan_Murphy a LGBTQPortrayal:Creator ;
+    RDFS:label "Ryan Murphy"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Sam_Levinson a LGBTQPortrayal:Creator ;
+    RDFS:label "Sam Levinson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Creator_Sarah_Watson a LGBTQPortrayal:Creator ;
+    RDFS:label "Sarah Watson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Genre_Comedy_Drama_Romance a LGBTQPortrayal:Genre ;
+    RDFS:label "Comedy, Drama, Romance"^^xsd:string .
+
+LGBTQPortrayal:Genre_Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Drama"^^xsd:string .
+
+LGBTQPortrayal:Genre_Drama_Horror_Fantasy a LGBTQPortrayal:Genre ;
+    RDFS:label "Drama, Horror, Fantasy"^^xsd:string .
+
+LGBTQPortrayal:Genre_Drama_Thriller_Mystery a LGBTQPortrayal:Genre ;
+    RDFS:label "Drama, Thriller, Mystery"^^xsd:string .
+
+LGBTQPortrayal:Genre_Fantasy_Drama_Action a LGBTQPortrayal:Genre ;
+    RDFS:label "Fantasy, Drama, Action"^^xsd:string .
+
+LGBTQPortrayal:Genre_Legal_Drama_Thriller a LGBTQPortrayal:Genre ;
+    RDFS:label "Legal Drama, Thriller"^^xsd:string .
+
+LGBTQPortrayal:Genre_Musical_Comedy-Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Musical, Comedy-Drama"^^xsd:string .
+
+LGBTQPortrayal:Genre_Supernatural_Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Supernatural, Drama"^^xsd:string .
+
+LGBTQPortrayal:Genre_Thriller_Teen_Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Thriller, Teen Drama"^^xsd:string .
+
+LGBTQPortrayal:Impact_Adam_Groff a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Highlights importance of addressing repression."^^xsd:string .
+
+LGBTQPortrayal:Impact_Alice a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Tackles internal struggles and empowerment."^^xsd:string .
+
+LGBTQPortrayal:Impact_Blaine_Anderson a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Helped normalize LGBTQ+ relationships in mainstream media."^^xsd:string .
+
+LGBTQPortrayal:Impact_Casey_Gardner a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Positively portrays bisexuality, showcasing complexity."^^xsd:string .
+
+LGBTQPortrayal:Impact_Connor_Walsh a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Tackles issues of societal bias and personal redemption."^^xsd:string .
+
+LGBTQPortrayal:Impact_David_Rose a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Celebrates LGBTQ+ lives through humor and acceptance."^^xsd:string .
+
+LGBTQPortrayal:Impact_Denise a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Challenges heteronormative narratives and broadens representation."^^xsd:string .
+
+LGBTQPortrayal:Impact_Emily_Fields a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Normalizes LGBTQ+ relationships, empowering LGBTQ+ women."^^xsd:string .
+
+LGBTQPortrayal:Impact_Eric_Effiong a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Broadens intersectional representation, showing complexity."^^xsd:string .
+
+LGBTQPortrayal:Impact_Jules_Vaughn a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Positive role model for transgender youth, promoting understanding."^^xsd:string .
+
+LGBTQPortrayal:Impact_Kat_Edison a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Promotes bisexual visibility and challenges workplace discrimination."^^xsd:string .
+
+LGBTQPortrayal:Impact_Kelly a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Breaks stereotypes by showing LGBTQ+ love in a positive light."^^xsd:string .
+
+LGBTQPortrayal:Impact_Kevin_Keller a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Reinforces cliches, adding little to LGBTQ+ visibility."^^xsd:string .
+
+LGBTQPortrayal:Impact_Lexa a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Sparked backlash for perpetuating harmful LGBTQ+ tropes."^^xsd:string .
+
+LGBTQPortrayal:Impact_Lito_Rodriguez a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Highlights LGBTQ+ challenges in global contexts."^^xsd:string .
+
+LGBTQPortrayal:Impact_Magnus_Bane a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Celebrates LGBTQ+ identity with fantasy elements."^^xsd:string .
+
+LGBTQPortrayal:Impact_Mickey_Dobbs a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Lacks meaningful engagement with LGBTQ+ themes."^^xsd:string .
+
+LGBTQPortrayal:Impact_Nomi_Marks a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "One of the first trans characters portrayed positively in mainstream sci-fi."^^xsd:string .
+
+LGBTQPortrayal:Impact_Omar_Shanaa a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Highlights intersectionality, addressing sexuality in cultural contexts."^^xsd:string .
+
+LGBTQPortrayal:Impact_Patrick_Brewer a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Breaks stereotypes with a positive LGBTQ+ relationship on screen."^^xsd:string .
+
+LGBTQPortrayal:Impact_Ray_Holt a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Subverts stereotypes and challenges workplace biases."^^xsd:string .
+
+LGBTQPortrayal:Impact_Santana_Lopez a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Normalized LGBTQ+ relationships in mainstream teen TV."^^xsd:string .
+
+LGBTQPortrayal:Impact_Shane_Harvey a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Reinforces outdated stereotypes without subverting them."^^xsd:string .
+
+LGBTQPortrayal:Impact_Simon_Eriksson a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Provides positive representation of a gay teenager navigating love."^^xsd:string .
+
+LGBTQPortrayal:Impact_Sophia_Burset a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Illuminates systemic challenges for trans individuals, fostering empathy."^^xsd:string .
+
+LGBTQPortrayal:Impact_Syd a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Increases visibility for non-binary individuals and promotes acceptance."^^xsd:string .
+
+LGBTQPortrayal:Impact_Tara_Maclay a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Controversial portrayal, perpetuating harmful LGBTQ+ tropes."^^xsd:string .
+
+LGBTQPortrayal:Impact_Theo_Putnam a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:NegativeRoleModel ;
+    RDFS:comment "Missed opportunity to delve into meaningful trans representation."^^xsd:string .
+
+LGBTQPortrayal:Impact_Victor_Salazar a LGBTQPortrayal:LGBTQCommunityImpact,
+        LGBTQPortrayal:PositiveRoleModel ;
+    RDFS:comment "Highlights intersectionality and the nuances of coming out in traditional families."^^xsd:string .
+
+LGBTQPortrayal:Lens_Adam_Groff a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Alice a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Blaine_Anderson a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Casey_Gardner a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Connor_Walsh a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_David_Rose a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Denise a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Emily_Fields a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Eric_Effiong a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Jules_Vaughn a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Kat_Edison a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Kelly a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Kevin_Keller a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Lexa a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Lito_Rodriguez a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Magnus_Bane a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Mickey_Dobbs a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Nomi_Marks a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Omar_Shanaa a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Patrick_Brewer a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Ray_Holt a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Santana_Lopez a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Shane_Harvey a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Simon_Eriksson a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Sophia_Burset a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Syd a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:Lens_Tara_Maclay a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Theo_Putnam a persp:Lens,
+        LGBTQPortrayal:ProfitDrivenLens .
+
+LGBTQPortrayal:Lens_Victor_Salazar a persp:Lens,
+        LGBTQPortrayal:SocialImpactLens .
+
+LGBTQPortrayal:NotSpecified a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:Performer_Aisha_Dee a LGBTQPortrayal:Performer ;
+    RDFS:label "Aisha Dee"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Alycia_Debnam-Carey a LGBTQPortrayal:Performer ;
+    RDFS:label "Alycia Debnam-Carey"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Amber_Benson a LGBTQPortrayal:Performer ;
+    RDFS:label "Amber Benson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Andre_Braugher a LGBTQPortrayal:Performer ;
+    RDFS:label "Andre Braugher"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Brigette_Lundy-Paine a LGBTQPortrayal:Performer ;
+    RDFS:label "Brigette Lundy-Paine"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:NonBinary ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Casey_Cott a LGBTQPortrayal:Performer ;
+    RDFS:label "Casey Cott"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Connor_Swindells a LGBTQPortrayal:Performer ;
+    RDFS:label "Connor Swindells"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Dan_Levy a LGBTQPortrayal:Performer ;
+    RDFS:label "Dan Levy"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Darren_Criss a LGBTQPortrayal:Performer ;
+    RDFS:label "Darren Criss"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Gillian_Jacobs a LGBTQPortrayal:Performer ;
+    RDFS:label "Gillian Jacobs"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Gugu_Mbatha-Raw a LGBTQPortrayal:Performer ;
+    RDFS:label "Gugu Mbatha-Raw"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+<http://www.semanticweb.org/LGBTQPortrayal#Performer_Harry_Shum_Jr.> a LGBTQPortrayal:Performer ;
+    RDFS:label "Harry Shum Jr."^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Hunter_Schafer a LGBTQPortrayal:Performer ;
+    RDFS:label "Hunter Schafer"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Performer_Jack_Falahee a LGBTQPortrayal:Performer ;
+    RDFS:label "Jack Falahee"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Jamie_Clayton a LGBTQPortrayal:Performer ;
+    RDFS:label "Jamie Clayton"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Performer_Lachlan_Watson a LGBTQPortrayal:Performer ;
+    RDFS:label "Lachlan Watson"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:NonBinary ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Pansexual ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Laverne_Cox a LGBTQPortrayal:Performer ;
+    RDFS:label "Laverne Cox"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Performer_Lena_Waithe a LGBTQPortrayal:Performer ;
+    RDFS:label "Lena Waithe"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Michael_Cimino a LGBTQPortrayal:Performer ;
+    RDFS:label "Michael Cimino"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Michael_Willett a LGBTQPortrayal:Performer ;
+    RDFS:label "Michael Willett"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Miguel_Angel_Silvestre a LGBTQPortrayal:Performer ;
+    RDFS:label "Miguel Angel Silvestre"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Naya_Rivera a LGBTQPortrayal:Performer ;
+    RDFS:label "Naya Rivera"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Ncuti_Gatwa a LGBTQPortrayal:Performer ;
+    RDFS:label "Ncuti Gatwa"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Noah_Reid a LGBTQPortrayal:Performer ;
+    RDFS:label "Noah Reid"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Omar_Ayuso a LGBTQPortrayal:Performer ;
+    RDFS:label "Omar Ayuso"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Gay ;
+    LGBTQPortrayal:isTransgender true .
+
+LGBTQPortrayal:Performer_Omar_Rudberg a LGBTQPortrayal:Performer ;
+    RDFS:label "Omar Rudberg"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Queer ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Shay_Mitchell a LGBTQPortrayal:Performer ;
+    RDFS:label "Shay Mitchell"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Sheridan_Pierce a LGBTQPortrayal:Performer ;
+    RDFS:label "Sheridan Pierce"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Performer_Sydney_Sweeney a LGBTQPortrayal:Performer ;
+    RDFS:label "Sydney Sweeney"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:Portrayal_Adam_Groff a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Adam_Groff ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Adam_Groff ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Adam_Groff,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Adam_Groff .
+
+LGBTQPortrayal:Portrayal_Alice a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Alice ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Alice ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Alice,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Alice .
+
+LGBTQPortrayal:Portrayal_Blaine_Anderson a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Blaine_Anderson ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Blaine_Anderson ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Blaine_Anderson,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Blaine_Anderson .
+
+LGBTQPortrayal:Portrayal_Casey_Gardner a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Casey_Gardner ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Casey_Gardner ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Casey_Gardner,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Casey_Gardner .
+
+LGBTQPortrayal:Portrayal_Connor_Walsh a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Connor_Walsh ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Connor_Walsh ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Connor_Walsh,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Connor_Walsh .
+
+LGBTQPortrayal:Portrayal_David_Rose a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_David_Rose ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_David_Rose ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_David_Rose,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_David_Rose .
+
+LGBTQPortrayal:Portrayal_Denise a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Denise ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Denise ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Denise,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Denise .
+
+LGBTQPortrayal:Portrayal_Emily_Fields a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Emily_Fields ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Emily_Fields ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Emily_Fields,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Emily_Fields .
+
+LGBTQPortrayal:Portrayal_Eric_Effiong a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Eric_Effiong ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Eric_Effiong ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Eric_Effiong,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Eric_Effiong .
+
+LGBTQPortrayal:Portrayal_Jules_Vaughn a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Jules_Vaughn ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Jules_Vaughn ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Jules_Vaughn,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Jules_Vaughn .
+
+LGBTQPortrayal:Portrayal_Kat_Edison a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Kat_Edison ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kat_Edison ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Kat_Edison,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Kat_Edison .
+
+LGBTQPortrayal:Portrayal_Kelly a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Kelly ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kelly ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Kelly,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Kelly .
+
+LGBTQPortrayal:Portrayal_Kevin_Keller a LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Kevin_Keller ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kevin_Keller ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Kevin_Keller,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Kevin_Keller .
+
+LGBTQPortrayal:Portrayal_Lexa a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Lexa ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Lexa ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Lexa,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Lexa .
+
+LGBTQPortrayal:Portrayal_Lito_Rodriguez a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Lito_Rodriguez ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Lito_Rodriguez ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Lito_Rodriguez,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Lito_Rodriguez .
+
+LGBTQPortrayal:Portrayal_Magnus_Bane a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Magnus_Bane ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Magnus_Bane ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Magnus_Bane,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Magnus_Bane .
+
+LGBTQPortrayal:Portrayal_Mickey_Dobbs a LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Mickey_Dobbs ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Mickey_Dobbs ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Mickey_Dobbs,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Mickey_Dobbs .
+
+LGBTQPortrayal:Portrayal_Nomi_Marks a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Nomi_Marks ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Nomi_Marks ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Nomi_Marks,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Nomi_Marks .
+
+LGBTQPortrayal:Portrayal_Omar_Shanaa a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Omar_Shanaa ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Omar_Shanaa ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Omar_Shanaa,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Omar_Shanaa .
+
+LGBTQPortrayal:Portrayal_Patrick_Brewer a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Patrick_Brewer ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Patrick_Brewer ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Patrick_Brewer,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Patrick_Brewer .
+
+LGBTQPortrayal:Portrayal_Ray_Holt a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Ray_Holt ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Ray_Holt ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Ray_Holt,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Ray_Holt .
+
+LGBTQPortrayal:Portrayal_Santana_Lopez a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Santana_Lopez ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Santana_Lopez ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Santana_Lopez,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Santana_Lopez .
+
+LGBTQPortrayal:Portrayal_Shane_Harvey a LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Shane_Harvey ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Shane_Harvey ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Shane_Harvey,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Shane_Harvey .
+
+LGBTQPortrayal:Portrayal_Simon_Eriksson a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Simon_Eriksson ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Simon_Eriksson ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Simon_Eriksson,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Simon_Eriksson .
+
+LGBTQPortrayal:Portrayal_Sophia_Burset a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Sophia_Burset ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Sophia_Burset ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Sophia_Burset,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Sophia_Burset .
+
+LGBTQPortrayal:Portrayal_Syd a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Syd ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Syd ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Syd,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Syd .
+
+LGBTQPortrayal:Portrayal_Tara_Maclay a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Tara_Maclay ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Tara_Maclay ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Tara_Maclay,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Tara_Maclay .
+
+LGBTQPortrayal:Portrayal_Theo_Putnam a LGBTQPortrayal:PortrayalofLgbtqCharacter,
+        LGBTQPortrayal:Static,
+        LGBTQPortrayal:Superficial ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Theo_Putnam ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Theo_Putnam ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Theo_Putnam,
+        LGBTQPortrayal:NegativeRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Theo_Putnam .
+
+LGBTQPortrayal:Portrayal_Victor_Salazar a LGBTQPortrayal:AffirmationOfIdentity,
+        LGBTQPortrayal:Authenticity,
+        LGBTQPortrayal:Detailed,
+        LGBTQPortrayal:Dynamic,
+        LGBTQPortrayal:NormalizationOfRelationship,
+        LGBTQPortrayal:PortrayalofLgbtqCharacter ;
+    LGBTQPortrayal:hasNarrativeFunction LGBTQPortrayal:CharacterTransformation_Victor_Salazar ;
+    LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Victor_Salazar ;
+    LGBTQPortrayal:impactsCommunity LGBTQPortrayal:Impact_Victor_Salazar,
+        LGBTQPortrayal:PositiveRoleModel ;
+    LGBTQPortrayal:viewedThroughLens LGBTQPortrayal:Lens_Victor_Salazar .
+
+LGBTQPortrayal:Production_ABC a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "ABC"^^xsd:string .
+
+LGBTQPortrayal:Production_CBC a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "CBC"^^xsd:string .
+
+LGBTQPortrayal:Production_Fox a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "Fox"^^xsd:string .
+
+<http://www.semanticweb.org/LGBTQPortrayal#Production_Fox/NBC> a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "Fox/NBC"^^xsd:string .
+
+LGBTQPortrayal:Production_Hulu a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "Hulu"^^xsd:string .
+
+LGBTQPortrayal:Production_MTV a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "MTV"^^xsd:string .
+
+LGBTQPortrayal:Production_The_WB a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "The WB"^^xsd:string .
+
+LGBTQPortrayal:Questioning a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:Representation_Adam_Groff a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Subtle exploration of internalized homophobia and self-acceptance."^^xsd:string .
+
+LGBTQPortrayal:Representation_Alice a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Queer character with a complex relationship to the protagonist, portraying both vulnerability and strength."^^xsd:string .
+
+LGBTQPortrayal:Representation_Blaine_Anderson a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Central gay character with a detailed portrayal of relationships and identity struggles."^^xsd:string .
+
+LGBTQPortrayal:Representation_Casey_Gardner a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Explores the struggles and triumphs of a bisexual teenager navigating her identity and relationships."^^xsd:string .
+
+LGBTQPortrayal:Representation_Connor_Walsh a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay character with complex relationships and moral struggles."^^xsd:string .
+
+LGBTQPortrayal:Representation_David_Rose a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Pansexual character portrayed with humor and depth, showing evolving relationships."^^xsd:string .
+
+LGBTQPortrayal:Representation_Denise a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Lesbian Black woman exploring love, career, and friendships, portrayed with emotional complexity and humor."^^xsd:string .
+
+LGBTQPortrayal:Representation_Emily_Fields a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Lesbian character with nuanced relationships and complex storylines."^^xsd:string .
+
+LGBTQPortrayal:Representation_Eric_Effiong a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay, Black character portrayed with depth, navigating relationships and family dynamics."^^xsd:string .
+
+LGBTQPortrayal:Representation_Jules_Vaughn a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Multi-dimensional transgender character portrayed authentically with emotional depth."^^xsd:string .
+
+LGBTQPortrayal:Representation_Kat_Edison a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Bisexual character with an empowering storyline and meaningful exploration of her sexual identity."^^xsd:string .
+
+LGBTQPortrayal:Representation_Kelly a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Bisexual character with an empowering love story and a rare happy ending."^^xsd:string .
+
+LGBTQPortrayal:Representation_Kevin_Keller a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Portrayed in the \"gay best friend\" trope with minimal character development."^^xsd:string .
+
+LGBTQPortrayal:Representation_Lexa a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Lesbian character killed off shortly after a meaningful relationship, reinforcing the \"bury your gays\" trope."^^xsd:string .
+
+LGBTQPortrayal:Representation_Lito_Rodriguez a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay character portrayed with depth, exploring his career struggles, relationship, and coming out."^^xsd:string .
+
+LGBTQPortrayal:Representation_Magnus_Bane a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Bisexual character portrayed with emotional depth and a rich backstory, exploring love and conflict."^^xsd:string .
+
+LGBTQPortrayal:Representation_Mickey_Dobbs a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Queer character whose storyline remains ambiguous and underdeveloped, falling into tokenism."^^xsd:string .
+
+LGBTQPortrayal:Representation_Nomi_Marks a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Transgender hacker portrayed with depth, exploring her relationships and challenges."^^xsd:string .
+
+LGBTQPortrayal:Representation_Omar_Shanaa a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay Muslim character navigating societal and cultural pressures while pursuing a meaningful relationship."^^xsd:string .
+
+LGBTQPortrayal:Representation_Patrick_Brewer a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay character portrayed in a healthy, supportive, and normalized relationship."^^xsd:string .
+
+LGBTQPortrayal:Representation_Ray_Holt a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay Black police captain portrayed with dignity, humor, and depth."^^xsd:string .
+
+LGBTQPortrayal:Representation_Santana_Lopez a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Lesbian character who evolves from repression and denial to pride and self-acceptance."^^xsd:string .
+
+LGBTQPortrayal:Representation_Shane_Harvey a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Gay best friend trope with little character depth or growth."^^xsd:string .
+
+LGBTQPortrayal:Representation_Simon_Eriksson a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Openly gay character with emotional complexity, navigating love, class struggles, and societal expectations."^^xsd:string .
+
+LGBTQPortrayal:Representation_Sophia_Burset a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Transgender character navigating systemic discrimination in prison."^^xsd:string .
+
+LGBTQPortrayal:Representation_Syd a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Non-binary character portrayed authentically with respect and humor in a multi-generational family dynamic."^^xsd:string .
+
+LGBTQPortrayal:Representation_Tara_Maclay a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Lesbian character killed suddenly, reinforcing the \"bury your gays\" trope."^^xsd:string .
+
+LGBTQPortrayal:Representation_Theo_Putnam a LGBTQPortrayal:RepresentationType,
+        LGBTQPortrayal:UnfairRepresentation ;
+    RDFS:comment "Trans character whose storyline is largely underexplored and lacks emotional depth."^^xsd:string .
+
+LGBTQPortrayal:Representation_Victor_Salazar a LGBTQPortrayal:FairRepresentation,
+        LGBTQPortrayal:RepresentationType ;
+    RDFS:comment "Gay Latinx teenager navigating coming out and family acceptance in a conservative environment."^^xsd:string .
+
+LGBTQPortrayal:ComicSidekick a LGBTQPortrayal:CharacterType ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterType .
+
+LGBTQPortrayal:Creator_Roberto_Aguirre-Sacasa a LGBTQPortrayal:Creator ;
+    RDFS:label "Roberto Aguirre-Sacasa"^^xsd:string ;
+    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+    LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+    LGBTQPortrayal:isTransgender false .
+
+LGBTQPortrayal:GayBestFriend a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:Stereotype .
+
+LGBTQPortrayal:Genre_Drama_Mystery a LGBTQPortrayal:Genre ;
+    RDFS:label "Drama, Mystery"^^xsd:string .
+
+LGBTQPortrayal:Genre_Teen_Drama_Romance a LGBTQPortrayal:Genre ;
+    RDFS:label "Teen Drama, Romance"^^xsd:string .
+
+LGBTQPortrayal:Pansexual a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:PlotResolution a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter .
+
+LGBTQPortrayal:Production_HBO a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "HBO"^^xsd:string .
+
+LGBTQPortrayal:Production_The_CW a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "The CW"^^xsd:string .
+
+LGBTQPortrayal:Stereotype a owl:Class .
+
+LGBTQPortrayal:TragicTrope a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:Stereotype .
+
+foaf:Person a owl:Class .
+
+LGBTQPortrayal:Gender a owl:Class .
+
+LGBTQPortrayal:Genre_Comedy a LGBTQPortrayal:Genre ;
+    RDFS:label "Comedy"^^xsd:string .
+
+LGBTQPortrayal:Genre_Science_Fiction_Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Science Fiction, Drama"^^xsd:string .
+
+LGBTQPortrayal:NarrativeRole a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter .
+
+LGBTQPortrayal:NonBinary a LGBTQPortrayal:Gender .
+
+LGBTQPortrayal:Production_Freeform a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "Freeform"^^xsd:string .
+
+LGBTQPortrayal:QueerProtagonistLeadRole a LGBTQPortrayal:CharacterType ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterType .
+
+LGBTQPortrayal:CharacterDepth a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:RepresentationType .
+
+schema:Country a owl:Class .
+
+LGBTQPortrayal:Genre_Comedy-Drama a LGBTQPortrayal:Genre ;
+    RDFS:label "Comedy-Drama"^^xsd:string .
+
+LGBTQPortrayal:ProfitDrivenLens a owl:Class ;
+    RDFS:subClassOf persp:Lens .
+
+LGBTQPortrayal:Queer a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:Static a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:NarrativeRole .
+
+LGBTQPortrayal:Superficial a LGBTQPortrayal:CharacterDepth ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterDepth .
+
+LGBTQPortrayal:TokenCharacter a LGBTQPortrayal:CharacterType ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterType .
+
+LGBTQPortrayal:UnfairRepresentation a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:RepresentationType .
+
+LGBTQPortrayal:Bisexual a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:CharacterType a owl:Class ;
+    RDFS:subClassOf persp:Cut .
+
+LGBTQPortrayal:Lesbian a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:ProductionAndIndustryFactory a owl:Class .
+
+LGBTQPortrayal:Production_Netflix a LGBTQPortrayal:ProductionAndIndustryFactory ;
+    RDFS:label "Netflix"^^xsd:string .
+
+LGBTQPortrayal:NegativeRoleModel a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:LGBTQCommunityImpact .
+
+LGBTQPortrayal:Genre a owl:Class .
+
+LGBTQPortrayal:Gay a LGBTQPortrayal:SexOrientation .
+
+LGBTQPortrayal:AuthenticRepresentation a LGBTQPortrayal:CharacterType ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterType .
+
+LGBTQPortrayal:Country_USA a schema:Country ;
+    RDFS:label "USA"^^xsd:string .
+
+LGBTQPortrayal:Authenticity a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter .
+
+LGBTQPortrayal:Detailed a LGBTQPortrayal:CharacterDepth ;
+    RDFS:subClassOf LGBTQPortrayal:CharacterDepth .
+
+LGBTQPortrayal:Dynamic a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:NarrativeRole .
+
+LGBTQPortrayal:FairRepresentation a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:RepresentationType .
+
+LGBTQPortrayal:SocialImpactLens a owl:Class ;
+    RDFS:subClassOf persp:Lens .
+
+LGBTQPortrayal:Creator a owl:Class ;
+    RDFS:subClassOf foaf:Person .
+
+LGBTQPortrayal:NormalizationOfRelationship a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PlotResolution .
+
+LGBTQPortrayal:AffirmationOfIdentity a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PlotResolution .
+
+LGBTQPortrayal:TvShow a owl:Class .
+
+LGBTQPortrayal:Character a owl:Class .
+
+LGBTQPortrayal:CharacterTransformation a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:NarrativeRole .
+
+LGBTQPortrayal:Performer a owl:Class ;
+    RDFS:subClassOf foaf:Person .
+
+LGBTQPortrayal:LGBTQCommunityImpact a owl:Class .
+
+LGBTQPortrayal:RepresentationType a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter .
+
+LGBTQPortrayal:Female a LGBTQPortrayal:Gender .
+
+LGBTQPortrayal:PortrayalofLgbtqCharacter a owl:Class ;
+    RDFS:subClassOf persp:Eventuality .
+
+LGBTQPortrayal:Male a LGBTQPortrayal:Gender .
+
+LGBTQPortrayal:PositiveRoleModel a owl:Class ;
+    RDFS:subClassOf LGBTQPortrayal:LGBTQCommunityImpact .
+
+LGBTQPortrayal:SexOrientation a owl:Class .
+
+[] a owl:Ontology ;
+    ns1:ontologyIRI "http://www.semanticweb.org/LGBTQPortrayal" ;
+    owl:Import "http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl" ;
+    owl:Prefix [ ns1:IRI "http://www.semanticweb.org/LGBTQPortrayal/" ;
+            ns1:name "" ],
+        [ ns1:IRI "http://www.w3.org/2000/01/rdf-schema#" ;
+            ns1:name "rdfs" ],
+        [ ns1:IRI "http://www.w3.org/2001/XMLSchema#" ;
+            ns1:name "xsd" ],
+        [ ns1:IRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+            ns1:name "rdf" ],
+        [ ns1:IRI "http://www.w3.org/2002/07/owl#" ;
+            ns1:name "owl" ],
+        [ ns1:IRI "http://www.w3.org/XML/1998/namespace" ;
+            ns1:name "xml" ] .
+

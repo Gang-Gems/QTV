@@ -182,6 +182,21 @@ for index, row in df.iterrows():
     g.add((character_uri, RDF.type, LGBTQPortrayal.Character))
     g.add((character_uri, RDFS.label, Literal(char_name, datatype=XSD.string)))
     
+
+    # Gender individuals
+    g.add((LGBTQPortrayal.Female, RDF.type, LGBTQPortrayal.Gender))
+    g.add((LGBTQPortrayal.Male, RDF.type, LGBTQPortrayal.Gender))
+    g.add((LGBTQPortrayal.NonBinary, RDF.type, LGBTQPortrayal.Gender))
+
+# Sexual Orientation individuals
+    g.add((LGBTQPortrayal.Bisexual, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.Gay, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.Lesbian, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.Questioning, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.Pansexual, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.Queer, RDF.type, LGBTQPortrayal.SexOrientation))
+    g.add((LGBTQPortrayal.NotSpecified, RDF.type, LGBTQPortrayal.SexOrientation))
+
     # Gender of the character
     if row["Gender of the character"] == "Female":
         g.add((character_uri, LGBTQPortrayal.hasGender, LGBTQPortrayal.Female))
@@ -313,24 +328,35 @@ for index, row in df.iterrows():
     # Link character -> hasPortrayal -> portrayal
     g.add((character_uri, LGBTQPortrayal.hasPortrayal, portrayal_uri))
 
+
     # Representation type: Fair or Unfair
     rep_type = row["Representation Type"].strip().lower()
-    if rep_type == "fair":
-        g.add((portrayal_uri, RDF.type, LGBTQPortrayal.FairRepresentation))
-        # Possibly link to PositiveRoleModel
-        g.add((portrayal_uri, LGBTQPortrayal.impactsCommunity, LGBTQPortrayal.PositiveRoleModel))
-    elif rep_type == "unfair":
-        g.add((portrayal_uri, RDF.type, LGBTQPortrayal.UnfairRepresentation))
-        # Possibly link to NegativeRoleModel
-        g.add((portrayal_uri, LGBTQPortrayal.impactsCommunity, LGBTQPortrayal.NegativeRoleModel))
-    else:
-        # fallback
-        pass
+    rep_justif = row["Justification for Classification"].strip()
 
-    # Justification
-    justification_text = row["Justification for Classification"].strip()
-    if justification_text:
-        g.add((portrayal_uri, RDFS.comment, Literal(justification_text, datatype=XSD.string)))
+    # Crea URI per l'istanza di tipo di rappresentazione
+    rep_type_uri = LGBTQPortrayal[f"Representation_{char_name.replace(' ', '_')}"]
+
+    # Istanza di tipo RepresentationType
+    g.add((rep_type_uri, RDF.type, LGBTQPortrayal.RepresentationType))
+    g.add((portrayal_uri, LGBTQPortrayal.hasRepresentationType, rep_type_uri))
+
+    # Aggiungi tipo specifico (Fair o Unfair) come sottoclasse
+    if rep_type == "fair representation":
+        g.add((rep_type_uri, RDF.type, LGBTQPortrayal.FairRepresentation))
+        g.add((portrayal_uri, LGBTQPortrayal.impactsCommunity, LGBTQPortrayal.PositiveRoleModel))
+    elif rep_type == "unfair representation":
+        g.add((rep_type_uri, RDF.type, LGBTQPortrayal.UnfairRepresentation))
+        g.add((portrayal_uri, LGBTQPortrayal.impactsCommunity, LGBTQPortrayal.NegativeRoleModel))
+
+
+    # Aggiungi giustificazione se presente
+    if rep_justif:
+        g.add((rep_type_uri, RDFS.comment, Literal(rep_justif, datatype=XSD.string)))
+
+    # (una tantum) aggiungi struttura classi
+    g.add((LGBTQPortrayal.FairRepresentation, RDFS.subClassOf, LGBTQPortrayal.RepresentationType))
+    g.add((LGBTQPortrayal.UnfairRepresentation, RDFS.subClassOf, LGBTQPortrayal.RepresentationType))
+
 
     # Authenticity
     if row["Authenticity"].strip().lower() == "yes":
@@ -355,6 +381,22 @@ for index, row in df.iterrows():
         tragic_uri = LGBTQPortrayal[f"TragicTrope_{char_name.replace(' ', '_')}"]
         g.add((tragic_uri, RDF.type, LGBTQPortrayal.TragicTrope))
 
+    # Dynamic Role
+    if row["Dynamic Role"].strip().lower() == "yes":
+        g.add((portrayal_uri, RDF.type, LGBTQPortrayal.Dynamic))
+
+# Static Role
+    if row["Static Role"].strip().lower() == "yes":
+        g.add((portrayal_uri, RDF.type, LGBTQPortrayal.Static))
+
+# Character Transformation
+    transformation_justif = row["Character Transformation"].strip()
+    if transformation_justif:
+        transf_uri = LGBTQPortrayal[f"CharacterTransformation_{char_name.replace(' ', '_')}"]
+    g.add((transf_uri, RDF.type, LGBTQPortrayal.CharacterTransformation))
+    g.add((portrayal_uri, LGBTQPortrayal.hasNarrativeFunction, transf_uri))
+    g.add((transf_uri, RDFS.comment, Literal(transformation_justif, datatype=XSD.string)))
+
     # 2f) Depth of portrayal
     depth_value = row["Portrayal"].strip().lower()
     if depth_value == "detailed":
@@ -368,7 +410,6 @@ for index, row in df.iterrows():
 
     g.add((LGBTQPortrayal.Superficial, RDF.type, LGBTQPortrayal.CharacterDepth))
     g.add((LGBTQPortrayal.Superficial, RDFS.subClassOf, LGBTQPortrayal.CharacterDepth))
-
 
     # 2g) Impact on LGBTQ Community
     impact_value = row["LGBTQ Community Impact"].strip().lower()
@@ -409,11 +450,38 @@ g.add((LGBTQPortrayal.ComicSidekick, RDFS.subClassOf, LGBTQPortrayal.CharacterTy
 g.add((LGBTQPortrayal.TokenCharacter, RDFS.subClassOf, LGBTQPortrayal.CharacterType))
 g.add((LGBTQPortrayal.QueerProtagonistLeadRole, RDFS.subClassOf, LGBTQPortrayal.CharacterType))
 
+#lens orientation
+g.add((LGBTQPortrayal.viewedThroughLens, RDF.type, OWL.ObjectProperty))
+g.add((LGBTQPortrayal.viewedThroughLens, RDFS.domain, LGBTQPortrayal.PortrayalofLgbtqCharacter))
+g.add((LGBTQPortrayal.viewedThroughLens, RDFS.range, persp.Lens))
 
+
+for index, row in df.iterrows():
+    char_name = row["Character Name"].strip().replace(" ", "_")
+    portrayal_uri = LGBTQPortrayal[f"Portrayal_{char_name}"]
+
+    # --- Lens orientation ---
+    lens_value = row["Lens Orientation"].strip()
+
+    if lens_value not in ("Social Impact Lens", "Profit Driven Lens"):
+        continue  # Salta la riga se non è un valore valido
+
+    # Crea URI unica per la lens associata a questo personaggio
+    lens_instance_uri = LGBTQPortrayal[f"Lens_{char_name}"]
+    g.add((lens_instance_uri, RDF.type, persp.Lens))  # Classe generale
+
+    # Aggiungi la sottoclasse corretta
+    if lens_value == "Social Impact Lens":
+        g.add((lens_instance_uri, RDF.type, LGBTQPortrayal.SocialImpactLens))
+    else:
+        g.add((lens_instance_uri, RDF.type, LGBTQPortrayal.ProfitDrivenLens))
+
+    # Collega il personaggio alla lens
+    g.add((portrayal_uri, LGBTQPortrayal.viewedThroughLens, lens_instance_uri))
 
 # ------------------------------------------------------------------------------
 # 3) Finally, serialize your graph
 # ------------------------------------------------------------------------------
-g.serialize("LGBTQPortrayal_with_data.ttl1", format="turtle")
-print("RDF data written to LGBTQPortrayal_with_data.ttl1")
+g.serialize("LGBTQPortrayal_with_data.ttl2", format="turtle")
+print("RDF data written to LGBTQPortrayal_with_data.ttl2")
 
