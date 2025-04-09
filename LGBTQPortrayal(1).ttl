@@ -1,0 +1,3260 @@
+@prefix : <http://www.semanticweb.org/LGBTQPortrayal#> .
+@prefix ns1: <http://www.semanticweb.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix RDFS: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix persp: <http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix LGBTQPortrayal: <http://www.semanticweb.org/LGBTQPortrayal#> .
+@base <http://www.semanticweb.org/LGBTQPortrayal#> .
+
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl> rdf:type owl:Ontology ;
+                                                                           ns1:ontologyIRI "http://www.semanticweb.org/LGBTQPortrayal" ;
+                                                                           rdfs:comment "This ontology models the portrayal of LGBTQ+ characters in teenage dramas, focusing on the tension between commercial interests and authentic representation. It adapts the Perspectivisation Ontology to include a Profit-Driven Lens and a Social Impact Lens, enabling analysis of narrative roles, tropes, stereotypes, and audience reception. The goal is to understand how media shapes perceptions of queerness and the cultural significance of representation." ;
+                                                                           owl:Import "http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/IRI
+ns1:IRI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/name
+ns1:name rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/ontologyIRI
+ns1:ontologyIRI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#Import
+owl:Import rdf:type owl:AnnotationProperty .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasRepresentationType
+:hasRepresentationType rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#affectsPortrayal
+:affectsPortrayal rdf:type owl:ObjectProperty ;
+                  rdfs:domain persp:Attitude ;
+                  rdfs:range :PortrayalofLgbtqCharacter ;
+                  rdfs:comment "Indicates how a particular attitude influences the way LGBTQ+ characters are represented. It allows tracing specific outcomes (e.g., queerbaiting or challenging stereotypes) back to their ideological stance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#associatedWith
+:associatedWith rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :FairRepresentation
+                                            :UnfairRepresentation
+                                          )
+                            ] ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :NegativeRoleModel
+                                           :PositiveRoleModel
+                                         )
+                           ] ;
+                rdfs:comment "Links a type of representation to the kind of role model it produces. Fair representations are associated with positive role models, while unfair ones are linked to negative role models." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#emergesFrom
+:emergesFrom rdf:type owl:ObjectProperty ;
+             rdfs:domain persp:Cut ;
+             rdfs:range persp:Eventuality ;
+             rdfs:comment "Specifies that the final portrayal (Cut) arises from the original representational phenomenon. It connects the output of the perspectivisation process to the core event under analysis." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasAttitude
+:hasAttitude rdf:type owl:ObjectProperty ;
+             rdfs:domain persp:Lens ;
+             rdfs:range persp:Attitude ;
+             rdfs:comment "Links a lens to the evaluative stance it adopts. This captures the nuance within each perspective — such as whether a commercial lens promotes tokenism or market-friendliness, or whether a social lens fosters empowerment or authenticity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasCharacterDepth
+:hasCharacterDepth rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Character ;
+                   rdfs:range :CharacterDepth ;
+                   rdfs:comment "Indicates the level of narrative and psychological development a character has. It helps distinguish between flat and multidimensional portrayals." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasGender
+:hasGender rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( foaf:Person
+                                       :Character
+                                     )
+                       ] ;
+           rdfs:range :Gender ;
+           rdfs:comment "Assigns a gender identity to either a real person (creator or performer) or a fictional character. This enables analysis of gender representation both on and off-screen." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasImpactOn
+:hasImpactOn rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( :ProductionAndIndustryFactory
+                                         :Stereotype
+                                       )
+                         ] ;
+             rdfs:range :PortrayalofLgbtqCharacter ;
+             rdfs:comment "Links the portrayal to its social and cultural impact on the LGBTQ+ community and public perception, as well as shows how external production and industry pressures shape how the character is portrayed." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasNarrativeFunction
+:hasNarrativeFunction rdf:type owl:ObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Class ;
+                                    owl:unionOf ( :Character
+                                                  :RepresentationType
+                                                )
+                                  ] ;
+                      rdfs:range :NarrativeRole ;
+                      rdfs:comment "Indicates the character’s narrative role — whether they evolve dynamically or remain static in the storyline. Associates a type of representation (fair/unfair) with its narrative role — e.g., a stereotypical character often having a static role." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasPortrayal
+:hasPortrayal rdf:type owl:ObjectProperty ;
+              rdfs:domain :Character ;
+              rdfs:range :PortrayalofLgbtqCharacter ;
+              rdfs:comment "Describes how a specific character is portrayed in the show, forming the analytic core of the ontology." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasSexOrientation
+:hasSexOrientation rdf:type owl:ObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( foaf:Person
+                                               :Character
+                                             )
+                               ] ;
+                   rdfs:range :SexOrientation ;
+                   rdfs:comment "Describes the sexual orientation of creators, performers, or characters. It supports the study of authentic casting and queer identity portrayal in media." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasStereotype
+:hasStereotype rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :PortrayalofLgbtqCharacter
+                                           :UnfairRepresentation
+                                         )
+                           ] ;
+               rdfs:range :Stereotype ;
+               rdfs:comment "Identifies the stereotype(s), if any, embedded in a character’s portrayal. If a representation is classified as unfair, this property allows specification of the particular stereotype present." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#impactsCommunity
+:impactsCommunity rdf:type owl:ObjectProperty ;
+                  rdfs:domain :PortrayalofLgbtqCharacter ;
+                  rdfs:range :LGBTQCommunityImpact ;
+                  rdfs:comment "Connects a portrayal of an LGBTQ+ character to its broader social impact. It reflects how the portrayal influences the LGBTQ+ community and public perception." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#informedByBackground
+:informedByBackground rdf:type owl:ObjectProperty ;
+                      rdfs:domain persp:Cut ;
+                      rdfs:range persp:Background ;
+                      rdfs:comment "Highlights how broader cultural or industrial contexts influence the form a portrayal ultimately takes. This property situates the final narrative outcome within the real-world forces that shaped it." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#providesContextFor
+:providesContextFor rdf:type owl:ObjectProperty ;
+                    rdfs:domain persp:Background ;
+                    rdfs:range persp:Attitude ;
+                    rdfs:comment "Denotes how cultural, historical, industrial, or academic background conditions shape or support the emergence of a specific attitude. It embeds the attitude in its real-world context." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#shapedByAttitude
+:shapedByAttitude rdf:type owl:ObjectProperty ;
+                  rdfs:domain persp:Cut ;
+                  rdfs:range persp:Attitude ;
+                  rdfs:comment "Relates the final form of representation to the evaluative attitude that directed it. It helps explain how the stance taken — such as queerbaiting or empowerment — manifests in the narrative result." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#shapedByLens
+:shapedByLens rdf:type owl:ObjectProperty ;
+              rdfs:domain persp:Cut ;
+              rdfs:range persp:Lens ;
+              rdfs:comment "Captures the influence of the chosen lens on the final portrayal. This property reveals how interpretative frameworks (profit-driven or socially conscious) mold the representation into specific character types or outcomes." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#viewedThroughLens
+:viewedThroughLens rdf:type owl:ObjectProperty ;
+                   rdfs:domain :PortrayalofLgbtqCharacter ;
+                   rdfs:range persp:Lens ;
+                   rdfs:comment "Connects the portrayal of an LGBTQ+ character to the interpretative lens applied to it. This property expresses the perspectival framing through which the representation is analyzed — whether driven by commercial goals or social responsibility." .
+
+
+###  https://schema.org/actor
+schema:actor rdf:type owl:ObjectProperty ;
+             rdfs:domain :Character ;
+             rdfs:range :Performer ;
+             rdfs:comment "Maps a character to the actor or actress who portrays them on screen, useful for analyzing casting choices." .
+
+
+###  https://schema.org/character
+schema:character rdf:type owl:ObjectProperty ;
+                 rdfs:domain :TvShow ;
+                 rdfs:range :Character ;
+                 rdfs:comment "Links a TV show to its LGBTQ+ character(s), establishing which characters are featured in which series." .
+
+
+###  https://schema.org/countryOfOrigin
+schema:countryOfOrigin rdf:type owl:ObjectProperty ;
+                       rdfs:domain :TvShow ;
+                       rdfs:range schema:Country ;
+                       rdfs:comment "Specifies the country where the TV show was originally produced or broadcast. This helps contextualize cultural norms and production standards influencing LGBTQ+ portrayals." .
+
+
+###  https://schema.org/creator
+schema:creator rdf:type owl:ObjectProperty ;
+               rdfs:domain :TvShow ;
+               rdfs:range :Creator ;
+               rdfs:comment "Associates the show with its creator (writer, showrunner, etc.), important for tracking authorial intent and representation sources." .
+
+
+###  https://schema.org/genre
+schema:genre rdf:type owl:ObjectProperty ;
+             rdfs:domain :Genre ;
+             rdfs:range :TvShow ;
+             rdfs:comment "Specifies the genre category of the show (e.g., drama, comedy, sci-fi). Genre plays a role in shaping tone, stereotypes, and the depth of representation." .
+
+
+###  https://schema.org/hasOccupation
+schema:hasOccupation rdf:type owl:ObjectProperty ;
+                     rdfs:domain foaf:Person ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Creator
+                                                :Performer
+                                              )
+                                ] ;
+                     rdfs:comment "Describes the occupation of the person, whether they are a creator or performer, for integration with broader vocabularies like Schema.org." .
+
+
+###  https://schema.org/productionCompany
+schema:productionCompany rdf:type owl:ObjectProperty ;
+                         rdfs:domain :ProductionAndIndustryFactory ;
+                         rdfs:range :TvShow ;
+                         rdfs:comment "Connects the show to the production company responsible for its creation, relevant to understanding commercial context." .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:comment "Captures the official name of the TV show. This property provides the basic identifying label for any media entity in the ontology." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#isTransgender
+:isTransgender rdf:type owl:DatatypeProperty ;
+               rdfs:comment "A boolean flag indicating whether a gender identity is transgender. This allows for the distinction of transgender representation within the broader gender category." .
+
+
+###  https://schema.org/datePublished
+schema:datePublished rdf:type owl:DatatypeProperty ;
+                     rdfs:comment "Records the original release date of the TV show. This is useful for analyzing trends in LGBTQ+ representation over time." .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Attitude
+persp:Attitude rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Background
+persp:Background rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Cut
+persp:Cut rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Eventuality
+persp:Eventuality rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#Lens
+persp:Lens rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:comment "An abstract superclass capturing any individual involved in the show’s creation or performance. This abstraction allows for distinguishing between those who shape the portrayal (creators) and those who embody it on screen (performers)." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AffirmationOfIdentity
+:AffirmationOfIdentity rdf:type owl:Class ;
+                       rdfs:subClassOf :PlotResolution ;
+                       rdfs:comment "Signifies a resolution in which the character’s queer identity is accepted, celebrated, or integrated into the storyline in a meaningful way." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AudienceDemand
+:AudienceDemand rdf:type owl:Class ;
+                rdfs:subClassOf persp:Background ;
+                rdfs:comment "The influence of public calls for more inclusive and authentic portrayals, especially from LGBTQ+ youth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AuthenticRepresentation
+:AuthenticRepresentation rdf:type owl:Class ;
+                         rdfs:subClassOf :CharacterType ;
+                         owl:disjointWith :GayBestFriend ,
+                                          :TokenCharacter ,
+                                          :TragicTrope .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Authenticity
+:Authenticity rdf:type owl:Class ;
+              rdfs:subClassOf :PortrayalofLgbtqCharacter ;
+              rdfs:comment "Captures the degree to which a character’s portrayal aligns with real-life LGBTQ+ experiences and identities. This class distinguishes between authentic characterization — informed, realistic, and emotionally complex — and stereotypical portrayals that rely on clichéd or exaggerated traits for entertainment or simplicity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CensorshipLaws
+:CensorshipLaws rdf:type owl:Class ;
+                rdfs:subClassOf persp:Background ;
+                rdfs:comment "National or regional laws that suppress or regulate LGBTQ+ content." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ChallengingStereotype
+:ChallengingStereotype rdf:type owl:Class ;
+                       rdfs:subClassOf persp:Attitude ;
+                       rdfs:comment "Seeks to subvert harmful tropes and propose alternative ways of portraying LGBTQ+ identities." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character
+:Character rdf:type owl:Class ;
+           rdfs:comment "Denotes the LGBTQ+ character being analyzed within the show. Each instance is linked to attributes such as narrative role, authenticity, and stereotype patterns, enabling nuanced comparison across different portrayals." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterDepth
+:CharacterDepth rdf:type owl:Class ;
+                rdfs:subClassOf :RepresentationType ;
+                rdfs:comment "Assesses how psychologically and narratively developed a character is. This includes dimensions such as backstory, emotional complexity, and agency in the plot." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation
+:CharacterTransformation rdf:type owl:Class ;
+                         rdfs:subClassOf :NarrativeRole ;
+                         rdfs:comment "Highlights whether the character undergoes significant development, self-discovery, or change in values or relationships — particularly in relation to their identity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterType
+:CharacterType rdf:type owl:Class ;
+               rdfs:subClassOf persp:Cut ;
+               rdfs:comment "It is the resulting narrative role or figure. It synthesizes the effect of all previous layers into a recognizable portrayal archetype. Each character can be linked to stereotypes, narrative functions such as leading or supporting roles, story arcs showing positive or negative development, and queerbaiting patterns." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ComicSidekick
+:ComicSidekick rdf:type owl:Class ;
+               rdfs:subClassOf :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country
+:Country rdf:type owl:Class ;
+         owl:disjointWith :LGBTQPortrayalCharacter ,
+                          :Show .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator
+:Creator rdf:type owl:Class ;
+         rdfs:subClassOf foaf:Person ;
+         rdfs:comment "Refers to individuals responsible for conceptual and narrative decisions, such as showrunners, screenwriters, or producers. Their intent is critical for interpreting whether a portrayal aligns with commercial or socially impactful goals." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Detailed
+:Detailed rdf:type owl:Class ;
+          rdfs:subClassOf :CharacterDepth .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Dynamic
+:Dynamic rdf:type owl:Class ;
+         rdfs:subClassOf :NarrativeRole ;
+         owl:disjointWith :Static ;
+         rdfs:comment "Labels characters whose narrative arc shows growth, change, or evolving relationships, particularly those tied to identity or conflict resolution." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#EmpowermentRepresentation
+:EmpowermentRepresentation rdf:type owl:Class ;
+                           rdfs:subClassOf persp:Attitude ;
+                           rdfs:comment "Highlights characters who are confident, visible, and central to the story — challenging marginalization and invisibility." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#FairRepresentation
+:FairRepresentation rdf:type owl:Class ;
+                    rdfs:subClassOf :RepresentationType ;
+                    rdfs:comment "Refers to portrayals of LGBTQ+ characters that are meaningful, relatable, and accurate, offering nuanced character development and authentic storylines. These representations affirm identity, avoid stereotypes, and contribute positively to visibility and understanding within both queer and broader audiences." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#FinancialRisk
+:FinancialRisk rdf:type owl:Class ;
+               rdfs:subClassOf persp:Background ;
+               rdfs:comment "Economic considerations that may discourage complex or controversial queer narratives." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend
+:GayBestFriend rdf:type owl:Class ;
+               rdfs:subClassOf :Stereotype ;
+               rdfs:comment "Represents a trope where the LGBTQ+ character exists to support the protagonist, often lacking narrative depth or personal goals. It reflects tokenism disguised as inclusivity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:comment "Represents the gender identity of a person (creator or performer). Tracking gender helps explore who gets to tell queer stories and how gender dynamics shape representation." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre
+:Genre rdf:type owl:Class ;
+       rdfs:comment "Denotes the genre of the TV show (e.g., drama, comedy, fantasy), which can affect the tone, tropes, and thematic treatment of LGBTQ+ characters." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#HistoricalTrends
+:HistoricalTrends rdf:type owl:Class ;
+                  rdfs:subClassOf persp:Background ;
+                  rdfs:comment "Past patterns of representation (e.g., tragic tropes, invisibility) that shape both audience expectation and creator intention." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#LGBTQCommunityImpact
+:LGBTQCommunityImpact rdf:type owl:Class ;
+                      rdfs:comment "Assesses how the portrayal influences public perceptions and members of the LGBTQ+ community. It includes both positive models (empowering, relatable) and negative ones (harmful, stereotypical), contributing to the Social Impact Lens." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#LGBTQPortrayalCharacter
+:LGBTQPortrayalCharacter rdf:type owl:Class ;
+                         owl:disjointWith :Show .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#MarketFriendly
+:MarketFriendly rdf:type owl:Class ;
+                rdfs:subClassOf persp:Attitude ;
+                rdfs:comment "A neutral-to-positive framing aimed at pleasing wide audiences without controversy. Often includes vague or sanitized depictions." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NarrativeRole
+:NarrativeRole rdf:type owl:Class ;
+               rdfs:subClassOf :PortrayalofLgbtqCharacter ;
+               rdfs:comment "Describes whether the character evolves dynamically within the narrative or remains static. It supports analyzing the depth of character development, especially in contrast to trope-based or tokenistic inclusion." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NegativeRoleModel
+:NegativeRoleModel rdf:type owl:Class ;
+                   rdfs:subClassOf :LGBTQCommunityImpact ;
+                   owl:disjointWith :PositiveRoleModel .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NormalizationOfRelationship
+:NormalizationOfRelationship rdf:type owl:Class ;
+                             rdfs:subClassOf :PlotResolution ;
+                             rdfs:comment "Indicates that an LGBTQ+ relationship is treated as natural and unproblematic within the narrative. This contributes to positive cultural messaging and reduces stigma." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer
+:Performer rdf:type owl:Class ;
+           rdfs:subClassOf foaf:Person ;
+           rdfs:comment "Representing actors or actresses who portray LGBTQ+ characters. The casting choices (e.g., queer actors playing queer roles) may influence authenticity and audience perception." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PlotResolution
+:PlotResolution rdf:type owl:Class ;
+                rdfs:subClassOf :PortrayalofLgbtqCharacter ;
+                rdfs:comment "Captures how the character’s narrative arc is resolved — for example, whether it affirms identity or reinforces tragic tropes. This class is key to analyzing emotional closure and message delivery to viewers." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PortrayalofLgbtqCharacter
+:PortrayalofLgbtqCharacter rdf:type owl:Class ;
+                           rdfs:subClassOf persp:Eventuality ;
+                           rdfs:comment "The central analytic class describing how a specific LGBTQ+ character is portrayed within a TV show. It aggregates information about representation type, narrative role, stereotypes, and character arc resolution, functioning as the main node connecting all perspectives." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PositiveRoleModel
+:PositiveRoleModel rdf:type owl:Class ;
+                   rdfs:subClassOf :LGBTQCommunityImpact .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ProductionAndIndustryFactory
+:ProductionAndIndustryFactory rdf:type owl:Class ;
+                              rdfs:comment "Captures the contextual elements around the show's production — including budget, platform, and target demographics. These factories help explain the pressures and constraints that shape LGBTQ+ portrayals through a profit-driven logic." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ProfitDrivenLens
+:ProfitDrivenLens rdf:type owl:Class ;
+                  rdfs:subClassOf persp:Lens ;
+                  owl:disjointWith :SocialImpactLens ;
+                  rdfs:comment "A perspective that emphasizes marketability, audience reach, and economic interests. It tends to favor representations that are safe, simplified, or stereotypical if they enhance profitability." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerProtagonistLeadRole
+:QueerProtagonistLeadRole rdf:type owl:Class ;
+                          rdfs:subClassOf :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerTheory
+:QueerTheory rdf:type owl:Class ;
+             rdfs:subClassOf persp:Background ;
+             rdfs:comment "Academic and activist thought informing more nuanced and deconstructed views of identity and representation." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Queerbaiting
+:Queerbaiting rdf:type owl:Class ;
+              rdfs:subClassOf persp:Attitude ;
+              rdfs:comment "Describes intentional suggestions of queerness without commitment — used to attract queer audiences while avoiding alienating others." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#RepresentationType
+:RepresentationType rdf:type owl:Class ;
+                    rdfs:subClassOf :PortrayalofLgbtqCharacter ;
+                    rdfs:comment "This class categorizes the quality and mode of representation of LGBTQ+ characters. Based on media tests and narrative theory, it includes values such as fair/unfair representation, authenticity, and role dynamism." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SexOrientation
+:SexOrientation rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Show
+:Show rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SignificanceInPlot
+:SignificanceInPlot rdf:type owl:Class ;
+                    rdfs:subClassOf :PortrayalofLgbtqCharacter ;
+                    rdfs:comment "Indicates the weight and importance of the LGBTQ+ character within the show’s narrative structure (e.g., main vs. side vs. token). It provides insight into the structural inclusion of queer identities." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SocialImpactLens
+:SocialImpactLens rdf:type owl:Class ;
+                  rdfs:subClassOf persp:Lens ;
+                  rdfs:comment "A socially conscious perspective aiming for accurate, affirming, and inclusive portrayals. It focuses on the effect of representation on public understanding and LGBTQ+ self-perception." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Static
+:Static rdf:type owl:Class ;
+        rdfs:subClassOf :NarrativeRole ;
+        rdfs:comment "Marks characters who remain unchanged throughout the story, often used to explore token roles or those lacking emotional depth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Stereotype
+:Stereotype rdf:type owl:Class ;
+            rdfs:comment "Identifies repeated patterns or tropes in LGBTQ+ representation — such as the “Gay Best Friend” or “Tragic Trope.” This class enables semantic tagging of recurring harmful or reductive portrayals across different shows." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#StreamingPolicies
+:StreamingPolicies rdf:type owl:Class ;
+                   rdfs:subClassOf persp:Background ;
+                   rdfs:comment "Guidelines set by streaming platforms that affect what kinds of representation are permissible or encouraged." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Superficial
+:Superficial rdf:type owl:Class ;
+             rdfs:subClassOf :CharacterDepth .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TokenCharacter
+:TokenCharacter rdf:type owl:Class ;
+                rdfs:subClassOf :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Tokenization
+:Tokenization rdf:type owl:Class ;
+              rdfs:subClassOf persp:Attitude ;
+              rdfs:comment "Represents the inclusion of queer characters in superficial ways — to appear diverse without offering narrative depth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope
+:TragicTrope rdf:type owl:Class ;
+             rdfs:subClassOf :Stereotype ;
+             rdfs:comment "Flags portrayals where the LGBTQ+ character is subjected to suffering, death, or punishment as a narrative resolution. Often signals moral or emotional manipulation tied to outdated or sensationalized views of queerness." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow
+:TvShow rdf:type owl:Class ;
+        rdfs:comment "Represents the teenage drama where LGBTQ+ portrayals occur, acting as the narrative container for all characters and their arcs. This class connects commercial production choices and audience reception to the broader cultural impact of the show’s representational practices."@en .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#UnfairRepresentation
+:UnfairRepresentation rdf:type owl:Class ;
+                      rdfs:subClassOf :RepresentationType ;
+                      rdfs:comment "Describes portrayals marked by tokenism, reductive stereotypes, or complete invisibility. These representations often serve superficial diversity goals, lack character depth, and may reinforce harmful assumptions about LGBTQ+ identities." .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:Class ;
+               rdfs:comment "Specifies the country where the TV show was produced or originally aired. This is relevant for understanding cultural and regulatory contexts that influence LGBTQ+ representation." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AuthenticRepresentation
+:AuthenticRepresentation rdf:type owl:NamedIndividual ,
+                                  :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Bisexual
+:Bisexual rdf:type owl:NamedIndividual ,
+                   :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Adam_Groff
+:CharacterTransformation_Adam_Groff rdf:type owl:NamedIndividual ,
+                                             :CharacterTransformation ;
+                                    rdfs:comment "Grows from repression to acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Alice
+:CharacterTransformation_Alice rdf:type owl:NamedIndividual ,
+                                        :CharacterTransformation ;
+                               rdfs:comment "Overcomes trauma and grows stronger." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Blaine_Anderson
+:CharacterTransformation_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                                                  :CharacterTransformation ;
+                                         rdfs:comment "Learns resilience, finds love." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Casey_Gardner
+:CharacterTransformation_Casey_Gardner rdf:type owl:NamedIndividual ,
+                                                :CharacterTransformation ;
+                                       rdfs:comment "Gains confidence in her relationships." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Connor_Walsh
+:CharacterTransformation_Connor_Walsh rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Develops self-awareness and integrity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_David_Rose
+:CharacterTransformation_David_Rose rdf:type owl:NamedIndividual ,
+                                             :CharacterTransformation ;
+                                    rdfs:comment "Finds love and fulfillment." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Denise
+:CharacterTransformation_Denise rdf:type owl:NamedIndividual ,
+                                         :CharacterTransformation ;
+                                rdfs:comment "Grows into confidence and love." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Emily_Fields
+:CharacterTransformation_Emily_Fields rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Gains confidence in identity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Eric_Effiong
+:CharacterTransformation_Eric_Effiong rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Grows from self-doubt to confidence." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Jules_Vaughn
+:CharacterTransformation_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Overcomes struggles and finds self-acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kat_Edison
+:CharacterTransformation_Kat_Edison rdf:type owl:NamedIndividual ,
+                                             :CharacterTransformation ;
+                                    rdfs:comment "Overcomes fears and takes control of her life." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kelly
+:CharacterTransformation_Kelly rdf:type owl:NamedIndividual ,
+                                        :CharacterTransformation ;
+                               rdfs:comment "Finds love and peace." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kevin_Keller
+:CharacterTransformation_Kevin_Keller rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Static and stereotypical." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Lexa
+:CharacterTransformation_Lexa rdf:type owl:NamedIndividual ,
+                                       :CharacterTransformation ;
+                              rdfs:comment "Dies before meaningful growth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Lito_Rodriguez
+:CharacterTransformation_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                                                 :CharacterTransformation ;
+                                        rdfs:comment "Moves from secrecy to pride." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Magnus_Bane
+:CharacterTransformation_Magnus_Bane rdf:type owl:NamedIndividual ,
+                                              :CharacterTransformation ;
+                                     rdfs:comment "Balances love and leadership." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Mickey_Dobbs
+:CharacterTransformation_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Static and minimally impactful." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Nomi_Marks
+:CharacterTransformation_Nomi_Marks rdf:type owl:NamedIndividual ,
+                                             :CharacterTransformation ;
+                                    rdfs:comment "Gains confidence and security." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Omar_Shanaa
+:CharacterTransformation_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                                              :CharacterTransformation ;
+                                     rdfs:comment "Finds balance between love and identity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Patrick_Brewer
+:CharacterTransformation_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                                                 :CharacterTransformation ;
+                                        rdfs:comment "Becomes part of a loving community." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Ray_Holt
+:CharacterTransformation_Ray_Holt rdf:type owl:NamedIndividual ,
+                                           :CharacterTransformation ;
+                                  rdfs:comment "Provides mentorship and breaks barriers." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Santana_Lopez
+:CharacterTransformation_Santana_Lopez rdf:type owl:NamedIndividual ,
+                                                :CharacterTransformation ;
+                                       rdfs:comment "Finds peace with her identity and love." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Shane_Harvey
+:CharacterTransformation_Shane_Harvey rdf:type owl:NamedIndividual ,
+                                               :CharacterTransformation ;
+                                      rdfs:comment "Static and stereotypical." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Simon_Eriksson
+:CharacterTransformation_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                                                 :CharacterTransformation ;
+                                        rdfs:comment "Balances love and cultural identity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Sophia_Burset
+:CharacterTransformation_Sophia_Burset rdf:type owl:NamedIndividual ,
+                                                :CharacterTransformation ;
+                                       rdfs:comment "Confronts systemic oppression." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Syd
+:CharacterTransformation_Syd rdf:type owl:NamedIndividual ,
+                                      :CharacterTransformation ;
+                             rdfs:comment "Gains family acceptance and self-confidence." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Tara_Maclay
+:CharacterTransformation_Tara_Maclay rdf:type owl:NamedIndividual ,
+                                              :CharacterTransformation ;
+                                     rdfs:comment "Dies abruptly." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Theo_Putnam
+:CharacterTransformation_Theo_Putnam rdf:type owl:NamedIndividual ,
+                                              :CharacterTransformation ;
+                                     rdfs:comment "Static and underdeveloped." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Victor_Salazar
+:CharacterTransformation_Victor_Salazar rdf:type owl:NamedIndividual ,
+                                                 :CharacterTransformation ;
+                                        rdfs:comment "Overcomes internalized fear and bias." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Adam_Groff
+:Character_Adam_Groff rdf:type owl:NamedIndividual ,
+                               :AuthenticRepresentation ,
+                               :Character ;
+                      :hasGender :Male ;
+                      :hasPortrayal :Portrayal_Adam_Groff ;
+                      :hasSexOrientation :Questioning ;
+                      schema:actor :Performer_Connor_Swindells ;
+                      rdfs:label "Adam Groff" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Alice
+:Character_Alice rdf:type owl:NamedIndividual ,
+                          :AuthenticRepresentation ,
+                          :Character ;
+                 :hasGender :Female ;
+                 :hasPortrayal :Portrayal_Alice ;
+                 :hasSexOrientation :NotSpecified ;
+                 schema:actor :Performer_Sydney_Sweeney ;
+                 rdfs:label "Alice" ;
+                 :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Blaine_Anderson
+:Character_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                                    :Character ,
+                                    :ComicSidekick ;
+                           :hasGender :Male ;
+                           :hasPortrayal :Portrayal_Blaine_Anderson ;
+                           :hasSexOrientation :Gay ;
+                           schema:actor :Performer_Darren_Criss ;
+                           rdfs:label "Blaine Anderson" ;
+                           :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Casey_Gardner
+:Character_Casey_Gardner rdf:type owl:NamedIndividual ,
+                                  :AuthenticRepresentation ,
+                                  :Character ;
+                         :hasGender :Female ;
+                         :hasPortrayal :Portrayal_Casey_Gardner ;
+                         :hasSexOrientation :Bisexual ;
+                         schema:actor :Performer_Brigette_Lundy-Paine ;
+                         rdfs:label "Casey Gardner" ;
+                         :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Connor_Walsh
+:Character_Connor_Walsh rdf:type owl:NamedIndividual ,
+                                 :AuthenticRepresentation ,
+                                 :Character ;
+                        :hasGender :Male ;
+                        :hasPortrayal :Portrayal_Connor_Walsh ;
+                        :hasSexOrientation :Gay ;
+                        schema:actor :Performer_Jack_Falahee ;
+                        rdfs:label "Connor Walsh" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_David_Rose
+:Character_David_Rose rdf:type owl:NamedIndividual ,
+                               :AuthenticRepresentation ,
+                               :Character ;
+                      :hasGender :Male ;
+                      :hasPortrayal :Portrayal_David_Rose ;
+                      :hasSexOrientation :Pansexual ;
+                      schema:actor :Performer_Dan_Levy ;
+                      rdfs:label "David Rose" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Denise
+:Character_Denise rdf:type owl:NamedIndividual ,
+                           :AuthenticRepresentation ,
+                           :Character ;
+                  :hasGender :Female ;
+                  :hasPortrayal :Portrayal_Denise ;
+                  :hasSexOrientation :Lesbian ;
+                  schema:actor :Performer_Lena_Waithe ;
+                  rdfs:label "Denise" ;
+                  :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Emily_Fields
+:Character_Emily_Fields rdf:type owl:NamedIndividual ,
+                                 :AuthenticRepresentation ,
+                                 :Character ;
+                        :hasGender :Female ;
+                        :hasPortrayal :Portrayal_Emily_Fields ;
+                        :hasSexOrientation :Lesbian ;
+                        schema:actor :Performer_Shay_Mitchell ;
+                        rdfs:label "Emily Fields" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Eric_Effiong
+:Character_Eric_Effiong rdf:type owl:NamedIndividual ,
+                                 :AuthenticRepresentation ,
+                                 :Character ;
+                        :hasGender :Male ;
+                        :hasPortrayal :Portrayal_Eric_Effiong ;
+                        :hasSexOrientation :Gay ;
+                        schema:actor :Performer_Ncuti_Gatwa ;
+                        rdfs:label "Eric Effiong" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Jules_Vaughn
+:Character_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                                 :AuthenticRepresentation ,
+                                 :Character ;
+                        :hasGender :Female ;
+                        :hasPortrayal :Portrayal_Jules_Vaughn ;
+                        :hasSexOrientation :Bisexual ;
+                        schema:actor :Performer_Hunter_Schafer ;
+                        rdfs:label "Jules Vaughn" ;
+                        :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kat_Edison
+:Character_Kat_Edison rdf:type owl:NamedIndividual ,
+                               :AuthenticRepresentation ,
+                               :Character ;
+                      :hasGender :Female ;
+                      :hasPortrayal :Portrayal_Kat_Edison ;
+                      :hasSexOrientation :Bisexual ;
+                      schema:actor :Performer_Aisha_Dee ;
+                      rdfs:label "Kat Edison" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kelly
+:Character_Kelly rdf:type owl:NamedIndividual ,
+                          :AuthenticRepresentation ,
+                          :Character ;
+                 :hasGender :Female ;
+                 :hasPortrayal :Portrayal_Kelly ;
+                 :hasSexOrientation :Bisexual ;
+                 schema:actor :Performer_Gugu_Mbatha-Raw ;
+                 rdfs:label "Kelly" ;
+                 :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kevin_Keller
+:Character_Kevin_Keller rdf:type owl:NamedIndividual ,
+                                 :Character ,
+                                 :TokenCharacter ;
+                        :hasGender :Male ;
+                        :hasPortrayal :Portrayal_Kevin_Keller ;
+                        :hasSexOrientation :Gay ;
+                        schema:actor :Performer_Casey_Cott ;
+                        rdfs:label "Kevin Keller" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Lexa
+:Character_Lexa rdf:type owl:NamedIndividual ,
+                         :Character ,
+                         :QueerProtagonistLeadRole ;
+                :hasGender :Female ;
+                :hasPortrayal :Portrayal_Lexa ;
+                :hasSexOrientation :Lesbian ;
+                schema:actor :Performer_Alycia_Debnam-Carey ;
+                rdfs:label "Lexa" ;
+                :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Lito_Rodriguez
+:Character_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                                   :AuthenticRepresentation ,
+                                   :Character ;
+                          :hasGender :Male ;
+                          :hasPortrayal :Portrayal_Lito_Rodriguez ;
+                          :hasSexOrientation :Gay ;
+                          schema:actor :Performer_Miguel_Angel_Silvestre ;
+                          rdfs:label "Lito Rodriguez" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Magnus_Bane
+:Character_Magnus_Bane rdf:type owl:NamedIndividual ,
+                                :AuthenticRepresentation ,
+                                :Character ;
+                       :hasGender :Male ;
+                       :hasPortrayal :Portrayal_Magnus_Bane ;
+                       :hasSexOrientation :Bisexual ;
+                       schema:actor <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.> ;
+                       rdfs:label "Magnus Bane" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Mickey_Dobbs
+:Character_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                                 :Character ,
+                                 :TokenCharacter ;
+                        :hasGender :Female ;
+                        :hasPortrayal :Portrayal_Mickey_Dobbs ;
+                        :hasSexOrientation :Bisexual ;
+                        schema:actor :Performer_Gillian_Jacobs ;
+                        rdfs:label "Mickey Dobbs" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Nomi_Marks
+:Character_Nomi_Marks rdf:type owl:NamedIndividual ,
+                               :AuthenticRepresentation ,
+                               :Character ;
+                      :hasGender :Female ;
+                      :hasPortrayal :Portrayal_Nomi_Marks ;
+                      :hasSexOrientation :Lesbian ;
+                      schema:actor :Performer_Jamie_Clayton ;
+                      rdfs:label "Nomi Marks" ;
+                      :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Omar_Shanaa
+:Character_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                                :AuthenticRepresentation ,
+                                :Character ;
+                       :hasGender :Male ;
+                       :hasPortrayal :Portrayal_Omar_Shanaa ;
+                       :hasSexOrientation :Gay ;
+                       schema:actor :Performer_Omar_Ayuso ;
+                       rdfs:label "Omar Shanaa" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Patrick_Brewer
+:Character_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                                   :Character ,
+                                   :ComicSidekick ;
+                          :hasGender :Male ;
+                          :hasPortrayal :Portrayal_Patrick_Brewer ;
+                          :hasSexOrientation :Gay ;
+                          schema:actor :Performer_Noah_Reid ;
+                          rdfs:label "Patrick Brewer" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Ray_Holt
+:Character_Ray_Holt rdf:type owl:NamedIndividual ,
+                             :AuthenticRepresentation ,
+                             :Character ;
+                    :hasGender :Male ;
+                    :hasPortrayal :Portrayal_Ray_Holt ;
+                    :hasSexOrientation :Gay ;
+                    schema:actor :Performer_Andre_Braugher ;
+                    rdfs:label "Ray Holt" ;
+                    :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Santana_Lopez
+:Character_Santana_Lopez rdf:type owl:NamedIndividual ,
+                                  :Character ,
+                                  :TokenCharacter ;
+                         :hasGender :Female ;
+                         :hasPortrayal :Portrayal_Santana_Lopez ;
+                         :hasSexOrientation :Lesbian ;
+                         schema:actor :Performer_Naya_Rivera ;
+                         rdfs:label "Santana Lopez" ;
+                         :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Shane_Harvey
+:Character_Shane_Harvey rdf:type owl:NamedIndividual ,
+                                 :Character ,
+                                 :TokenCharacter ;
+                        :hasGender :Male ;
+                        :hasPortrayal :Portrayal_Shane_Harvey ;
+                        :hasSexOrientation :Gay ;
+                        schema:actor :Performer_Michael_Willett ;
+                        rdfs:label "Shane Harvey" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Simon_Eriksson
+:Character_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                                   :Character ,
+                                   :QueerProtagonistLeadRole ;
+                          :hasGender :Male ;
+                          :hasPortrayal :Portrayal_Simon_Eriksson ;
+                          :hasSexOrientation :Gay ;
+                          schema:actor :Performer_Omar_Rudberg ;
+                          rdfs:label "Simon Eriksson" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Sophia_Burset
+:Character_Sophia_Burset rdf:type owl:NamedIndividual ,
+                                  :AuthenticRepresentation ,
+                                  :Character ;
+                         :hasGender :Female ;
+                         :hasPortrayal :Portrayal_Sophia_Burset ;
+                         :hasSexOrientation :Lesbian ;
+                         schema:actor :Performer_Laverne_Cox ;
+                         rdfs:label "Sophia Burset" ;
+                         :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Syd
+:Character_Syd rdf:type owl:NamedIndividual ,
+                        :AuthenticRepresentation ,
+                        :Character ;
+               :hasGender :NonBinary ;
+               :hasPortrayal :Portrayal_Syd ;
+               :hasSexOrientation :Queer ;
+               schema:actor :Performer_Sheridan_Pierce ;
+               rdfs:label "Syd" ;
+               :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Tara_Maclay
+:Character_Tara_Maclay rdf:type owl:NamedIndividual ,
+                                :Character ,
+                                :TokenCharacter ;
+                       :hasGender :Female ;
+                       :hasPortrayal :Portrayal_Tara_Maclay ;
+                       :hasSexOrientation :Lesbian ;
+                       schema:actor :Performer_Amber_Benson ;
+                       rdfs:label "Tara Maclay" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Theo_Putnam
+:Character_Theo_Putnam rdf:type owl:NamedIndividual ,
+                                :Character ,
+                                :TokenCharacter ;
+                       :hasGender :Male ;
+                       :hasPortrayal :Portrayal_Theo_Putnam ;
+                       :hasSexOrientation :Queer ;
+                       schema:actor :Performer_Lachlan_Watson ;
+                       rdfs:label "Theo Putnam" ;
+                       :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Victor_Salazar
+:Character_Victor_Salazar rdf:type owl:NamedIndividual ,
+                                   :Character ,
+                                   :QueerProtagonistLeadRole ;
+                          :hasGender :Male ;
+                          :hasPortrayal :Portrayal_Victor_Salazar ;
+                          :hasSexOrientation :Gay ;
+                          schema:actor :Performer_Michael_Cimino ;
+                          rdfs:label "Victor Salazar" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ComicSidekick
+:ComicSidekick rdf:type owl:NamedIndividual ,
+                        :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Canada
+:Country_Canada rdf:type owl:NamedIndividual ,
+                         schema:Country ;
+                rdfs:label "Canada" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Spain
+:Country_Spain rdf:type owl:NamedIndividual ,
+                        schema:Country ;
+               rdfs:label "Spain" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Sweden
+:Country_Sweden rdf:type owl:NamedIndividual ,
+                         schema:Country ;
+                rdfs:label "Sweden" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_UK
+:Country_UK rdf:type owl:NamedIndividual ,
+                     schema:Country ;
+            rdfs:label "UK" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_USA
+:Country_USA rdf:type owl:NamedIndividual ,
+                      schema:Country ;
+             rdfs:label "USA" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Aziz_Ansari
+:Creator_Aziz_Ansari rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Aziz Ansari" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Carlos_Montero
+:Creator_Carlos_Montero rdf:type owl:NamedIndividual ,
+                                 :Creator ;
+                        :hasGender :Male ;
+                        :hasSexOrientation :SexOrientation ;
+                        rdfs:label "Carlos Montero" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Dana_Min_Goodman
+:Creator_Dana_Min_Goodman rdf:type owl:NamedIndividual ,
+                                   :Creator ;
+                          :hasGender :Female ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Dana Min Goodman" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ed_Decter
+:Creator_Ed_Decter rdf:type owl:NamedIndividual ,
+                            :Creator ;
+                   :hasGender :Male ;
+                   :hasSexOrientation :SexOrientation ;
+                   rdfs:label "Ed Decter" ;
+                   :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Eugene_Levy
+:Creator_Eugene_Levy rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Eugene Levy" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Gloria_Calderon_Kellett
+:Creator_Gloria_Calderon_Kellett rdf:type owl:NamedIndividual ,
+                                          :Creator ;
+                                 :hasGender :Female ;
+                                 :hasSexOrientation :SexOrientation ;
+                                 rdfs:label "Gloria Calderon Kellett" ;
+                                 :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ina_Marlene_King
+:Creator_Ina_Marlene_King rdf:type owl:NamedIndividual ,
+                                   :Creator ;
+                          :hasGender :Female ;
+                          :hasSexOrientation :Lesbian ;
+                          rdfs:label "Ina Marlene King" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Isaac_Aptaker
+:Creator_Isaac_Aptaker rdf:type owl:NamedIndividual ,
+                                :Creator ;
+                       :hasGender :Male ;
+                       :hasSexOrientation :SexOrientation ;
+                       rdfs:label "Isaac Aptaker" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jason_Rothenberg
+:Creator_Jason_Rothenberg rdf:type owl:NamedIndividual ,
+                                   :Creator ;
+                          :hasGender :Male ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Jason Rothenberg" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jean-Marc_Vallee
+:Creator_Jean-Marc_Vallee rdf:type owl:NamedIndividual ,
+                                   :Creator ;
+                          :hasGender :Male ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Jean-Marc Vallee" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jenji_Leslie_Kohan
+:Creator_Jenji_Leslie_Kohan rdf:type owl:NamedIndividual ,
+                                     :Creator ;
+                            :hasGender :Female ;
+                            :hasSexOrientation :SexOrientation ;
+                            rdfs:label "Jenji Leslie Kohan" ;
+                            :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Joss_Whedon
+:Creator_Joss_Whedon rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Joss Whedon" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Judd_Apatow
+:Creator_Judd_Apatow rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Judd Apatow" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Lana_e_Lilly_Wachowski
+:Creator_Lana_e_Lilly_Wachowski rdf:type owl:NamedIndividual ,
+                                         :Creator ;
+                                :hasGender :Female ;
+                                :hasSexOrientation :Lesbian ;
+                                rdfs:label "Lana e Lilly Wachowski" ;
+                                :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Laurie_Nunn
+:Creator_Laurie_Nunn rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Female ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Laurie Nunn" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Lisa_Ambjorn
+:Creator_Lisa_Ambjorn rdf:type owl:NamedIndividual ,
+                               :Creator ;
+                      :hasGender :Female ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Lisa Ambjorn" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Michael_Schur
+:Creator_Michael_Schur rdf:type owl:NamedIndividual ,
+                                :Creator ;
+                       :hasGender :Male ;
+                       :hasSexOrientation :SexOrientation ;
+                       rdfs:label "Michael Schur" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Owen_Harris
+:Creator_Owen_Harris rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Owen Harris" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Peter_Nowalk
+:Creator_Peter_Nowalk rdf:type owl:NamedIndividual ,
+                               :Creator ;
+                      :hasGender :Male ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Peter Nowalk" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Roberto_Aguirre-Sacasa
+:Creator_Roberto_Aguirre-Sacasa rdf:type owl:NamedIndividual ,
+                                         :Creator ;
+                                :hasGender :Male ;
+                                :hasSexOrientation :SexOrientation ;
+                                rdfs:label "Roberto Aguirre-Sacasa" ;
+                                :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Robia_Rashid
+:Creator_Robia_Rashid rdf:type owl:NamedIndividual ,
+                               :Creator ;
+                      :hasGender :Female ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Robia Rashid" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ryan_Murphy
+:Creator_Ryan_Murphy rdf:type owl:NamedIndividual ,
+                              :Creator ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :Gay ;
+                     rdfs:label "Ryan Murphy" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Sam_Levinson
+:Creator_Sam_Levinson rdf:type owl:NamedIndividual ,
+                               :Creator ;
+                      :hasGender :Male ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Sam Levinson" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Sarah_Watson
+:Creator_Sarah_Watson rdf:type owl:NamedIndividual ,
+                               :Creator ;
+                      :hasGender :Female ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Sarah Watson" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Detailed
+:Detailed rdf:type owl:NamedIndividual ,
+                   :CharacterDepth .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Female
+:Female rdf:type owl:NamedIndividual ,
+                 :Gender .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Gay
+:Gay rdf:type owl:NamedIndividual ,
+              :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend_Kevin_Keller
+:GayBestFriend_Kevin_Keller rdf:type owl:NamedIndividual ,
+                                     :GayBestFriend .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend_Shane_Harvey
+:GayBestFriend_Shane_Harvey rdf:type owl:NamedIndividual ,
+                                     :GayBestFriend .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy
+:Genre_Comedy rdf:type owl:NamedIndividual ,
+                       :Genre ;
+              rdfs:label "Comedy" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy-Drama
+:Genre_Comedy-Drama rdf:type owl:NamedIndividual ,
+                             :Genre ;
+                    rdfs:label "Comedy-Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy_Drama_Romance
+:Genre_Comedy_Drama_Romance rdf:type owl:NamedIndividual ,
+                                     :Genre ;
+                            rdfs:label "Comedy, Drama, Romance" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama
+:Genre_Drama rdf:type owl:NamedIndividual ,
+                      :Genre ;
+             rdfs:label "Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Horror_Fantasy
+:Genre_Drama_Horror_Fantasy rdf:type owl:NamedIndividual ,
+                                     :Genre ;
+                            rdfs:label "Drama, Horror, Fantasy" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Mystery
+:Genre_Drama_Mystery rdf:type owl:NamedIndividual ,
+                              :Genre ;
+                     rdfs:label "Drama, Mystery" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Thriller_Mystery
+:Genre_Drama_Thriller_Mystery rdf:type owl:NamedIndividual ,
+                                       :Genre ;
+                              rdfs:label "Drama, Thriller, Mystery" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Fantasy_Drama_Action
+:Genre_Fantasy_Drama_Action rdf:type owl:NamedIndividual ,
+                                     :Genre ;
+                            rdfs:label "Fantasy, Drama, Action" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Legal_Drama_Thriller
+:Genre_Legal_Drama_Thriller rdf:type owl:NamedIndividual ,
+                                     :Genre ;
+                            rdfs:label "Legal Drama, Thriller" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Musical_Comedy-Drama
+:Genre_Musical_Comedy-Drama rdf:type owl:NamedIndividual ,
+                                     :Genre ;
+                            rdfs:label "Musical, Comedy-Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Science_Fiction_Drama
+:Genre_Science_Fiction_Drama rdf:type owl:NamedIndividual ,
+                                      :Genre ;
+                             rdfs:label "Science Fiction, Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Supernatural_Drama
+:Genre_Supernatural_Drama rdf:type owl:NamedIndividual ,
+                                   :Genre ;
+                          rdfs:label "Supernatural, Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Teen_Drama_Romance
+:Genre_Teen_Drama_Romance rdf:type owl:NamedIndividual ,
+                                   :Genre ;
+                          rdfs:label "Teen Drama, Romance" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Thriller_Teen_Drama
+:Genre_Thriller_Teen_Drama rdf:type owl:NamedIndividual ,
+                                    :Genre ;
+                           rdfs:label "Thriller, Teen Drama" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Adam_Groff
+:Impact_Adam_Groff rdf:type owl:NamedIndividual ,
+                            :LGBTQCommunityImpact ,
+                            :PositiveRoleModel ;
+                   rdfs:comment "Highlights importance of addressing repression." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Alice
+:Impact_Alice rdf:type owl:NamedIndividual ,
+                       :LGBTQCommunityImpact ,
+                       :PositiveRoleModel ;
+              rdfs:comment "Tackles internal struggles and empowerment." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Blaine_Anderson
+:Impact_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                                 :LGBTQCommunityImpact ,
+                                 :PositiveRoleModel ;
+                        rdfs:comment "Helped normalize LGBTQ+ relationships in mainstream media." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Casey_Gardner
+:Impact_Casey_Gardner rdf:type owl:NamedIndividual ,
+                               :LGBTQCommunityImpact ,
+                               :PositiveRoleModel ;
+                      rdfs:comment "Positively portrays bisexuality, showcasing complexity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Connor_Walsh
+:Impact_Connor_Walsh rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :PositiveRoleModel ;
+                     rdfs:comment "Tackles issues of societal bias and personal redemption." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_David_Rose
+:Impact_David_Rose rdf:type owl:NamedIndividual ,
+                            :LGBTQCommunityImpact ,
+                            :PositiveRoleModel ;
+                   rdfs:comment "Celebrates LGBTQ+ lives through humor and acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Denise
+:Impact_Denise rdf:type owl:NamedIndividual ,
+                        :LGBTQCommunityImpact ,
+                        :PositiveRoleModel ;
+               rdfs:comment "Challenges heteronormative narratives and broadens representation." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Emily_Fields
+:Impact_Emily_Fields rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :PositiveRoleModel ;
+                     rdfs:comment "Normalizes LGBTQ+ relationships, empowering LGBTQ+ women." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Eric_Effiong
+:Impact_Eric_Effiong rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :PositiveRoleModel ;
+                     rdfs:comment "Broadens intersectional representation, showing complexity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Jules_Vaughn
+:Impact_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :PositiveRoleModel ;
+                     rdfs:comment "Positive role model for transgender youth, promoting understanding." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kat_Edison
+:Impact_Kat_Edison rdf:type owl:NamedIndividual ,
+                            :LGBTQCommunityImpact ,
+                            :PositiveRoleModel ;
+                   rdfs:comment "Promotes bisexual visibility and challenges workplace discrimination." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kelly
+:Impact_Kelly rdf:type owl:NamedIndividual ,
+                       :LGBTQCommunityImpact ,
+                       :PositiveRoleModel ;
+              rdfs:comment "Breaks stereotypes by showing LGBTQ+ love in a positive light." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kevin_Keller
+:Impact_Kevin_Keller rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :NegativeRoleModel ;
+                     rdfs:comment "Reinforces cliches, adding little to LGBTQ+ visibility." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Lexa
+:Impact_Lexa rdf:type owl:NamedIndividual ,
+                      :LGBTQCommunityImpact ,
+                      :NegativeRoleModel ;
+             rdfs:comment "Sparked backlash for perpetuating harmful LGBTQ+ tropes." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Lito_Rodriguez
+:Impact_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                                :LGBTQCommunityImpact ,
+                                :PositiveRoleModel ;
+                       rdfs:comment "Highlights LGBTQ+ challenges in global contexts." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Magnus_Bane
+:Impact_Magnus_Bane rdf:type owl:NamedIndividual ,
+                             :LGBTQCommunityImpact ,
+                             :PositiveRoleModel ;
+                    rdfs:comment "Celebrates LGBTQ+ identity with fantasy elements." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Mickey_Dobbs
+:Impact_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :NegativeRoleModel ;
+                     rdfs:comment "Lacks meaningful engagement with LGBTQ+ themes." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Nomi_Marks
+:Impact_Nomi_Marks rdf:type owl:NamedIndividual ,
+                            :LGBTQCommunityImpact ,
+                            :PositiveRoleModel ;
+                   rdfs:comment "One of the first trans characters portrayed positively in mainstream sci-fi." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Omar_Shanaa
+:Impact_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                             :LGBTQCommunityImpact ,
+                             :PositiveRoleModel ;
+                    rdfs:comment "Highlights intersectionality, addressing sexuality in cultural contexts." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Patrick_Brewer
+:Impact_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                                :LGBTQCommunityImpact ,
+                                :PositiveRoleModel ;
+                       rdfs:comment "Breaks stereotypes with a positive LGBTQ+ relationship on screen." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Ray_Holt
+:Impact_Ray_Holt rdf:type owl:NamedIndividual ,
+                          :LGBTQCommunityImpact ,
+                          :PositiveRoleModel ;
+                 rdfs:comment "Subverts stereotypes and challenges workplace biases." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Santana_Lopez
+:Impact_Santana_Lopez rdf:type owl:NamedIndividual ,
+                               :LGBTQCommunityImpact ,
+                               :PositiveRoleModel ;
+                      rdfs:comment "Normalized LGBTQ+ relationships in mainstream teen TV." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Shane_Harvey
+:Impact_Shane_Harvey rdf:type owl:NamedIndividual ,
+                              :LGBTQCommunityImpact ,
+                              :NegativeRoleModel ;
+                     rdfs:comment "Reinforces outdated stereotypes without subverting them." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Simon_Eriksson
+:Impact_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                                :LGBTQCommunityImpact ,
+                                :PositiveRoleModel ;
+                       rdfs:comment "Provides positive representation of a gay teenager navigating love." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Sophia_Burset
+:Impact_Sophia_Burset rdf:type owl:NamedIndividual ,
+                               :LGBTQCommunityImpact ,
+                               :PositiveRoleModel ;
+                      rdfs:comment "Illuminates systemic challenges for trans individuals, fostering empathy." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Syd
+:Impact_Syd rdf:type owl:NamedIndividual ,
+                     :LGBTQCommunityImpact ,
+                     :PositiveRoleModel ;
+            rdfs:comment "Increases visibility for non-binary individuals and promotes acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Tara_Maclay
+:Impact_Tara_Maclay rdf:type owl:NamedIndividual ,
+                             :LGBTQCommunityImpact ,
+                             :NegativeRoleModel ;
+                    rdfs:comment "Controversial portrayal, perpetuating harmful LGBTQ+ tropes." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Theo_Putnam
+:Impact_Theo_Putnam rdf:type owl:NamedIndividual ,
+                             :LGBTQCommunityImpact ,
+                             :NegativeRoleModel ;
+                    rdfs:comment "Missed opportunity to delve into meaningful trans representation." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Victor_Salazar
+:Impact_Victor_Salazar rdf:type owl:NamedIndividual ,
+                                :LGBTQCommunityImpact ,
+                                :PositiveRoleModel ;
+                       rdfs:comment "Highlights intersectionality and the nuances of coming out in traditional families." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Adam_Groff
+:Lens_Adam_Groff rdf:type owl:NamedIndividual ,
+                          persp:Lens ,
+                          :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Alice
+:Lens_Alice rdf:type owl:NamedIndividual ,
+                     persp:Lens ,
+                     :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Blaine_Anderson
+:Lens_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                               persp:Lens ,
+                               :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Casey_Gardner
+:Lens_Casey_Gardner rdf:type owl:NamedIndividual ,
+                             persp:Lens ,
+                             :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Connor_Walsh
+:Lens_Connor_Walsh rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_David_Rose
+:Lens_David_Rose rdf:type owl:NamedIndividual ,
+                          persp:Lens ,
+                          :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Denise
+:Lens_Denise rdf:type owl:NamedIndividual ,
+                      persp:Lens ,
+                      :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Emily_Fields
+:Lens_Emily_Fields rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Eric_Effiong
+:Lens_Eric_Effiong rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Jules_Vaughn
+:Lens_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kat_Edison
+:Lens_Kat_Edison rdf:type owl:NamedIndividual ,
+                          persp:Lens ,
+                          :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kelly
+:Lens_Kelly rdf:type owl:NamedIndividual ,
+                     persp:Lens ,
+                     :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kevin_Keller
+:Lens_Kevin_Keller rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Lexa
+:Lens_Lexa rdf:type owl:NamedIndividual ,
+                    persp:Lens ,
+                    :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Lito_Rodriguez
+:Lens_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                              persp:Lens ,
+                              :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Magnus_Bane
+:Lens_Magnus_Bane rdf:type owl:NamedIndividual ,
+                           persp:Lens ,
+                           :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Mickey_Dobbs
+:Lens_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Nomi_Marks
+:Lens_Nomi_Marks rdf:type owl:NamedIndividual ,
+                          persp:Lens ,
+                          :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Omar_Shanaa
+:Lens_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                           persp:Lens ,
+                           :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Patrick_Brewer
+:Lens_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                              persp:Lens ,
+                              :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Ray_Holt
+:Lens_Ray_Holt rdf:type owl:NamedIndividual ,
+                        persp:Lens ,
+                        :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Santana_Lopez
+:Lens_Santana_Lopez rdf:type owl:NamedIndividual ,
+                             persp:Lens ,
+                             :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Shane_Harvey
+:Lens_Shane_Harvey rdf:type owl:NamedIndividual ,
+                            persp:Lens ,
+                            :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Simon_Eriksson
+:Lens_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                              persp:Lens ,
+                              :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Sophia_Burset
+:Lens_Sophia_Burset rdf:type owl:NamedIndividual ,
+                             persp:Lens ,
+                             :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Syd
+:Lens_Syd rdf:type owl:NamedIndividual ,
+                   persp:Lens ,
+                   :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Tara_Maclay
+:Lens_Tara_Maclay rdf:type owl:NamedIndividual ,
+                           persp:Lens ,
+                           :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Theo_Putnam
+:Lens_Theo_Putnam rdf:type owl:NamedIndividual ,
+                           persp:Lens ,
+                           :ProfitDrivenLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Victor_Salazar
+:Lens_Victor_Salazar rdf:type owl:NamedIndividual ,
+                              persp:Lens ,
+                              :SocialImpactLens .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lesbian
+:Lesbian rdf:type owl:NamedIndividual ,
+                  :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Male
+:Male rdf:type owl:NamedIndividual ,
+               :Gender .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NegativeRoleModel
+:NegativeRoleModel rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NonBinary
+:NonBinary rdf:type owl:NamedIndividual ,
+                    :Gender .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NotSpecified
+:NotSpecified rdf:type owl:NamedIndividual ,
+                       :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Pansexual
+:Pansexual rdf:type owl:NamedIndividual ,
+                    :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Aisha_Dee
+:Performer_Aisha_Dee rdf:type owl:NamedIndividual ,
+                              :Performer ;
+                     :hasGender :Female ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Aisha Dee" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Alycia_Debnam-Carey
+:Performer_Alycia_Debnam-Carey rdf:type owl:NamedIndividual ,
+                                        :Performer ;
+                               :hasGender :Female ;
+                               :hasSexOrientation :SexOrientation ;
+                               rdfs:label "Alycia Debnam-Carey" ;
+                               :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Amber_Benson
+:Performer_Amber_Benson rdf:type owl:NamedIndividual ,
+                                 :Performer ;
+                        :hasGender :Female ;
+                        :hasSexOrientation :SexOrientation ;
+                        rdfs:label "Amber Benson" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Andre_Braugher
+:Performer_Andre_Braugher rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :Male ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Andre Braugher" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Brigette_Lundy-Paine
+:Performer_Brigette_Lundy-Paine rdf:type owl:NamedIndividual ,
+                                         :Performer ;
+                                :hasGender :NonBinary ;
+                                :hasSexOrientation :Queer ;
+                                rdfs:label "Brigette Lundy-Paine" ;
+                                :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Casey_Cott
+:Performer_Casey_Cott rdf:type owl:NamedIndividual ,
+                               :Performer ;
+                      :hasGender :Male ;
+                      :hasSexOrientation :SexOrientation ;
+                      rdfs:label "Casey Cott" ;
+                      :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Connor_Swindells
+:Performer_Connor_Swindells rdf:type owl:NamedIndividual ,
+                                     :Performer ;
+                            :hasGender :Male ;
+                            :hasSexOrientation :SexOrientation ;
+                            rdfs:label "Connor Swindells" ;
+                            :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Dan_Levy
+:Performer_Dan_Levy rdf:type owl:NamedIndividual ,
+                             :Performer ;
+                    :hasGender :Male ;
+                    :hasSexOrientation :Gay ;
+                    rdfs:label "Dan Levy" ;
+                    :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Darren_Criss
+:Performer_Darren_Criss rdf:type owl:NamedIndividual ,
+                                 :Performer ;
+                        :hasGender :Male ;
+                        :hasSexOrientation :SexOrientation ;
+                        rdfs:label "Darren Criss" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Gillian_Jacobs
+:Performer_Gillian_Jacobs rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :Female ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Gillian Jacobs" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Gugu_Mbatha-Raw
+:Performer_Gugu_Mbatha-Raw rdf:type owl:NamedIndividual ,
+                                    :Performer ;
+                           :hasGender :Female ;
+                           :hasSexOrientation :SexOrientation ;
+                           rdfs:label "Gugu Mbatha-Raw" ;
+                           :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.> rdf:type owl:NamedIndividual ,
+                                                                                                            :Performer ;
+                                                                                                   :hasGender :Male ;
+                                                                                                   :hasSexOrientation :SexOrientation ;
+                                                                                                   rdfs:label "Harry Shum Jr." ;
+                                                                                                   :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Hunter_Schafer
+:Performer_Hunter_Schafer rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :Female ;
+                          :hasSexOrientation :Bisexual ;
+                          rdfs:label "Hunter Schafer" ;
+                          :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Jack_Falahee
+:Performer_Jack_Falahee rdf:type owl:NamedIndividual ,
+                                 :Performer ;
+                        :hasGender :Male ;
+                        :hasSexOrientation :SexOrientation ;
+                        rdfs:label "Jack Falahee" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Jamie_Clayton
+:Performer_Jamie_Clayton rdf:type owl:NamedIndividual ,
+                                  :Performer ;
+                         :hasGender :Female ;
+                         :hasSexOrientation :SexOrientation ;
+                         rdfs:label "Jamie Clayton" ;
+                         :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Lachlan_Watson
+:Performer_Lachlan_Watson rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :NonBinary ;
+                          :hasSexOrientation :Pansexual ;
+                          rdfs:label "Lachlan Watson" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Laverne_Cox
+:Performer_Laverne_Cox rdf:type owl:NamedIndividual ,
+                                :Performer ;
+                       :hasGender :Female ;
+                       :hasSexOrientation :SexOrientation ;
+                       rdfs:label "Laverne Cox" ;
+                       :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Lena_Waithe
+:Performer_Lena_Waithe rdf:type owl:NamedIndividual ,
+                                :Performer ;
+                       :hasGender :Female ;
+                       :hasSexOrientation :Queer ;
+                       rdfs:label "Lena Waithe" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Michael_Cimino
+:Performer_Michael_Cimino rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :Male ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Michael Cimino" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Michael_Willett
+:Performer_Michael_Willett rdf:type owl:NamedIndividual ,
+                                    :Performer ;
+                           :hasGender :Male ;
+                           :hasSexOrientation :Gay ;
+                           rdfs:label "Michael Willett" ;
+                           :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Miguel_Angel_Silvestre
+:Performer_Miguel_Angel_Silvestre rdf:type owl:NamedIndividual ,
+                                           :Performer ;
+                                  :hasGender :Male ;
+                                  :hasSexOrientation :SexOrientation ;
+                                  rdfs:label "Miguel Angel Silvestre" ;
+                                  :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Naya_Rivera
+:Performer_Naya_Rivera rdf:type owl:NamedIndividual ,
+                                :Performer ;
+                       :hasGender :Female ;
+                       :hasSexOrientation :SexOrientation ;
+                       rdfs:label "Naya Rivera" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Ncuti_Gatwa
+:Performer_Ncuti_Gatwa rdf:type owl:NamedIndividual ,
+                                :Performer ;
+                       :hasGender :Male ;
+                       :hasSexOrientation :Queer ;
+                       rdfs:label "Ncuti Gatwa" ;
+                       :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Noah_Reid
+:Performer_Noah_Reid rdf:type owl:NamedIndividual ,
+                              :Performer ;
+                     :hasGender :Male ;
+                     :hasSexOrientation :SexOrientation ;
+                     rdfs:label "Noah Reid" ;
+                     :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Omar_Ayuso
+:Performer_Omar_Ayuso rdf:type owl:NamedIndividual ,
+                               :Performer ;
+                      :hasGender :Male ;
+                      :hasSexOrientation :Gay ;
+                      rdfs:label "Omar Ayuso" ;
+                      :isTransgender "true"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Omar_Rudberg
+:Performer_Omar_Rudberg rdf:type owl:NamedIndividual ,
+                                 :Performer ;
+                        :hasGender :Male ;
+                        :hasSexOrientation :Queer ;
+                        rdfs:label "Omar Rudberg" ;
+                        :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Shay_Mitchell
+:Performer_Shay_Mitchell rdf:type owl:NamedIndividual ,
+                                  :Performer ;
+                         :hasGender :Female ;
+                         :hasSexOrientation :SexOrientation ;
+                         rdfs:label "Shay Mitchell" ;
+                         :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Sheridan_Pierce
+:Performer_Sheridan_Pierce rdf:type owl:NamedIndividual ,
+                                    :Performer ;
+                           :hasGender :Female ;
+                           :hasSexOrientation :SexOrientation ;
+                           rdfs:label "Sheridan Pierce" ;
+                           :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Sydney_Sweeney
+:Performer_Sydney_Sweeney rdf:type owl:NamedIndividual ,
+                                   :Performer ;
+                          :hasGender :Female ;
+                          :hasSexOrientation :SexOrientation ;
+                          rdfs:label "Sydney Sweeney" ;
+                          :isTransgender "false"^^xsd:boolean .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Adam_Groff
+:Portrayal_Adam_Groff rdf:type owl:NamedIndividual ,
+                               :AffirmationOfIdentity ,
+                               :Authenticity ,
+                               :Detailed ,
+                               :Dynamic ,
+                               :NormalizationOfRelationship ,
+                               :PortrayalofLgbtqCharacter ;
+                      :hasNarrativeFunction :CharacterTransformation_Adam_Groff ;
+                      :impactsCommunity :Impact_Adam_Groff ,
+                                        :PositiveRoleModel ;
+                      :viewedThroughLens :Lens_Adam_Groff ;
+                      :hasRepresentationType :Representation_Adam_Groff .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Alice
+:Portrayal_Alice rdf:type owl:NamedIndividual ,
+                          :AffirmationOfIdentity ,
+                          :Authenticity ,
+                          :Detailed ,
+                          :Dynamic ,
+                          :NormalizationOfRelationship ,
+                          :PortrayalofLgbtqCharacter ;
+                 :hasNarrativeFunction :CharacterTransformation_Alice ;
+                 :impactsCommunity :Impact_Alice ,
+                                   :PositiveRoleModel ;
+                 :viewedThroughLens :Lens_Alice ;
+                 :hasRepresentationType :Representation_Alice .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Blaine_Anderson
+:Portrayal_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                                    :AffirmationOfIdentity ,
+                                    :Authenticity ,
+                                    :Detailed ,
+                                    :Dynamic ,
+                                    :NormalizationOfRelationship ,
+                                    :PortrayalofLgbtqCharacter ;
+                           :hasNarrativeFunction :CharacterTransformation_Blaine_Anderson ;
+                           :impactsCommunity :Impact_Blaine_Anderson ,
+                                             :PositiveRoleModel ;
+                           :viewedThroughLens :Lens_Blaine_Anderson ;
+                           :hasRepresentationType :Representation_Blaine_Anderson .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Casey_Gardner
+:Portrayal_Casey_Gardner rdf:type owl:NamedIndividual ,
+                                  :AffirmationOfIdentity ,
+                                  :Authenticity ,
+                                  :Detailed ,
+                                  :Dynamic ,
+                                  :NormalizationOfRelationship ,
+                                  :PortrayalofLgbtqCharacter ;
+                         :hasNarrativeFunction :CharacterTransformation_Casey_Gardner ;
+                         :impactsCommunity :Impact_Casey_Gardner ,
+                                           :PositiveRoleModel ;
+                         :viewedThroughLens :Lens_Casey_Gardner ;
+                         :hasRepresentationType :Representation_Casey_Gardner .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Connor_Walsh
+:Portrayal_Connor_Walsh rdf:type owl:NamedIndividual ,
+                                 :AffirmationOfIdentity ,
+                                 :Authenticity ,
+                                 :Detailed ,
+                                 :Dynamic ,
+                                 :NormalizationOfRelationship ,
+                                 :PortrayalofLgbtqCharacter ;
+                        :hasNarrativeFunction :CharacterTransformation_Connor_Walsh ;
+                        :impactsCommunity :Impact_Connor_Walsh ,
+                                          :PositiveRoleModel ;
+                        :viewedThroughLens :Lens_Connor_Walsh ;
+                        :hasRepresentationType :Representation_Connor_Walsh .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_David_Rose
+:Portrayal_David_Rose rdf:type owl:NamedIndividual ,
+                               :AffirmationOfIdentity ,
+                               :Authenticity ,
+                               :Detailed ,
+                               :Dynamic ,
+                               :NormalizationOfRelationship ,
+                               :PortrayalofLgbtqCharacter ;
+                      :hasNarrativeFunction :CharacterTransformation_David_Rose ;
+                      :impactsCommunity :Impact_David_Rose ,
+                                        :PositiveRoleModel ;
+                      :viewedThroughLens :Lens_David_Rose ;
+                      :hasRepresentationType :Representation_David_Rose .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Denise
+:Portrayal_Denise rdf:type owl:NamedIndividual ,
+                           :AffirmationOfIdentity ,
+                           :Authenticity ,
+                           :Detailed ,
+                           :Dynamic ,
+                           :NormalizationOfRelationship ,
+                           :PortrayalofLgbtqCharacter ;
+                  :hasNarrativeFunction :CharacterTransformation_Denise ;
+                  :impactsCommunity :Impact_Denise ,
+                                    :PositiveRoleModel ;
+                  :viewedThroughLens :Lens_Denise ;
+                  :hasRepresentationType :Representation_Denise .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Emily_Fields
+:Portrayal_Emily_Fields rdf:type owl:NamedIndividual ,
+                                 :AffirmationOfIdentity ,
+                                 :Authenticity ,
+                                 :Detailed ,
+                                 :Dynamic ,
+                                 :NormalizationOfRelationship ,
+                                 :PortrayalofLgbtqCharacter ;
+                        :hasNarrativeFunction :CharacterTransformation_Emily_Fields ;
+                        :impactsCommunity :Impact_Emily_Fields ,
+                                          :PositiveRoleModel ;
+                        :viewedThroughLens :Lens_Emily_Fields ;
+                        :hasRepresentationType :Representation_Emily_Fields .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Eric_Effiong
+:Portrayal_Eric_Effiong rdf:type owl:NamedIndividual ,
+                                 :AffirmationOfIdentity ,
+                                 :Authenticity ,
+                                 :Detailed ,
+                                 :Dynamic ,
+                                 :NormalizationOfRelationship ,
+                                 :PortrayalofLgbtqCharacter ;
+                        :hasNarrativeFunction :CharacterTransformation_Eric_Effiong ;
+                        :impactsCommunity :Impact_Eric_Effiong ,
+                                          :PositiveRoleModel ;
+                        :viewedThroughLens :Lens_Eric_Effiong ;
+                        :hasRepresentationType :Representation_Eric_Effiong .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Jules_Vaughn
+:Portrayal_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                                 :AffirmationOfIdentity ,
+                                 :Authenticity ,
+                                 :Detailed ,
+                                 :Dynamic ,
+                                 :NormalizationOfRelationship ,
+                                 :PortrayalofLgbtqCharacter ;
+                        :hasNarrativeFunction :CharacterTransformation_Jules_Vaughn ;
+                        :impactsCommunity :Impact_Jules_Vaughn ,
+                                          :PositiveRoleModel ;
+                        :viewedThroughLens :Lens_Jules_Vaughn ;
+                        :hasRepresentationType :Representation_Jules_Vaughn .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kat_Edison
+:Portrayal_Kat_Edison rdf:type owl:NamedIndividual ,
+                               :AffirmationOfIdentity ,
+                               :Authenticity ,
+                               :Detailed ,
+                               :Dynamic ,
+                               :NormalizationOfRelationship ,
+                               :PortrayalofLgbtqCharacter ;
+                      :hasNarrativeFunction :CharacterTransformation_Kat_Edison ;
+                      :impactsCommunity :Impact_Kat_Edison ,
+                                        :PositiveRoleModel ;
+                      :viewedThroughLens :Lens_Kat_Edison ;
+                      :hasRepresentationType :Representation_Kat_Edison .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kelly
+:Portrayal_Kelly rdf:type owl:NamedIndividual ,
+                          :AffirmationOfIdentity ,
+                          :Authenticity ,
+                          :Detailed ,
+                          :Dynamic ,
+                          :NormalizationOfRelationship ,
+                          :PortrayalofLgbtqCharacter ;
+                 :hasNarrativeFunction :CharacterTransformation_Kelly ;
+                 :impactsCommunity :Impact_Kelly ,
+                                   :PositiveRoleModel ;
+                 :viewedThroughLens :Lens_Kelly ;
+                 :hasRepresentationType :Representation_Kelly .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kevin_Keller
+:Portrayal_Kevin_Keller rdf:type owl:NamedIndividual ,
+                                 :PortrayalofLgbtqCharacter ,
+                                 :Static ,
+                                 :Superficial ;
+                        :hasNarrativeFunction :CharacterTransformation_Kevin_Keller ;
+                        :impactsCommunity :Impact_Kevin_Keller ,
+                                          :NegativeRoleModel ;
+                        :viewedThroughLens :Lens_Kevin_Keller ;
+                        :hasRepresentationType :Representation_Kevin_Keller .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Lexa
+:Portrayal_Lexa rdf:type owl:NamedIndividual ,
+                         :AffirmationOfIdentity ,
+                         :PortrayalofLgbtqCharacter ,
+                         :Static ,
+                         :Superficial ;
+                :hasNarrativeFunction :CharacterTransformation_Lexa ;
+                :impactsCommunity :Impact_Lexa ,
+                                  :NegativeRoleModel ;
+                :viewedThroughLens :Lens_Lexa ;
+                :hasRepresentationType :Representation_Lexa .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Lito_Rodriguez
+:Portrayal_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                                   :AffirmationOfIdentity ,
+                                   :Authenticity ,
+                                   :Detailed ,
+                                   :Dynamic ,
+                                   :NormalizationOfRelationship ,
+                                   :PortrayalofLgbtqCharacter ;
+                          :hasNarrativeFunction :CharacterTransformation_Lito_Rodriguez ;
+                          :impactsCommunity :Impact_Lito_Rodriguez ,
+                                            :PositiveRoleModel ;
+                          :viewedThroughLens :Lens_Lito_Rodriguez ;
+                          :hasRepresentationType :Representation_Lito_Rodriguez .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Magnus_Bane
+:Portrayal_Magnus_Bane rdf:type owl:NamedIndividual ,
+                                :AffirmationOfIdentity ,
+                                :Authenticity ,
+                                :Detailed ,
+                                :Dynamic ,
+                                :NormalizationOfRelationship ,
+                                :PortrayalofLgbtqCharacter ;
+                       :hasNarrativeFunction :CharacterTransformation_Magnus_Bane ;
+                       :impactsCommunity :Impact_Magnus_Bane ,
+                                         :PositiveRoleModel ;
+                       :viewedThroughLens :Lens_Magnus_Bane ;
+                       :hasRepresentationType :Representation_Magnus_Bane .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Mickey_Dobbs
+:Portrayal_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                                 :PortrayalofLgbtqCharacter ,
+                                 :Static ,
+                                 :Superficial ;
+                        :hasNarrativeFunction :CharacterTransformation_Mickey_Dobbs ;
+                        :impactsCommunity :Impact_Mickey_Dobbs ,
+                                          :NegativeRoleModel ;
+                        :viewedThroughLens :Lens_Mickey_Dobbs ;
+                        :hasRepresentationType :Representation_Mickey_Dobbs .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Nomi_Marks
+:Portrayal_Nomi_Marks rdf:type owl:NamedIndividual ,
+                               :AffirmationOfIdentity ,
+                               :Authenticity ,
+                               :Detailed ,
+                               :Dynamic ,
+                               :NormalizationOfRelationship ,
+                               :PortrayalofLgbtqCharacter ;
+                      :hasNarrativeFunction :CharacterTransformation_Nomi_Marks ;
+                      :impactsCommunity :Impact_Nomi_Marks ,
+                                        :PositiveRoleModel ;
+                      :viewedThroughLens :Lens_Nomi_Marks ;
+                      :hasRepresentationType :Representation_Nomi_Marks .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Omar_Shanaa
+:Portrayal_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                                :AffirmationOfIdentity ,
+                                :Authenticity ,
+                                :Detailed ,
+                                :Dynamic ,
+                                :NormalizationOfRelationship ,
+                                :PortrayalofLgbtqCharacter ;
+                       :hasNarrativeFunction :CharacterTransformation_Omar_Shanaa ;
+                       :impactsCommunity :Impact_Omar_Shanaa ,
+                                         :PositiveRoleModel ;
+                       :viewedThroughLens :Lens_Omar_Shanaa ;
+                       :hasRepresentationType :Representation_Omar_Shanaa .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Patrick_Brewer
+:Portrayal_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                                   :AffirmationOfIdentity ,
+                                   :Authenticity ,
+                                   :Detailed ,
+                                   :Dynamic ,
+                                   :NormalizationOfRelationship ,
+                                   :PortrayalofLgbtqCharacter ;
+                          :hasNarrativeFunction :CharacterTransformation_Patrick_Brewer ;
+                          :impactsCommunity :Impact_Patrick_Brewer ,
+                                            :PositiveRoleModel ;
+                          :viewedThroughLens :Lens_Patrick_Brewer ;
+                          :hasRepresentationType :Representation_Patrick_Brewer .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Ray_Holt
+:Portrayal_Ray_Holt rdf:type owl:NamedIndividual ,
+                             :AffirmationOfIdentity ,
+                             :Authenticity ,
+                             :Detailed ,
+                             :Dynamic ,
+                             :NormalizationOfRelationship ,
+                             :PortrayalofLgbtqCharacter ;
+                    :hasNarrativeFunction :CharacterTransformation_Ray_Holt ;
+                    :impactsCommunity :Impact_Ray_Holt ,
+                                      :PositiveRoleModel ;
+                    :viewedThroughLens :Lens_Ray_Holt ;
+                    :hasRepresentationType :Representation_Ray_Holt .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Santana_Lopez
+:Portrayal_Santana_Lopez rdf:type owl:NamedIndividual ,
+                                  :AffirmationOfIdentity ,
+                                  :Authenticity ,
+                                  :Detailed ,
+                                  :Dynamic ,
+                                  :NormalizationOfRelationship ,
+                                  :PortrayalofLgbtqCharacter ;
+                         :hasNarrativeFunction :CharacterTransformation_Santana_Lopez ;
+                         :impactsCommunity :Impact_Santana_Lopez ,
+                                           :PositiveRoleModel ;
+                         :viewedThroughLens :Lens_Santana_Lopez ;
+                         :hasRepresentationType :Representation_Santana_Lopez .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Shane_Harvey
+:Portrayal_Shane_Harvey rdf:type owl:NamedIndividual ,
+                                 :PortrayalofLgbtqCharacter ,
+                                 :Static ,
+                                 :Superficial ;
+                        :hasNarrativeFunction :CharacterTransformation_Shane_Harvey ;
+                        :impactsCommunity :Impact_Shane_Harvey ,
+                                          :NegativeRoleModel ;
+                        :viewedThroughLens :Lens_Shane_Harvey ;
+                        :hasRepresentationType :Representation_Shane_Harvey .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Simon_Eriksson
+:Portrayal_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                                   :AffirmationOfIdentity ,
+                                   :Authenticity ,
+                                   :Detailed ,
+                                   :Dynamic ,
+                                   :NormalizationOfRelationship ,
+                                   :PortrayalofLgbtqCharacter ;
+                          :hasNarrativeFunction :CharacterTransformation_Simon_Eriksson ;
+                          :impactsCommunity :Impact_Simon_Eriksson ,
+                                            :PositiveRoleModel ;
+                          :viewedThroughLens :Lens_Simon_Eriksson ;
+                          :hasRepresentationType :Representation_Simon_Eriksson .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Sophia_Burset
+:Portrayal_Sophia_Burset rdf:type owl:NamedIndividual ,
+                                  :AffirmationOfIdentity ,
+                                  :Authenticity ,
+                                  :Detailed ,
+                                  :Dynamic ,
+                                  :NormalizationOfRelationship ,
+                                  :PortrayalofLgbtqCharacter ;
+                         :hasNarrativeFunction :CharacterTransformation_Sophia_Burset ;
+                         :impactsCommunity :Impact_Sophia_Burset ,
+                                           :PositiveRoleModel ;
+                         :viewedThroughLens :Lens_Sophia_Burset ;
+                         :hasRepresentationType :Representation_Sophia_Burset .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Syd
+:Portrayal_Syd rdf:type owl:NamedIndividual ,
+                        :AffirmationOfIdentity ,
+                        :Authenticity ,
+                        :Detailed ,
+                        :Dynamic ,
+                        :NormalizationOfRelationship ,
+                        :PortrayalofLgbtqCharacter ;
+               :hasNarrativeFunction :CharacterTransformation_Syd ;
+               :impactsCommunity :Impact_Syd ,
+                                 :PositiveRoleModel ;
+               :viewedThroughLens :Lens_Syd ;
+               :hasRepresentationType :Representation_Syd .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Tara_Maclay
+:Portrayal_Tara_Maclay rdf:type owl:NamedIndividual ,
+                                :AffirmationOfIdentity ,
+                                :NormalizationOfRelationship ,
+                                :PortrayalofLgbtqCharacter ,
+                                :Static ,
+                                :Superficial ;
+                       :hasNarrativeFunction :CharacterTransformation_Tara_Maclay ;
+                       :impactsCommunity :Impact_Tara_Maclay ,
+                                         :NegativeRoleModel ;
+                       :viewedThroughLens :Lens_Tara_Maclay ;
+                       :hasRepresentationType :Representation_Tara_Maclay .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Theo_Putnam
+:Portrayal_Theo_Putnam rdf:type owl:NamedIndividual ,
+                                :PortrayalofLgbtqCharacter ,
+                                :Static ,
+                                :Superficial ;
+                       :hasNarrativeFunction :CharacterTransformation_Theo_Putnam ;
+                       :impactsCommunity :Impact_Theo_Putnam ,
+                                         :NegativeRoleModel ;
+                       :viewedThroughLens :Lens_Theo_Putnam ;
+                       :hasRepresentationType :Representation_Theo_Putnam .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Victor_Salazar
+:Portrayal_Victor_Salazar rdf:type owl:NamedIndividual ,
+                                   :AffirmationOfIdentity ,
+                                   :Authenticity ,
+                                   :Detailed ,
+                                   :Dynamic ,
+                                   :NormalizationOfRelationship ,
+                                   :PortrayalofLgbtqCharacter ;
+                          :hasNarrativeFunction :CharacterTransformation_Victor_Salazar ;
+                          :impactsCommunity :Impact_Victor_Salazar ,
+                                            :PositiveRoleModel ;
+                          :viewedThroughLens :Lens_Victor_Salazar ;
+                          :hasRepresentationType :Representation_Victor_Salazar .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PositiveRoleModel
+:PositiveRoleModel rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_ABC
+:Production_ABC rdf:type owl:NamedIndividual ,
+                         :ProductionAndIndustryFactory ;
+                rdfs:label "ABC" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_CBC
+:Production_CBC rdf:type owl:NamedIndividual ,
+                         :ProductionAndIndustryFactory ;
+                rdfs:label "CBC" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox
+:Production_Fox rdf:type owl:NamedIndividual ,
+                         :ProductionAndIndustryFactory ;
+                rdfs:label "Fox" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Freeform
+:Production_Freeform rdf:type owl:NamedIndividual ,
+                              :ProductionAndIndustryFactory ;
+                     rdfs:label "Freeform" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_HBO
+:Production_HBO rdf:type owl:NamedIndividual ,
+                         :ProductionAndIndustryFactory ;
+                rdfs:label "HBO" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Hulu
+:Production_Hulu rdf:type owl:NamedIndividual ,
+                          :ProductionAndIndustryFactory ;
+                 rdfs:label "Hulu" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_MTV
+:Production_MTV rdf:type owl:NamedIndividual ,
+                         :ProductionAndIndustryFactory ;
+                rdfs:label "MTV" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Netflix
+:Production_Netflix rdf:type owl:NamedIndividual ,
+                             :ProductionAndIndustryFactory ;
+                    rdfs:label "Netflix" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_The_CW
+:Production_The_CW rdf:type owl:NamedIndividual ,
+                            :ProductionAndIndustryFactory ;
+                   rdfs:label "The CW" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_The_WB
+:Production_The_WB rdf:type owl:NamedIndividual ,
+                            :ProductionAndIndustryFactory ;
+                   rdfs:label "The WB" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Queer
+:Queer rdf:type owl:NamedIndividual ,
+                :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerProtagonistLeadRole
+:QueerProtagonistLeadRole rdf:type owl:NamedIndividual ,
+                                   :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Questioning
+:Questioning rdf:type owl:NamedIndividual ,
+                      :SexOrientation .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Adam_Groff
+:Representation_Adam_Groff rdf:type owl:NamedIndividual ,
+                                    :FairRepresentation ,
+                                    :RepresentationType ;
+                           rdfs:comment "Subtle exploration of internalized homophobia and self-acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Alice
+:Representation_Alice rdf:type owl:NamedIndividual ,
+                               :FairRepresentation ,
+                               :RepresentationType ;
+                      rdfs:comment "Queer character with a complex relationship to the protagonist, portraying both vulnerability and strength." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Blaine_Anderson
+:Representation_Blaine_Anderson rdf:type owl:NamedIndividual ,
+                                         :FairRepresentation ,
+                                         :RepresentationType ;
+                                rdfs:comment "Central gay character with a detailed portrayal of relationships and identity struggles." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Casey_Gardner
+:Representation_Casey_Gardner rdf:type owl:NamedIndividual ,
+                                       :FairRepresentation ,
+                                       :RepresentationType ;
+                              rdfs:comment "Explores the struggles and triumphs of a bisexual teenager navigating her identity and relationships." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Connor_Walsh
+:Representation_Connor_Walsh rdf:type owl:NamedIndividual ,
+                                      :FairRepresentation ,
+                                      :RepresentationType ;
+                             rdfs:comment "Gay character with complex relationships and moral struggles." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_David_Rose
+:Representation_David_Rose rdf:type owl:NamedIndividual ,
+                                    :FairRepresentation ,
+                                    :RepresentationType ;
+                           rdfs:comment "Pansexual character portrayed with humor and depth, showing evolving relationships." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Denise
+:Representation_Denise rdf:type owl:NamedIndividual ,
+                                :FairRepresentation ,
+                                :RepresentationType ;
+                       rdfs:comment "Lesbian Black woman exploring love, career, and friendships, portrayed with emotional complexity and humor." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Emily_Fields
+:Representation_Emily_Fields rdf:type owl:NamedIndividual ,
+                                      :FairRepresentation ,
+                                      :RepresentationType ;
+                             rdfs:comment "Lesbian character with nuanced relationships and complex storylines." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Eric_Effiong
+:Representation_Eric_Effiong rdf:type owl:NamedIndividual ,
+                                      :FairRepresentation ,
+                                      :RepresentationType ;
+                             rdfs:comment "Gay, Black character portrayed with depth, navigating relationships and family dynamics." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Jules_Vaughn
+:Representation_Jules_Vaughn rdf:type owl:NamedIndividual ,
+                                      :FairRepresentation ,
+                                      :RepresentationType ;
+                             rdfs:comment "Multi-dimensional transgender character portrayed authentically with emotional depth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kat_Edison
+:Representation_Kat_Edison rdf:type owl:NamedIndividual ,
+                                    :FairRepresentation ,
+                                    :RepresentationType ;
+                           rdfs:comment "Bisexual character with an empowering storyline and meaningful exploration of her sexual identity." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kelly
+:Representation_Kelly rdf:type owl:NamedIndividual ,
+                               :FairRepresentation ,
+                               :RepresentationType ;
+                      rdfs:comment "Bisexual character with an empowering love story and a rare happy ending." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kevin_Keller
+:Representation_Kevin_Keller rdf:type owl:NamedIndividual ,
+                                      :RepresentationType ,
+                                      :UnfairRepresentation ;
+                             rdfs:comment "Portrayed in the \"gay best friend\" trope with minimal character development." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Lexa
+:Representation_Lexa rdf:type owl:NamedIndividual ,
+                              :RepresentationType ,
+                              :UnfairRepresentation ;
+                     rdfs:comment "Lesbian character killed off shortly after a meaningful relationship, reinforcing the \"bury your gays\" trope." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Lito_Rodriguez
+:Representation_Lito_Rodriguez rdf:type owl:NamedIndividual ,
+                                        :FairRepresentation ,
+                                        :RepresentationType ;
+                               rdfs:comment "Gay character portrayed with depth, exploring his career struggles, relationship, and coming out." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Magnus_Bane
+:Representation_Magnus_Bane rdf:type owl:NamedIndividual ,
+                                     :FairRepresentation ,
+                                     :RepresentationType ;
+                            rdfs:comment "Bisexual character portrayed with emotional depth and a rich backstory, exploring love and conflict." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Mickey_Dobbs
+:Representation_Mickey_Dobbs rdf:type owl:NamedIndividual ,
+                                      :RepresentationType ,
+                                      :UnfairRepresentation ;
+                             rdfs:comment "Queer character whose storyline remains ambiguous and underdeveloped, falling into tokenism." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Nomi_Marks
+:Representation_Nomi_Marks rdf:type owl:NamedIndividual ,
+                                    :FairRepresentation ,
+                                    :RepresentationType ;
+                           rdfs:comment "Transgender hacker portrayed with depth, exploring her relationships and challenges." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Omar_Shanaa
+:Representation_Omar_Shanaa rdf:type owl:NamedIndividual ,
+                                     :FairRepresentation ,
+                                     :RepresentationType ;
+                            rdfs:comment "Gay Muslim character navigating societal and cultural pressures while pursuing a meaningful relationship." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Patrick_Brewer
+:Representation_Patrick_Brewer rdf:type owl:NamedIndividual ,
+                                        :FairRepresentation ,
+                                        :RepresentationType ;
+                               rdfs:comment "Gay character portrayed in a healthy, supportive, and normalized relationship." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Ray_Holt
+:Representation_Ray_Holt rdf:type owl:NamedIndividual ,
+                                  :FairRepresentation ,
+                                  :RepresentationType ;
+                         rdfs:comment "Gay Black police captain portrayed with dignity, humor, and depth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Santana_Lopez
+:Representation_Santana_Lopez rdf:type owl:NamedIndividual ,
+                                       :FairRepresentation ,
+                                       :RepresentationType ;
+                              rdfs:comment "Lesbian character who evolves from repression and denial to pride and self-acceptance." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Shane_Harvey
+:Representation_Shane_Harvey rdf:type owl:NamedIndividual ,
+                                      :RepresentationType ,
+                                      :UnfairRepresentation ;
+                             rdfs:comment "Gay best friend trope with little character depth or growth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Simon_Eriksson
+:Representation_Simon_Eriksson rdf:type owl:NamedIndividual ,
+                                        :FairRepresentation ,
+                                        :RepresentationType ;
+                               rdfs:comment "Openly gay character with emotional complexity, navigating love, class struggles, and societal expectations." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Sophia_Burset
+:Representation_Sophia_Burset rdf:type owl:NamedIndividual ,
+                                       :FairRepresentation ,
+                                       :RepresentationType ;
+                              rdfs:comment "Transgender character navigating systemic discrimination in prison." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Syd
+:Representation_Syd rdf:type owl:NamedIndividual ,
+                             :FairRepresentation ,
+                             :RepresentationType ;
+                    rdfs:comment "Non-binary character portrayed authentically with respect and humor in a multi-generational family dynamic." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Tara_Maclay
+:Representation_Tara_Maclay rdf:type owl:NamedIndividual ,
+                                     :RepresentationType ,
+                                     :UnfairRepresentation ;
+                            rdfs:comment "Lesbian character killed suddenly, reinforcing the \"bury your gays\" trope." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Theo_Putnam
+:Representation_Theo_Putnam rdf:type owl:NamedIndividual ,
+                                     :RepresentationType ,
+                                     :UnfairRepresentation ;
+                            rdfs:comment "Trans character whose storyline is largely underexplored and lacks emotional depth." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Victor_Salazar
+:Representation_Victor_Salazar rdf:type owl:NamedIndividual ,
+                                        :FairRepresentation ,
+                                        :RepresentationType ;
+                               rdfs:comment "Gay Latinx teenager navigating coming out and family acceptance in a conservative environment." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SexOrientation
+:SexOrientation rdf:type owl:NamedIndividual .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Superficial
+:Superficial rdf:type owl:NamedIndividual ,
+                      :CharacterDepth .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TokenCharacter
+:TokenCharacter rdf:type owl:NamedIndividual ,
+                         :CharacterType .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope_Lexa
+:TragicTrope_Lexa rdf:type owl:NamedIndividual ,
+                           :TragicTrope .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope_Tara_Maclay
+:TragicTrope_Tara_Maclay rdf:type owl:NamedIndividual ,
+                                  :TragicTrope .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Atypical
+:TvShow_Atypical rdf:type owl:NamedIndividual ,
+                          :TvShow ;
+                 schema:character :Character_Casey_Gardner ;
+                 schema:countryOfOrigin :Country_USA ;
+                 schema:creator :Creator_Robia_Rashid ;
+                 schema:genre :Genre_Comedy-Drama ;
+                 schema:productionCompany :Production_Netflix ;
+                 rdfs:label "Atypical" ;
+                 schema:datePublished "2017"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Brooklyn_Nine-Nine
+:TvShow_Brooklyn_Nine-Nine rdf:type owl:NamedIndividual ,
+                                    :TvShow ;
+                           schema:character :Character_Ray_Holt ;
+                           schema:countryOfOrigin :Country_USA ;
+                           schema:creator :Creator_Michael_Schur ;
+                           schema:genre :Genre_Comedy ;
+                           schema:productionCompany <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC> ;
+                           rdfs:label "Brooklyn Nine-Nine" ;
+                           schema:datePublished "2013"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Buffy_the_Vampire_Slayer
+:TvShow_Buffy_the_Vampire_Slayer rdf:type owl:NamedIndividual ,
+                                          :TvShow ;
+                                 schema:character :Character_Tara_Maclay ;
+                                 schema:countryOfOrigin :Country_USA ;
+                                 schema:creator :Creator_Joss_Whedon ;
+                                 schema:genre :Genre_Supernatural_Drama ;
+                                 schema:productionCompany :Production_The_WB ;
+                                 rdfs:label "Buffy the Vampire Slayer" ;
+                                 schema:datePublished "1999"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Chilling_Adventures_of_Sabrina
+:TvShow_Chilling_Adventures_of_Sabrina rdf:type owl:NamedIndividual ,
+                                                :TvShow ;
+                                       schema:character :Character_Theo_Putnam ;
+                                       schema:countryOfOrigin :Country_USA ;
+                                       schema:creator :Creator_Roberto_Aguirre-Sacasa ;
+                                       schema:genre :Genre_Drama_Horror_Fantasy ;
+                                       schema:productionCompany :Production_Netflix ;
+                                       rdfs:label "Chilling Adventures of Sabrina" ;
+                                       schema:datePublished "2018"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Elite
+:TvShow_Elite rdf:type owl:NamedIndividual ,
+                       :TvShow ;
+              schema:character :Character_Omar_Shanaa ;
+              schema:countryOfOrigin :Country_Spain ;
+              schema:creator :Creator_Carlos_Montero ;
+              schema:genre :Genre_Thriller_Teen_Drama ;
+              schema:productionCompany :Production_Netflix ;
+              rdfs:label "Elite" ;
+              schema:datePublished "2018"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Euphoria
+:TvShow_Euphoria rdf:type owl:NamedIndividual ,
+                          :TvShow ;
+                 schema:character :Character_Jules_Vaughn ;
+                 schema:countryOfOrigin :Country_USA ;
+                 schema:creator :Creator_Sam_Levinson ;
+                 schema:genre :Genre_Drama ;
+                 schema:productionCompany :Production_HBO ;
+                 rdfs:label "Euphoria" ;
+                 schema:datePublished "2019"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Faking_It
+:TvShow_Faking_It rdf:type owl:NamedIndividual ,
+                           :TvShow ;
+                  schema:character :Character_Shane_Harvey ;
+                  schema:countryOfOrigin :Country_USA ;
+                  schema:creator :Creator_Dana_Min_Goodman ;
+                  schema:genre :Genre_Comedy_Drama_Romance ;
+                  schema:productionCompany :Production_MTV ;
+                  rdfs:label "Faking It" ;
+                  schema:datePublished "2014"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Glee
+:TvShow_Glee rdf:type owl:NamedIndividual ,
+                      :TvShow ;
+             schema:character :Character_Blaine_Anderson ,
+                              :Character_Santana_Lopez ;
+             schema:countryOfOrigin :Country_USA ;
+             schema:creator :Creator_Ryan_Murphy ;
+             schema:genre :Genre_Musical_Comedy-Drama ;
+             schema:productionCompany :Production_Fox ;
+             rdfs:label "Glee" ;
+             schema:datePublished "2009"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_How_to_Get_Away_with_Murder
+:TvShow_How_to_Get_Away_with_Murder rdf:type owl:NamedIndividual ,
+                                             :TvShow ;
+                                    schema:character :Character_Connor_Walsh ;
+                                    schema:countryOfOrigin :Country_USA ;
+                                    schema:creator :Creator_Peter_Nowalk ;
+                                    schema:genre :Genre_Legal_Drama_Thriller ;
+                                    schema:productionCompany :Production_ABC ;
+                                    rdfs:label "How to Get Away with Murder" ;
+                                    schema:datePublished "2014"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Love
+:TvShow_Love rdf:type owl:NamedIndividual ,
+                      :TvShow ;
+             schema:character :Character_Mickey_Dobbs ;
+             schema:countryOfOrigin :Country_USA ;
+             schema:creator :Creator_Judd_Apatow ;
+             schema:genre :Genre_Comedy-Drama ;
+             schema:productionCompany :Production_Netflix ;
+             rdfs:label "Love" ;
+             schema:datePublished "2016"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Love_Victor
+:TvShow_Love_Victor rdf:type owl:NamedIndividual ,
+                             :TvShow ;
+                    schema:character :Character_Victor_Salazar ;
+                    schema:countryOfOrigin :Country_USA ;
+                    schema:creator :Creator_Isaac_Aptaker ;
+                    schema:genre :Genre_Teen_Drama_Romance ;
+                    schema:productionCompany :Production_Hulu ;
+                    rdfs:label "Love, Victor" ;
+                    schema:datePublished "2020"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Master_of_None
+:TvShow_Master_of_None rdf:type owl:NamedIndividual ,
+                                :TvShow ;
+                       schema:character :Character_Denise ;
+                       schema:countryOfOrigin :Country_USA ;
+                       schema:creator :Creator_Aziz_Ansari ;
+                       schema:genre :Genre_Comedy-Drama ;
+                       schema:productionCompany :Production_Netflix ;
+                       rdfs:label "Master of None" ;
+                       schema:datePublished "2015"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_One_Day_at_a_Time
+:TvShow_One_Day_at_a_Time rdf:type owl:NamedIndividual ,
+                                   :TvShow ;
+                          schema:character :Character_Syd ;
+                          schema:countryOfOrigin :Country_USA ;
+                          schema:creator :Creator_Gloria_Calderon_Kellett ;
+                          schema:genre :Genre_Comedy ;
+                          schema:productionCompany :Production_Netflix ;
+                          rdfs:label "One Day at a Time" ;
+                          schema:datePublished "2017"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Orange_Is_the_New_Black
+:TvShow_Orange_Is_the_New_Black rdf:type owl:NamedIndividual ,
+                                         :TvShow ;
+                                schema:character :Character_Sophia_Burset ;
+                                schema:countryOfOrigin :Country_USA ;
+                                schema:creator :Creator_Jenji_Leslie_Kohan ;
+                                schema:genre :Genre_Comedy-Drama ;
+                                schema:productionCompany :Production_Netflix ;
+                                rdfs:label "Orange Is the New Black" ;
+                                schema:datePublished "2013"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Pretty_Little_Liars
+:TvShow_Pretty_Little_Liars rdf:type owl:NamedIndividual ,
+                                     :TvShow ;
+                            schema:character :Character_Emily_Fields ;
+                            schema:countryOfOrigin :Country_USA ;
+                            schema:creator :Creator_Ina_Marlene_King ;
+                            schema:genre :Genre_Drama_Mystery ;
+                            schema:productionCompany :Production_Freeform ;
+                            rdfs:label "Pretty Little Liars" ;
+                            schema:datePublished "2010"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Riverdale
+:TvShow_Riverdale rdf:type owl:NamedIndividual ,
+                           :TvShow ;
+                  schema:character :Character_Kevin_Keller ;
+                  schema:countryOfOrigin :Country_USA ;
+                  schema:creator :Creator_Roberto_Aguirre-Sacasa ;
+                  schema:genre :Genre_Drama_Mystery ;
+                  schema:productionCompany :Production_The_CW ;
+                  rdfs:label "Riverdale" ;
+                  schema:datePublished "2017"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sense8
+:TvShow_Sense8 rdf:type owl:NamedIndividual ,
+                        :TvShow ;
+               schema:character :Character_Lito_Rodriguez ,
+                                :Character_Nomi_Marks ;
+               schema:countryOfOrigin :Country_USA ;
+               schema:creator :Creator_Lana_e_Lilly_Wachowski ;
+               schema:genre :Genre_Science_Fiction_Drama ;
+               schema:productionCompany :Production_Netflix ;
+               rdfs:label "Sense8" ;
+               schema:datePublished "2015"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sex_Education
+:TvShow_Sex_Education rdf:type owl:NamedIndividual ,
+                               :TvShow ;
+                      schema:character :Character_Adam_Groff ,
+                                       :Character_Eric_Effiong ;
+                      schema:countryOfOrigin :Country_UK ;
+                      schema:creator :Creator_Laurie_Nunn ;
+                      schema:genre :Genre_Comedy-Drama ;
+                      schema:productionCompany :Production_Netflix ;
+                      rdfs:label "Sex Education" ;
+                      schema:datePublished "2019"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Shadowhunters
+:TvShow_Shadowhunters rdf:type owl:NamedIndividual ,
+                               :TvShow ;
+                      schema:character :Character_Magnus_Bane ;
+                      schema:countryOfOrigin :Country_USA ;
+                      schema:creator :Creator_Ed_Decter ;
+                      schema:genre :Genre_Fantasy_Drama_Action ;
+                      schema:productionCompany :Production_Freeform ;
+                      rdfs:label "Shadowhunters" ;
+                      schema:datePublished "2016"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sharp_Objects
+:TvShow_Sharp_Objects rdf:type owl:NamedIndividual ,
+                               :TvShow ;
+                      schema:character :Character_Alice ;
+                      schema:countryOfOrigin :Country_USA ;
+                      schema:creator :Creator_Jean-Marc_Vallee ;
+                      schema:genre :Genre_Drama_Thriller_Mystery ;
+                      schema:productionCompany :Production_HBO ;
+                      rdfs:label "Sharp Objects" ;
+                      schema:datePublished "2018"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_The_100
+:TvShow_The_100 rdf:type owl:NamedIndividual ,
+                         :TvShow ;
+                schema:character :Character_Lexa ;
+                schema:countryOfOrigin :Country_USA ;
+                schema:creator :Creator_Jason_Rothenberg ;
+                schema:genre :Genre_Science_Fiction_Drama ;
+                schema:productionCompany :Production_The_CW ;
+                rdfs:label "The 100" ;
+                schema:datePublished "2014"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_The_Bold_Type
+:TvShow_The_Bold_Type rdf:type owl:NamedIndividual ,
+                               :TvShow ;
+                      schema:character :Character_Kat_Edison ;
+                      schema:countryOfOrigin :Country_USA ;
+                      schema:creator :Creator_Sarah_Watson ;
+                      schema:genre :Genre_Comedy-Drama ;
+                      schema:productionCompany :Production_Freeform ;
+                      rdfs:label "The Bold Type" ;
+                      schema:datePublished "2017"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Young_Royals
+:TvShow_Young_Royals rdf:type owl:NamedIndividual ,
+                              :TvShow ;
+                     schema:character :Character_Simon_Eriksson ;
+                     schema:countryOfOrigin :Country_Sweden ;
+                     schema:creator :Creator_Lisa_Ambjorn ;
+                     schema:genre :Genre_Teen_Drama_Romance ;
+                     schema:productionCompany :Production_Netflix ;
+                     rdfs:label "Young Royals" ;
+                     schema:datePublished "2021"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC> rdf:type owl:NamedIndividual ,
+                                                                                                      :ProductionAndIndustryFactory ;
+                                                                                             rdfs:label "Fox/NBC" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Black_Mirror:_San_Junipero
+:TvShow_Black_Mirror:_San_Junipero rdf:type owl:NamedIndividual ,
+                                            :TvShow ;
+                                   schema:character :Character_Kelly ;
+                                   schema:countryOfOrigin :Country_USA ;
+                                   schema:creator :Creator_Owen_Harris ;
+                                   schema:genre :Genre_Science_Fiction_Drama ;
+                                   schema:productionCompany :Production_Netflix ;
+                                   rdfs:label "Black Mirror: San Junipero" ;
+                                   schema:datePublished "2016"^^xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Schitt's_Creek
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Schitt's_Creek> rdf:type owl:NamedIndividual ,
+                                                                                                         :TvShow ;
+                                                                                                schema:character :Character_David_Rose ,
+                                                                                                                 :Character_Patrick_Brewer ;
+                                                                                                schema:countryOfOrigin :Country_Canada ;
+                                                                                                schema:creator :Creator_Eugene_Levy ;
+                                                                                                schema:genre :Genre_Comedy ;
+                                                                                                schema:productionCompany :Production_CBC ;
+                                                                                                rdfs:label "Schitt's Creek" ;
+                                                                                                schema:datePublished "2015"^^xsd:gYear ,
+                                                                                                                     "2017"^^xsd:gYear .
+
+
+[ ns1:IRI "http://www.w3.org/2001/XMLSchema#" ;
+  ns1:name "xsd"
+] .
+
+[ ns1:IRI "http://www.w3.org/2000/01/rdf-schema#" ;
+   ns1:name "rdfs"
+ ] .
+
+[ ns1:IRI "http://www.w3.org/XML/1998/namespace" ;
+   ns1:name "xml"
+ ] .
+
+[ ns1:IRI "http://www.semanticweb.org/LGBTQPortrayal/" ;
+   ns1:name ""
+ ] .
+
+[ ns1:IRI "http://www.w3.org/2002/07/owl#" ;
+   ns1:name "owl"
+ ] .
+
+[ ns1:IRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+   ns1:name "rdf"
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+:AuthenticRepresentation rdfs:comment "Represents portrayals characterized by depth, nuance, and cultural accuracy in the depiction of LGBTQ+ identities. Instances of this class exhibit alignment with lived experiences and resist reductive or stereotypical frameworks." .
+
+
+:ComicSidekick rdfs:comment "Refers to portrayals where LGBTQ+ characters are positioned as secondary figures, often providing comic relief or functioning as accessories to the main (typically heterosexual) protagonist. This class captures a recurrent trope that can both enable visibility and reinforce marginalization." .
+
+
+:Detailed rdfs:comment "Represents character portrayals that are richly developed in terms of personality, motivations, emotional complexity, and narrative significance. These characters often undergo development arcs, interact with multiple plotlines, and are situated within believable social and psychological contexts." .
+
+
+:NegativeRoleModel rdfs:comment "Describes portrayals that reinforce harmful stereotypes, lack complexity, or depict queerness as deviant, tragic, or marginal. These representations may contribute to internalized stigma or societal misunderstanding, undermining the potential for positive cultural impact." .
+
+
+:PositiveRoleModel rdfs:comment "Represents LGBTQ+ characters whose portrayal is empowering, multifaceted, and affirming of queer identity. These characters serve as relatable figures for LGBTQ+ audiences, promoting self-acceptance and challenging social biases through their visibility and narrative agency." .
+
+
+:QueerProtagonistLeadRole rdfs:comment "Defines characters who occupy central narrative roles and whose LGBTQ+ identity is integral to the storyline. These roles often influence the plot’s direction, embody agency, and challenge heteronormative tropes." .
+
+
+:SexOrientation rdfs:comment "Describes the sexual orientation of the creator or performer, where disclosed or relevant. This class allows analysis of whether LGBTQ+ roles are portrayed or written by members of the community." .
+
+
+:Superficial rdfs:comment "Refers to portrayals that lack narrative complexity or emotional depth. These characters may be flat, underdeveloped, or stereotypical, with limited screen time or relevance to the plot. Their identity is often reduced to a single trait or function (e.g., comic relief, sidekick)." .
+
+
+:TokenCharacter rdfs:comment "Captures a representation pattern where LGBTQ+ characters are included primarily for the sake of surface-level diversity, without substantial narrative depth or character development. These portrayals are typically isolated and do not affect the plot meaningfully." .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
