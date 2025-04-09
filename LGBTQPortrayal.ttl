@@ -14,6 +14,7 @@
 
 <http://www.semanticweb.org/LGBTQPortrayal> rdf:type owl:Ontology ;
                                              ns1:ontologyIRI "http://www.semanticweb.org/LGBTQPortrayal" ;
+                                             rdfs:comment "This ontology models the portrayal of LGBTQ+ characters in teenage dramas, focusing on the tension between commercial interests and authentic representation. It adapts the Perspectivisation Ontology to include a Profit-Driven Lens and a Social Impact Lens, enabling analysis of narrative roles, tropes, stereotypes, and audience reception. The goal is to understand how media shapes perceptions of queerness and the cultural significance of representation." ;
                                              owl:Import "http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl" .
 
 #################################################################
@@ -61,8 +62,11 @@ LGBTQPortrayal:affectsPortrayal rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#associatedWith
 LGBTQPortrayal:associatedWith rdf:type owl:ObjectProperty ;
-                              rdfs:domain LGBTQPortrayal:FairRepresentation ,
-                                          LGBTQPortrayal:UnfairRepresentation ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( LGBTQPortrayal:FairRepresentation
+                                                          LGBTQPortrayal:UnfairRepresentation
+                                                        )
+                                          ] ;
                               rdfs:range LGBTQPortrayal:NegativeRoleModel ,
                                          LGBTQPortrayal:PositiveRoleModel ;
                               rdfs:comment "Links a type of representation to the kind of role model it produces. Fair representations are associated with positive role models, while unfair ones are linked to negative role models." .
@@ -91,24 +95,33 @@ LGBTQPortrayal:hasCharacterDepth rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#hasGender
 LGBTQPortrayal:hasGender rdf:type owl:ObjectProperty ;
-                         rdfs:domain LGBTQPortrayal:Character ,
-                                     foaf:Person ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( LGBTQPortrayal:Character
+                                                     foaf:Person
+                                                   )
+                                     ] ;
                          rdfs:range LGBTQPortrayal:Gender ;
                          rdfs:comment "Assigns a gender identity to either a real person (creator or performer) or a fictional character. This enables analysis of gender representation both on and off-screen." .
 
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#hasImpactOn
 LGBTQPortrayal:hasImpactOn rdf:type owl:ObjectProperty ;
-                           rdfs:domain LGBTQPortrayal:ProductionAndIndustryFactory ,
-                                       LGBTQPortrayal:Stereotype ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( LGBTQPortrayal:ProductionAndIndustryFactory
+                                                       LGBTQPortrayal:Stereotype
+                                                     )
+                                       ] ;
                            rdfs:range LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                            rdfs:comment "Links the portrayal to its social and cultural impact on the LGBTQ+ community and public perception, as well as shows how external production and industry pressures shape how the character is portrayed." .
 
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#hasNarrativeFunction
 LGBTQPortrayal:hasNarrativeFunction rdf:type owl:ObjectProperty ;
-                                    rdfs:domain LGBTQPortrayal:Character ,
-                                                LGBTQPortrayal:RepresentationType ;
+                                    rdfs:domain [ rdf:type owl:Class ;
+                                                  owl:unionOf ( LGBTQPortrayal:Character
+                                                                LGBTQPortrayal:RepresentationType
+                                                              )
+                                                ] ;
                                     rdfs:range LGBTQPortrayal:NarrativeRole ;
                                     rdfs:comment "Indicates the character’s narrative role — whether they evolve dynamically or remain static in the storyline. Associates a type of representation (fair/unfair) with its narrative role — e.g., a stereotypical character often having a static role." .
 
@@ -122,16 +135,22 @@ LGBTQPortrayal:hasPortrayal rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#hasSexOrientation
 LGBTQPortrayal:hasSexOrientation rdf:type owl:ObjectProperty ;
-                                 rdfs:domain LGBTQPortrayal:Character ,
-                                             foaf:Person ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( LGBTQPortrayal:Character
+                                                             foaf:Person
+                                                           )
+                                             ] ;
                                  rdfs:range LGBTQPortrayal:SexOrientation ;
                                  rdfs:comment "Describes the sexual orientation of creators, performers, or characters. It supports the study of authentic casting and queer identity portrayal in media." .
 
 
 ###  http://www.semanticweb.org/LGBTQPortrayal#hasStereotype
 LGBTQPortrayal:hasStereotype rdf:type owl:ObjectProperty ;
-                             rdfs:domain LGBTQPortrayal:PortrayalofLgbtqCharacter ,
-                                         LGBTQPortrayal:UnfairRepresentation ;
+                             rdfs:domain [ rdf:type owl:Class ;
+                                           owl:unionOf ( LGBTQPortrayal:PortrayalofLgbtqCharacter
+                                                         LGBTQPortrayal:UnfairRepresentation
+                                                       )
+                                         ] ;
                              rdfs:range LGBTQPortrayal:Stereotype ;
                              rdfs:comment "Identifies the stereotype(s), if any, embedded in a character’s portrayal. If a representation is classified as unfair, this property allows specification of the particular stereotype present." .
 
@@ -216,8 +235,11 @@ schema:genre rdf:type owl:ObjectProperty ;
 ###  https://schema.org/hasOccupation
 schema:hasOccupation rdf:type owl:ObjectProperty ;
                      rdfs:domain foaf:Person ;
-                     rdfs:range LGBTQPortrayal:Creator ,
-                                LGBTQPortrayal:Performer ;
+                     rdfs:range [ rdf:type owl:Class ;
+                                  owl:unionOf ( LGBTQPortrayal:Creator
+                                                LGBTQPortrayal:Performer
+                                              )
+                                ] ;
                      rdfs:comment "Describes the occupation of the person, whether they are a creator or performer, for integration with broader vocabularies like Schema.org." .
 
 
@@ -3156,17 +3178,9 @@ LGBTQPortrayal:TvShow_Black_Mirror:_San_Junipero rdf:type owl:NamedIndividual ,
                                                                                        "2017"^^xsd:gYear .
 
 
-[ ns1:IRI "http://www.semanticweb.org/LGBTQPortrayal/" ;
-  ns1:name ""
-] .
-
-[ ns1:IRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
-   ns1:name "rdf"
- ] .
-
 [ ns1:IRI "http://www.w3.org/2001/XMLSchema#" ;
-   ns1:name "xsd"
- ] .
+  ns1:name "xsd"
+] .
 
 [ ns1:IRI "http://www.w3.org/XML/1998/namespace" ;
    ns1:name "xml"
@@ -3178,6 +3192,14 @@ LGBTQPortrayal:TvShow_Black_Mirror:_San_Junipero rdf:type owl:NamedIndividual ,
 
 [ ns1:IRI "http://www.w3.org/2002/07/owl#" ;
    ns1:name "owl"
+ ] .
+
+[ ns1:IRI "http://www.semanticweb.org/LGBTQPortrayal/" ;
+   ns1:name ""
+ ] .
+
+[ ns1:IRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+   ns1:name "rdf"
  ] .
 
 #################################################################
@@ -3211,4 +3233,4 @@ LGBTQPortrayal:Superficial rdfs:comment "Refers to portrayals that lack narrativ
 LGBTQPortrayal:TokenCharacter rdfs:comment "Captures a representation pattern where LGBTQ+ characters are included primarily for the sake of surface-level diversity, without substantial narrative depth or character development. These portrayals are typically isolated and do not affect the plot meaningfully." .
 
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
