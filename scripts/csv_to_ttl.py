@@ -5,7 +5,7 @@ from rdflib.namespace import XSD, OWL, RDF, RDFS, FOAF
 
 # Definition of Namespaces
 persp = Namespace("http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#")
-LGBTQPortrayal = Namespace("http://www.semanticweb.org/LGBTQPortrayal#")
+LGBTQPortrayal = Namespace("https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#")
 RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 schema = Namespace("https://schema.org/")
 FOAF = Namespace("http://xmlns.com/foaf/0.1/")

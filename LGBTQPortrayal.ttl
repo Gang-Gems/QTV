@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/LGBTQPortrayal#> .
+@prefix : <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#> .
 @prefix ns1: <http://www.semanticweb.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -9,13 +9,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix persp: <http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl#> .
 @prefix schema: <https://schema.org/> .
-@prefix LGBTQPortrayal: <http://www.semanticweb.org/LGBTQPortrayal#> .
-@base <http://www.semanticweb.org/LGBTQPortrayal#> .
+@prefix LGBTQPortrayal: <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#> .
+@base <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#> .
 
-<http://www.semanticweb.org/LGBTQPortrayal> rdf:type owl:Ontology ;
-                                             ns1:ontologyIRI "http://www.semanticweb.org/LGBTQPortrayal" ;
-                                             rdfs:comment "This ontology models the portrayal of LGBTQ+ characters in teenage dramas, focusing on the tension between commercial interests and authentic representation. It adapts the Perspectivisation Ontology to include a Profit-Driven Lens and a Social Impact Lens, enabling analysis of narrative roles, tropes, stereotypes, and audience reception. The goal is to understand how media shapes perceptions of queerness and the cultural significance of representation." ;
-                                             owl:Import "http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl" .
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl> rdf:type owl:Ontology ;
+                                                                           ns1:ontologyIRI "https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl" ;
+                                                                           rdfs:comment "This ontology models the portrayal of LGBTQ+ characters in teenage dramas, focusing on the tension between commercial interests and authentic representation. It adapts the Perspectivisation Ontology to include a Profit-Driven Lens and a Social Impact Lens, enabling analysis of narrative roles, tropes, stereotypes, and audience reception. The goal is to understand how media shapes perceptions of queerness and the cultural significance of representation." ;
+                                                                           owl:Import "http://www.ontologydesignpatterns.org/ont/persp/perspectivisation.owl" .
 
 #################################################################
 #    Annotation properties
@@ -33,7 +33,7 @@ ns1:name rdf:type owl:AnnotationProperty .
 ns1:ontologyIRI rdf:type owl:AnnotationProperty .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasRepresentationType
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasRepresentationType
 LGBTQPortrayal:hasRepresentationType rdf:type owl:AnnotationProperty .
 
 
@@ -53,47 +53,50 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/LGBTQPortrayal#affectsPortrayal
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#affectsPortrayal
 LGBTQPortrayal:affectsPortrayal rdf:type owl:ObjectProperty ;
                                 rdfs:domain persp:Attitude ;
                                 rdfs:range LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                                 rdfs:comment "Indicates how a particular attitude influences the way LGBTQ+ characters are represented. It allows tracing specific outcomes (e.g., queerbaiting or challenging stereotypes) back to their ideological stance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#associatedWith
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#associatedWith
 LGBTQPortrayal:associatedWith rdf:type owl:ObjectProperty ;
                               rdfs:domain [ rdf:type owl:Class ;
                                             owl:unionOf ( LGBTQPortrayal:FairRepresentation
                                                           LGBTQPortrayal:UnfairRepresentation
                                                         )
                                           ] ;
-                              rdfs:range LGBTQPortrayal:NegativeRoleModel ,
-                                         LGBTQPortrayal:PositiveRoleModel ;
+                              rdfs:range [ rdf:type owl:Class ;
+                                           owl:unionOf ( LGBTQPortrayal:NegativeRoleModel
+                                                         LGBTQPortrayal:PositiveRoleModel
+                                                       )
+                                         ] ;
                               rdfs:comment "Links a type of representation to the kind of role model it produces. Fair representations are associated with positive role models, while unfair ones are linked to negative role models." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#emergesFrom
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#emergesFrom
 LGBTQPortrayal:emergesFrom rdf:type owl:ObjectProperty ;
                            rdfs:domain persp:Cut ;
                            rdfs:range persp:Eventuality ;
                            rdfs:comment "Specifies that the final portrayal (Cut) arises from the original representational phenomenon. It connects the output of the perspectivisation process to the core event under analysis." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasAttitude
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasAttitude
 LGBTQPortrayal:hasAttitude rdf:type owl:ObjectProperty ;
                            rdfs:domain persp:Lens ;
                            rdfs:range persp:Attitude ;
                            rdfs:comment "Links a lens to the evaluative stance it adopts. This captures the nuance within each perspective — such as whether a commercial lens promotes tokenism or market-friendliness, or whether a social lens fosters empowerment or authenticity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasCharacterDepth
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasCharacterDepth
 LGBTQPortrayal:hasCharacterDepth rdf:type owl:ObjectProperty ;
                                  rdfs:domain LGBTQPortrayal:Character ;
                                  rdfs:range LGBTQPortrayal:CharacterDepth ;
                                  rdfs:comment "Indicates the level of narrative and psychological development a character has. It helps distinguish between flat and multidimensional portrayals." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasGender
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasGender
 LGBTQPortrayal:hasGender rdf:type owl:ObjectProperty ;
                          rdfs:domain [ rdf:type owl:Class ;
                                        owl:unionOf ( LGBTQPortrayal:Character
@@ -104,7 +107,7 @@ LGBTQPortrayal:hasGender rdf:type owl:ObjectProperty ;
                          rdfs:comment "Assigns a gender identity to either a real person (creator or performer) or a fictional character. This enables analysis of gender representation both on and off-screen." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasImpactOn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasImpactOn
 LGBTQPortrayal:hasImpactOn rdf:type owl:ObjectProperty ;
                            rdfs:domain [ rdf:type owl:Class ;
                                          owl:unionOf ( LGBTQPortrayal:ProductionAndIndustryFactory
@@ -115,7 +118,7 @@ LGBTQPortrayal:hasImpactOn rdf:type owl:ObjectProperty ;
                            rdfs:comment "Links the portrayal to its social and cultural impact on the LGBTQ+ community and public perception, as well as shows how external production and industry pressures shape how the character is portrayed." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasNarrativeFunction
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasNarrativeFunction
 LGBTQPortrayal:hasNarrativeFunction rdf:type owl:ObjectProperty ;
                                     rdfs:domain [ rdf:type owl:Class ;
                                                   owl:unionOf ( LGBTQPortrayal:Character
@@ -126,14 +129,14 @@ LGBTQPortrayal:hasNarrativeFunction rdf:type owl:ObjectProperty ;
                                     rdfs:comment "Indicates the character’s narrative role — whether they evolve dynamically or remain static in the storyline. Associates a type of representation (fair/unfair) with its narrative role — e.g., a stereotypical character often having a static role." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasPortrayal
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasPortrayal
 LGBTQPortrayal:hasPortrayal rdf:type owl:ObjectProperty ;
                             rdfs:domain LGBTQPortrayal:Character ;
                             rdfs:range LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                             rdfs:comment "Describes how a specific character is portrayed in the show, forming the analytic core of the ontology." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasSexOrientation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasSexOrientation
 LGBTQPortrayal:hasSexOrientation rdf:type owl:ObjectProperty ;
                                  rdfs:domain [ rdf:type owl:Class ;
                                                owl:unionOf ( LGBTQPortrayal:Character
@@ -144,7 +147,7 @@ LGBTQPortrayal:hasSexOrientation rdf:type owl:ObjectProperty ;
                                  rdfs:comment "Describes the sexual orientation of creators, performers, or characters. It supports the study of authentic casting and queer identity portrayal in media." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasStereotype
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasStereotype
 LGBTQPortrayal:hasStereotype rdf:type owl:ObjectProperty ;
                              rdfs:domain [ rdf:type owl:Class ;
                                            owl:unionOf ( LGBTQPortrayal:PortrayalofLgbtqCharacter
@@ -155,42 +158,42 @@ LGBTQPortrayal:hasStereotype rdf:type owl:ObjectProperty ;
                              rdfs:comment "Identifies the stereotype(s), if any, embedded in a character’s portrayal. If a representation is classified as unfair, this property allows specification of the particular stereotype present." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#impactsCommunity
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#impactsCommunity
 LGBTQPortrayal:impactsCommunity rdf:type owl:ObjectProperty ;
                                 rdfs:domain LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                                 rdfs:range LGBTQPortrayal:LGBTQCommunityImpact ;
                                 rdfs:comment "Connects a portrayal of an LGBTQ+ character to its broader social impact. It reflects how the portrayal influences the LGBTQ+ community and public perception." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#informedByBackground
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#informedByBackground
 LGBTQPortrayal:informedByBackground rdf:type owl:ObjectProperty ;
                                     rdfs:domain persp:Cut ;
                                     rdfs:range persp:Background ;
                                     rdfs:comment "Highlights how broader cultural or industrial contexts influence the form a portrayal ultimately takes. This property situates the final narrative outcome within the real-world forces that shaped it." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#providesContextFor
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#providesContextFor
 LGBTQPortrayal:providesContextFor rdf:type owl:ObjectProperty ;
                                   rdfs:domain persp:Background ;
                                   rdfs:range persp:Attitude ;
                                   rdfs:comment "Denotes how cultural, historical, industrial, or academic background conditions shape or support the emergence of a specific attitude. It embeds the attitude in its real-world context." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#shapedByAttitude
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#shapedByAttitude
 LGBTQPortrayal:shapedByAttitude rdf:type owl:ObjectProperty ;
                                 rdfs:domain persp:Cut ;
                                 rdfs:range persp:Attitude ;
                                 rdfs:comment "Relates the final form of representation to the evaluative attitude that directed it. It helps explain how the stance taken — such as queerbaiting or empowerment — manifests in the narrative result." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#shapedByLens
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#shapedByLens
 LGBTQPortrayal:shapedByLens rdf:type owl:ObjectProperty ;
                             rdfs:domain persp:Cut ;
                             rdfs:range persp:Lens ;
                             rdfs:comment "Captures the influence of the chosen lens on the final portrayal. This property reveals how interpretative frameworks (profit-driven or socially conscious) mold the representation into specific character types or outcomes." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#viewedThroughLens
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#viewedThroughLens
 LGBTQPortrayal:viewedThroughLens rdf:type owl:ObjectProperty ;
                                  rdfs:domain LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                                  rdfs:range persp:Lens ;
@@ -254,12 +257,12 @@ schema:productionCompany rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/LGBTQPortrayal#hasTitle
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#hasTitle
 LGBTQPortrayal:hasTitle rdf:type owl:DatatypeProperty ;
                         rdfs:comment "Captures the official name of the TV show. This property provides the basic identifying label for any media entity in the ontology." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#isTransgender
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#isTransgender
 LGBTQPortrayal:isTransgender rdf:type owl:DatatypeProperty ;
                              rdfs:comment "A boolean flag indicating whether a gender identity is transgender. This allows for the distinction of transgender representation within the broader gender category." .
 
@@ -297,272 +300,293 @@ persp:Eventuality rdf:type owl:Class .
 persp:Lens rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#AffirmationOfIdentity
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AffirmationOfIdentity
 LGBTQPortrayal:AffirmationOfIdentity rdf:type owl:Class ;
                                      rdfs:subClassOf LGBTQPortrayal:PlotResolution ;
                                      rdfs:comment "Signifies a resolution in which the character’s queer identity is accepted, celebrated, or integrated into the storyline in a meaningful way." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#AudienceDemand
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AudienceDemand
 LGBTQPortrayal:AudienceDemand rdf:type owl:Class ;
                               rdfs:subClassOf persp:Background ;
                               rdfs:comment "The influence of public calls for more inclusive and authentic portrayals, especially from LGBTQ+ youth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#AuthenticRepresentation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AuthenticRepresentation
 LGBTQPortrayal:AuthenticRepresentation rdf:type owl:Class ;
-                                       rdfs:subClassOf LGBTQPortrayal:CharacterType .
+                                       rdfs:subClassOf LGBTQPortrayal:CharacterType ;
+                                       owl:disjointWith LGBTQPortrayal:GayBestFriend ,
+                                                        LGBTQPortrayal:TokenCharacter ,
+                                                        LGBTQPortrayal:TragicTrope .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Authenticity
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Authenticity
 LGBTQPortrayal:Authenticity rdf:type owl:Class ;
                             rdfs:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                             rdfs:comment "Captures the degree to which a character’s portrayal aligns with real-life LGBTQ+ experiences and identities. This class distinguishes between authentic characterization — informed, realistic, and emotionally complex — and stereotypical portrayals that rely on clichéd or exaggerated traits for entertainment or simplicity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CensorshipLaws
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CensorshipLaws
 LGBTQPortrayal:CensorshipLaws rdf:type owl:Class ;
                               rdfs:subClassOf persp:Background ;
                               rdfs:comment "National or regional laws that suppress or regulate LGBTQ+ content." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#ChallengingStereotype
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ChallengingStereotype
 LGBTQPortrayal:ChallengingStereotype rdf:type owl:Class ;
                                      rdfs:subClassOf persp:Attitude ;
                                      rdfs:comment "Seeks to subvert harmful tropes and propose alternative ways of portraying LGBTQ+ identities." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character
 LGBTQPortrayal:Character rdf:type owl:Class ;
                          rdfs:comment "Denotes the LGBTQ+ character being analyzed within the show. Each instance is linked to attributes such as narrative role, authenticity, and stereotype patterns, enabling nuanced comparison across different portrayals." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterDepth
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterDepth
 LGBTQPortrayal:CharacterDepth rdf:type owl:Class ;
                               rdfs:subClassOf LGBTQPortrayal:RepresentationType ;
                               rdfs:comment "Assesses how psychologically and narratively developed a character is. This includes dimensions such as backstory, emotional complexity, and agency in the plot." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation
 LGBTQPortrayal:CharacterTransformation rdf:type owl:Class ;
                                        rdfs:subClassOf LGBTQPortrayal:NarrativeRole ;
                                        rdfs:comment "Highlights whether the character undergoes significant development, self-discovery, or change in values or relationships — particularly in relation to their identity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterType
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterType
 LGBTQPortrayal:CharacterType rdf:type owl:Class ;
                              rdfs:subClassOf persp:Cut ;
                              rdfs:comment "It is the resulting narrative role or figure. It synthesizes the effect of all previous layers into a recognizable portrayal archetype. Each character can be linked to stereotypes, narrative functions such as leading or supporting roles, story arcs showing positive or negative development, and queerbaiting patterns." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#ComicSidekick
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ComicSidekick
 LGBTQPortrayal:ComicSidekick rdf:type owl:Class ;
                              rdfs:subClassOf LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country
+LGBTQPortrayal:Country rdf:type owl:Class ;
+                       owl:disjointWith LGBTQPortrayal:LGBTQPortrayalCharacter ,
+                                        LGBTQPortrayal:Show .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator
 LGBTQPortrayal:Creator rdf:type owl:Class ;
                        rdfs:subClassOf foaf:Person ;
                        rdfs:comment "Refers to individuals responsible for conceptual and narrative decisions, such as showrunners, screenwriters, or producers. Their intent is critical for interpreting whether a portrayal aligns with commercial or socially impactful goals." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Detailed
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Detailed
 LGBTQPortrayal:Detailed rdf:type owl:Class ;
                         rdfs:subClassOf LGBTQPortrayal:CharacterDepth .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Dynamic
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Dynamic
 LGBTQPortrayal:Dynamic rdf:type owl:Class ;
                        rdfs:subClassOf LGBTQPortrayal:NarrativeRole ;
+                       owl:disjointWith LGBTQPortrayal:Static ;
                        rdfs:comment "Labels characters whose narrative arc shows growth, change, or evolving relationships, particularly those tied to identity or conflict resolution." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#EmpowermentRepresentation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#EmpowermentRepresentation
 LGBTQPortrayal:EmpowermentRepresentation rdf:type owl:Class ;
                                          rdfs:subClassOf persp:Attitude ;
                                          rdfs:comment "Highlights characters who are confident, visible, and central to the story — challenging marginalization and invisibility." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#FairRepresentation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#FairRepresentation
 LGBTQPortrayal:FairRepresentation rdf:type owl:Class ;
                                   rdfs:subClassOf LGBTQPortrayal:RepresentationType ;
                                   rdfs:comment "Refers to portrayals of LGBTQ+ characters that are meaningful, relatable, and accurate, offering nuanced character development and authentic storylines. These representations affirm identity, avoid stereotypes, and contribute positively to visibility and understanding within both queer and broader audiences." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#FinancialRisk
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#FinancialRisk
 LGBTQPortrayal:FinancialRisk rdf:type owl:Class ;
                              rdfs:subClassOf persp:Background ;
                              rdfs:comment "Economic considerations that may discourage complex or controversial queer narratives." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#GayBestFriend
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend
 LGBTQPortrayal:GayBestFriend rdf:type owl:Class ;
                              rdfs:subClassOf LGBTQPortrayal:Stereotype ;
                              rdfs:comment "Represents a trope where the LGBTQ+ character exists to support the protagonist, often lacking narrative depth or personal goals. It reflects tokenism disguised as inclusivity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Gender
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Gender
 LGBTQPortrayal:Gender rdf:type owl:Class ;
                       rdfs:comment "Represents the gender identity of a person (creator or performer). Tracking gender helps explore who gets to tell queer stories and how gender dynamics shape representation." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre
 LGBTQPortrayal:Genre rdf:type owl:Class ;
                      rdfs:comment "Denotes the genre of the TV show (e.g., drama, comedy, fantasy), which can affect the tone, tropes, and thematic treatment of LGBTQ+ characters." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#HistoricalTrends
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#HistoricalTrends
 LGBTQPortrayal:HistoricalTrends rdf:type owl:Class ;
                                 rdfs:subClassOf persp:Background ;
                                 rdfs:comment "Past patterns of representation (e.g., tragic tropes, invisibility) that shape both audience expectation and creator intention." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#LGBTQCommunityImpact
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#LGBTQCommunityImpact
 LGBTQPortrayal:LGBTQCommunityImpact rdf:type owl:Class ;
                                     rdfs:comment "Assesses how the portrayal influences public perceptions and members of the LGBTQ+ community. It includes both positive models (empowering, relatable) and negative ones (harmful, stereotypical), contributing to the Social Impact Lens." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#MarketFriendly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#LGBTQPortrayalCharacter
+LGBTQPortrayal:LGBTQPortrayalCharacter rdf:type owl:Class ;
+                                       owl:disjointWith LGBTQPortrayal:Show .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#MarketFriendly
 LGBTQPortrayal:MarketFriendly rdf:type owl:Class ;
                               rdfs:subClassOf persp:Attitude ;
                               rdfs:comment "A neutral-to-positive framing aimed at pleasing wide audiences without controversy. Often includes vague or sanitized depictions." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NarrativeRole
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NarrativeRole
 LGBTQPortrayal:NarrativeRole rdf:type owl:Class ;
                              rdfs:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                              rdfs:comment "Describes whether the character evolves dynamically within the narrative or remains static. It supports analyzing the depth of character development, especially in contrast to trope-based or tokenistic inclusion." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NegativeRoleModel
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NegativeRoleModel
 LGBTQPortrayal:NegativeRoleModel rdf:type owl:Class ;
-                                 rdfs:subClassOf LGBTQPortrayal:LGBTQCommunityImpact .
+                                 rdfs:subClassOf LGBTQPortrayal:LGBTQCommunityImpact ;
+                                 owl:disjointWith LGBTQPortrayal:PositiveRoleModel .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NormalizationOfRelationship
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NormalizationOfRelationship
 LGBTQPortrayal:NormalizationOfRelationship rdf:type owl:Class ;
                                            rdfs:subClassOf LGBTQPortrayal:PlotResolution ;
                                            rdfs:comment "Indicates that an LGBTQ+ relationship is treated as natural and unproblematic within the narrative. This contributes to positive cultural messaging and reduces stigma." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer
 LGBTQPortrayal:Performer rdf:type owl:Class ;
                          rdfs:subClassOf foaf:Person ;
                          rdfs:comment "Representing actors or actresses who portray LGBTQ+ characters. The casting choices (e.g., queer actors playing queer roles) may influence authenticity and audience perception." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#PlotResolution
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PlotResolution
 LGBTQPortrayal:PlotResolution rdf:type owl:Class ;
                               rdfs:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                               rdfs:comment "Captures how the character’s narrative arc is resolved — for example, whether it affirms identity or reinforces tragic tropes. This class is key to analyzing emotional closure and message delivery to viewers." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#PortrayalofLgbtqCharacter
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PortrayalofLgbtqCharacter
 LGBTQPortrayal:PortrayalofLgbtqCharacter rdf:type owl:Class ;
                                          rdfs:subClassOf persp:Eventuality ;
                                          rdfs:comment "The central analytic class describing how a specific LGBTQ+ character is portrayed within a TV show. It aggregates information about representation type, narrative role, stereotypes, and character arc resolution, functioning as the main node connecting all perspectives." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#PositiveRoleModel
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PositiveRoleModel
 LGBTQPortrayal:PositiveRoleModel rdf:type owl:Class ;
                                  rdfs:subClassOf LGBTQPortrayal:LGBTQCommunityImpact .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#ProductionAndIndustryFactory
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ProductionAndIndustryFactory
 LGBTQPortrayal:ProductionAndIndustryFactory rdf:type owl:Class ;
                                             rdfs:comment "Captures the contextual elements around the show's production — including budget, platform, and target demographics. These factories help explain the pressures and constraints that shape LGBTQ+ portrayals through a profit-driven logic." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#ProfitDrivenLens
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ProfitDrivenLens
 LGBTQPortrayal:ProfitDrivenLens rdf:type owl:Class ;
                                 rdfs:subClassOf persp:Lens ;
+                                owl:disjointWith LGBTQPortrayal:SocialImpactLens ;
                                 rdfs:comment "A perspective that emphasizes marketability, audience reach, and economic interests. It tends to favor representations that are safe, simplified, or stereotypical if they enhance profitability." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#QueerProtagonistLeadRole
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerProtagonistLeadRole
 LGBTQPortrayal:QueerProtagonistLeadRole rdf:type owl:Class ;
                                         rdfs:subClassOf LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#QueerTheory
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerTheory
 LGBTQPortrayal:QueerTheory rdf:type owl:Class ;
                            rdfs:subClassOf persp:Background ;
                            rdfs:comment "Academic and activist thought informing more nuanced and deconstructed views of identity and representation." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Queerbaiting
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Queerbaiting
 LGBTQPortrayal:Queerbaiting rdf:type owl:Class ;
                             rdfs:subClassOf persp:Attitude ;
                             rdfs:comment "Describes intentional suggestions of queerness without commitment — used to attract queer audiences while avoiding alienating others." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#RepresentationType
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#RepresentationType
 LGBTQPortrayal:RepresentationType rdf:type owl:Class ;
                                   rdfs:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                                   rdfs:comment "This class categorizes the quality and mode of representation of LGBTQ+ characters. Based on media tests and narrative theory, it includes values such as fair/unfair representation, authenticity, and role dynamism." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#SexOrientation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SexOrientation
 LGBTQPortrayal:SexOrientation rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#SignificanceInPlot
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Show
+LGBTQPortrayal:Show rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SignificanceInPlot
 LGBTQPortrayal:SignificanceInPlot rdf:type owl:Class ;
                                   rdfs:subClassOf LGBTQPortrayal:PortrayalofLgbtqCharacter ;
                                   rdfs:comment "Indicates the weight and importance of the LGBTQ+ character within the show’s narrative structure (e.g., main vs. side vs. token). It provides insight into the structural inclusion of queer identities." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#SocialImpactLens
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SocialImpactLens
 LGBTQPortrayal:SocialImpactLens rdf:type owl:Class ;
                                 rdfs:subClassOf persp:Lens ;
                                 rdfs:comment "A socially conscious perspective aiming for accurate, affirming, and inclusive portrayals. It focuses on the effect of representation on public understanding and LGBTQ+ self-perception." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Static
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Static
 LGBTQPortrayal:Static rdf:type owl:Class ;
                       rdfs:subClassOf LGBTQPortrayal:NarrativeRole ;
                       rdfs:comment "Marks characters who remain unchanged throughout the story, often used to explore token roles or those lacking emotional depth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Stereotype
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Stereotype
 LGBTQPortrayal:Stereotype rdf:type owl:Class ;
                           rdfs:comment "Identifies repeated patterns or tropes in LGBTQ+ representation — such as the “Gay Best Friend” or “Tragic Trope.” This class enables semantic tagging of recurring harmful or reductive portrayals across different shows." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#StreamingPolicies
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#StreamingPolicies
 LGBTQPortrayal:StreamingPolicies rdf:type owl:Class ;
                                  rdfs:subClassOf persp:Background ;
                                  rdfs:comment "Guidelines set by streaming platforms that affect what kinds of representation are permissible or encouraged." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Superficial
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Superficial
 LGBTQPortrayal:Superficial rdf:type owl:Class ;
                            rdfs:subClassOf LGBTQPortrayal:CharacterDepth .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TokenCharacter
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TokenCharacter
 LGBTQPortrayal:TokenCharacter rdf:type owl:Class ;
                               rdfs:subClassOf LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Tokenization
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Tokenization
 LGBTQPortrayal:Tokenization rdf:type owl:Class ;
                             rdfs:subClassOf persp:Attitude ;
                             rdfs:comment "Represents the inclusion of queer characters in superficial ways — to appear diverse without offering narrative depth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TragicTrope
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope
 LGBTQPortrayal:TragicTrope rdf:type owl:Class ;
                            rdfs:subClassOf LGBTQPortrayal:Stereotype ;
                            rdfs:comment "Flags portrayals where the LGBTQ+ character is subjected to suffering, death, or punishment as a narrative resolution. Often signals moral or emotional manipulation tied to outdated or sensationalized views of queerness." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow
 LGBTQPortrayal:TvShow rdf:type owl:Class ;
                       rdfs:comment "Represents the teenage drama where LGBTQ+ portrayals occur, acting as the narrative container for all characters and their arcs. This class connects commercial production choices and audience reception to the broader cultural impact of the show’s representational practices."@en .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#UnfairRepresentation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#UnfairRepresentation
 LGBTQPortrayal:UnfairRepresentation rdf:type owl:Class ;
                                     rdfs:subClassOf LGBTQPortrayal:RepresentationType ;
                                     rdfs:comment "Describes portrayals marked by tokenism, reductive stereotypes, or complete invisibility. These representations often serve superficial diversity goals, lack character depth, and may reinforce harmful assumptions about LGBTQ+ identities." .
@@ -582,191 +606,191 @@ schema:Country rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/LGBTQPortrayal#AuthenticRepresentation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#AuthenticRepresentation
 LGBTQPortrayal:AuthenticRepresentation rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Bisexual
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Bisexual
 LGBTQPortrayal:Bisexual rdf:type owl:NamedIndividual ,
                                  LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Adam_Groff
 LGBTQPortrayal:CharacterTransformation_Adam_Groff rdf:type owl:NamedIndividual ,
                                                            LGBTQPortrayal:CharacterTransformation ;
                                                   rdfs:comment "Grows from repression to acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Alice
 LGBTQPortrayal:CharacterTransformation_Alice rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:CharacterTransformation ;
                                              rdfs:comment "Overcomes trauma and grows stronger." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Blaine_Anderson
 LGBTQPortrayal:CharacterTransformation_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                                                 LGBTQPortrayal:CharacterTransformation ;
                                                        rdfs:comment "Learns resilience, finds love." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Casey_Gardner
 LGBTQPortrayal:CharacterTransformation_Casey_Gardner rdf:type owl:NamedIndividual ,
                                                               LGBTQPortrayal:CharacterTransformation ;
                                                      rdfs:comment "Gains confidence in her relationships." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Connor_Walsh
 LGBTQPortrayal:CharacterTransformation_Connor_Walsh rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Develops self-awareness and integrity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_David_Rose
 LGBTQPortrayal:CharacterTransformation_David_Rose rdf:type owl:NamedIndividual ,
                                                            LGBTQPortrayal:CharacterTransformation ;
                                                   rdfs:comment "Finds love and fulfillment." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Denise
 LGBTQPortrayal:CharacterTransformation_Denise rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:CharacterTransformation ;
                                               rdfs:comment "Grows into confidence and love." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Emily_Fields
 LGBTQPortrayal:CharacterTransformation_Emily_Fields rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Gains confidence in identity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Eric_Effiong
 LGBTQPortrayal:CharacterTransformation_Eric_Effiong rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Grows from self-doubt to confidence." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Jules_Vaughn
 LGBTQPortrayal:CharacterTransformation_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Overcomes struggles and finds self-acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kat_Edison
 LGBTQPortrayal:CharacterTransformation_Kat_Edison rdf:type owl:NamedIndividual ,
                                                            LGBTQPortrayal:CharacterTransformation ;
                                                   rdfs:comment "Overcomes fears and takes control of her life." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kelly
 LGBTQPortrayal:CharacterTransformation_Kelly rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:CharacterTransformation ;
                                              rdfs:comment "Finds love and peace." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Kevin_Keller
 LGBTQPortrayal:CharacterTransformation_Kevin_Keller rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Static and stereotypical." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Lexa
 LGBTQPortrayal:CharacterTransformation_Lexa rdf:type owl:NamedIndividual ,
                                                      LGBTQPortrayal:CharacterTransformation ;
                                             rdfs:comment "Dies before meaningful growth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Lito_Rodriguez
 LGBTQPortrayal:CharacterTransformation_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                                                LGBTQPortrayal:CharacterTransformation ;
                                                       rdfs:comment "Moves from secrecy to pride." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Magnus_Bane
 LGBTQPortrayal:CharacterTransformation_Magnus_Bane rdf:type owl:NamedIndividual ,
                                                             LGBTQPortrayal:CharacterTransformation ;
                                                    rdfs:comment "Balances love and leadership." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Mickey_Dobbs
 LGBTQPortrayal:CharacterTransformation_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Static and minimally impactful." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Nomi_Marks
 LGBTQPortrayal:CharacterTransformation_Nomi_Marks rdf:type owl:NamedIndividual ,
                                                            LGBTQPortrayal:CharacterTransformation ;
                                                   rdfs:comment "Gains confidence and security." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Omar_Shanaa
 LGBTQPortrayal:CharacterTransformation_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                                             LGBTQPortrayal:CharacterTransformation ;
                                                    rdfs:comment "Finds balance between love and identity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Patrick_Brewer
 LGBTQPortrayal:CharacterTransformation_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                                                LGBTQPortrayal:CharacterTransformation ;
                                                       rdfs:comment "Becomes part of a loving community." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Ray_Holt
 LGBTQPortrayal:CharacterTransformation_Ray_Holt rdf:type owl:NamedIndividual ,
                                                          LGBTQPortrayal:CharacterTransformation ;
                                                 rdfs:comment "Provides mentorship and breaks barriers." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Santana_Lopez
 LGBTQPortrayal:CharacterTransformation_Santana_Lopez rdf:type owl:NamedIndividual ,
                                                               LGBTQPortrayal:CharacterTransformation ;
                                                      rdfs:comment "Finds peace with her identity and love." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Shane_Harvey
 LGBTQPortrayal:CharacterTransformation_Shane_Harvey rdf:type owl:NamedIndividual ,
                                                              LGBTQPortrayal:CharacterTransformation ;
                                                     rdfs:comment "Static and stereotypical." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Simon_Eriksson
 LGBTQPortrayal:CharacterTransformation_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                                                LGBTQPortrayal:CharacterTransformation ;
                                                       rdfs:comment "Balances love and cultural identity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Sophia_Burset
 LGBTQPortrayal:CharacterTransformation_Sophia_Burset rdf:type owl:NamedIndividual ,
                                                               LGBTQPortrayal:CharacterTransformation ;
                                                      rdfs:comment "Confronts systemic oppression." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Syd
 LGBTQPortrayal:CharacterTransformation_Syd rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:CharacterTransformation ;
                                            rdfs:comment "Gains family acceptance and self-confidence." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Tara_Maclay
 LGBTQPortrayal:CharacterTransformation_Tara_Maclay rdf:type owl:NamedIndividual ,
                                                             LGBTQPortrayal:CharacterTransformation ;
                                                    rdfs:comment "Dies abruptly." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Theo_Putnam
 LGBTQPortrayal:CharacterTransformation_Theo_Putnam rdf:type owl:NamedIndividual ,
                                                             LGBTQPortrayal:CharacterTransformation ;
                                                    rdfs:comment "Static and underdeveloped." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#CharacterTransformation_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#CharacterTransformation_Victor_Salazar
 LGBTQPortrayal:CharacterTransformation_Victor_Salazar rdf:type owl:NamedIndividual ,
                                                                LGBTQPortrayal:CharacterTransformation ;
                                                       rdfs:comment "Overcomes internalized fear and bias." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Adam_Groff
 LGBTQPortrayal:Character_Adam_Groff rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AuthenticRepresentation ,
                                              LGBTQPortrayal:Character ;
@@ -778,7 +802,7 @@ LGBTQPortrayal:Character_Adam_Groff rdf:type owl:NamedIndividual ,
                                     rdfs:label "Adam Groff" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Alice
 LGBTQPortrayal:Character_Alice rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:AuthenticRepresentation ,
                                         LGBTQPortrayal:Character ;
@@ -790,7 +814,7 @@ LGBTQPortrayal:Character_Alice rdf:type owl:NamedIndividual ,
                                rdfs:label "Alice" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Blaine_Anderson
 LGBTQPortrayal:Character_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:Character ,
                                                   LGBTQPortrayal:ComicSidekick ;
@@ -802,7 +826,7 @@ LGBTQPortrayal:Character_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                          rdfs:label "Blaine Anderson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Casey_Gardner
 LGBTQPortrayal:Character_Casey_Gardner rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:AuthenticRepresentation ,
                                                 LGBTQPortrayal:Character ;
@@ -814,7 +838,7 @@ LGBTQPortrayal:Character_Casey_Gardner rdf:type owl:NamedIndividual ,
                                        rdfs:label "Casey Gardner" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Connor_Walsh
 LGBTQPortrayal:Character_Connor_Walsh rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AuthenticRepresentation ,
                                                LGBTQPortrayal:Character ;
@@ -826,7 +850,7 @@ LGBTQPortrayal:Character_Connor_Walsh rdf:type owl:NamedIndividual ,
                                       rdfs:label "Connor Walsh" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_David_Rose
 LGBTQPortrayal:Character_David_Rose rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AuthenticRepresentation ,
                                              LGBTQPortrayal:Character ;
@@ -838,7 +862,7 @@ LGBTQPortrayal:Character_David_Rose rdf:type owl:NamedIndividual ,
                                     rdfs:label "David Rose" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Denise
 LGBTQPortrayal:Character_Denise rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:AuthenticRepresentation ,
                                          LGBTQPortrayal:Character ;
@@ -850,7 +874,7 @@ LGBTQPortrayal:Character_Denise rdf:type owl:NamedIndividual ,
                                 rdfs:label "Denise" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Emily_Fields
 LGBTQPortrayal:Character_Emily_Fields rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AuthenticRepresentation ,
                                                LGBTQPortrayal:Character ;
@@ -862,7 +886,7 @@ LGBTQPortrayal:Character_Emily_Fields rdf:type owl:NamedIndividual ,
                                       rdfs:label "Emily Fields" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Eric_Effiong
 LGBTQPortrayal:Character_Eric_Effiong rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AuthenticRepresentation ,
                                                LGBTQPortrayal:Character ;
@@ -874,7 +898,7 @@ LGBTQPortrayal:Character_Eric_Effiong rdf:type owl:NamedIndividual ,
                                       rdfs:label "Eric Effiong" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Jules_Vaughn
 LGBTQPortrayal:Character_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AuthenticRepresentation ,
                                                LGBTQPortrayal:Character ;
@@ -886,7 +910,7 @@ LGBTQPortrayal:Character_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                       rdfs:label "Jules Vaughn" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kat_Edison
 LGBTQPortrayal:Character_Kat_Edison rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AuthenticRepresentation ,
                                              LGBTQPortrayal:Character ;
@@ -898,7 +922,7 @@ LGBTQPortrayal:Character_Kat_Edison rdf:type owl:NamedIndividual ,
                                     rdfs:label "Kat Edison" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kelly
 LGBTQPortrayal:Character_Kelly rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:AuthenticRepresentation ,
                                         LGBTQPortrayal:Character ;
@@ -910,7 +934,7 @@ LGBTQPortrayal:Character_Kelly rdf:type owl:NamedIndividual ,
                                rdfs:label "Kelly" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Kevin_Keller
 LGBTQPortrayal:Character_Kevin_Keller rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Character ,
                                                LGBTQPortrayal:TokenCharacter ;
@@ -922,7 +946,7 @@ LGBTQPortrayal:Character_Kevin_Keller rdf:type owl:NamedIndividual ,
                                       rdfs:label "Kevin Keller" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Lexa
 LGBTQPortrayal:Character_Lexa rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:Character ,
                                        LGBTQPortrayal:QueerProtagonistLeadRole ;
@@ -934,7 +958,7 @@ LGBTQPortrayal:Character_Lexa rdf:type owl:NamedIndividual ,
                               rdfs:label "Lexa" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Lito_Rodriguez
 LGBTQPortrayal:Character_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:AuthenticRepresentation ,
                                                  LGBTQPortrayal:Character ;
@@ -946,19 +970,19 @@ LGBTQPortrayal:Character_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                         rdfs:label "Lito Rodriguez" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Magnus_Bane
 LGBTQPortrayal:Character_Magnus_Bane rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:AuthenticRepresentation ,
                                               LGBTQPortrayal:Character ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
                                      LGBTQPortrayal:hasPortrayal LGBTQPortrayal:Portrayal_Magnus_Bane ;
                                      LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:Bisexual ;
-                                     schema:actor <http://www.semanticweb.org/LGBTQPortrayal#Performer_Harry_Shum_Jr.> ;
+                                     schema:actor <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.> ;
                                      LGBTQPortrayal:isTransgender "false"^^xsd:boolean ;
                                      rdfs:label "Magnus Bane" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Mickey_Dobbs
 LGBTQPortrayal:Character_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Character ,
                                                LGBTQPortrayal:TokenCharacter ;
@@ -970,7 +994,7 @@ LGBTQPortrayal:Character_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                       rdfs:label "Mickey Dobbs" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Nomi_Marks
 LGBTQPortrayal:Character_Nomi_Marks rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AuthenticRepresentation ,
                                              LGBTQPortrayal:Character ;
@@ -982,7 +1006,7 @@ LGBTQPortrayal:Character_Nomi_Marks rdf:type owl:NamedIndividual ,
                                     rdfs:label "Nomi Marks" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Omar_Shanaa
 LGBTQPortrayal:Character_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:AuthenticRepresentation ,
                                               LGBTQPortrayal:Character ;
@@ -994,7 +1018,7 @@ LGBTQPortrayal:Character_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                      rdfs:label "Omar Shanaa" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Patrick_Brewer
 LGBTQPortrayal:Character_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Character ,
                                                  LGBTQPortrayal:ComicSidekick ;
@@ -1006,7 +1030,7 @@ LGBTQPortrayal:Character_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                         rdfs:label "Patrick Brewer" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Ray_Holt
 LGBTQPortrayal:Character_Ray_Holt rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:AuthenticRepresentation ,
                                            LGBTQPortrayal:Character ;
@@ -1018,7 +1042,7 @@ LGBTQPortrayal:Character_Ray_Holt rdf:type owl:NamedIndividual ,
                                   rdfs:label "Ray Holt" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Santana_Lopez
 LGBTQPortrayal:Character_Santana_Lopez rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:Character ,
                                                 LGBTQPortrayal:TokenCharacter ;
@@ -1030,7 +1054,7 @@ LGBTQPortrayal:Character_Santana_Lopez rdf:type owl:NamedIndividual ,
                                        rdfs:label "Santana Lopez" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Shane_Harvey
 LGBTQPortrayal:Character_Shane_Harvey rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Character ,
                                                LGBTQPortrayal:TokenCharacter ;
@@ -1042,7 +1066,7 @@ LGBTQPortrayal:Character_Shane_Harvey rdf:type owl:NamedIndividual ,
                                       rdfs:label "Shane Harvey" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Simon_Eriksson
 LGBTQPortrayal:Character_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Character ,
                                                  LGBTQPortrayal:QueerProtagonistLeadRole ;
@@ -1054,7 +1078,7 @@ LGBTQPortrayal:Character_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                         rdfs:label "Simon Eriksson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Sophia_Burset
 LGBTQPortrayal:Character_Sophia_Burset rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:AuthenticRepresentation ,
                                                 LGBTQPortrayal:Character ;
@@ -1066,7 +1090,7 @@ LGBTQPortrayal:Character_Sophia_Burset rdf:type owl:NamedIndividual ,
                                        rdfs:label "Sophia Burset" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Syd
 LGBTQPortrayal:Character_Syd rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:AuthenticRepresentation ,
                                       LGBTQPortrayal:Character ;
@@ -1078,7 +1102,7 @@ LGBTQPortrayal:Character_Syd rdf:type owl:NamedIndividual ,
                              rdfs:label "Syd" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Tara_Maclay
 LGBTQPortrayal:Character_Tara_Maclay rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Character ,
                                               LGBTQPortrayal:TokenCharacter ;
@@ -1090,7 +1114,7 @@ LGBTQPortrayal:Character_Tara_Maclay rdf:type owl:NamedIndividual ,
                                      rdfs:label "Tara Maclay" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Theo_Putnam
 LGBTQPortrayal:Character_Theo_Putnam rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Character ,
                                               LGBTQPortrayal:TokenCharacter ;
@@ -1102,7 +1126,7 @@ LGBTQPortrayal:Character_Theo_Putnam rdf:type owl:NamedIndividual ,
                                      rdfs:label "Theo Putnam" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Character_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Character_Victor_Salazar
 LGBTQPortrayal:Character_Victor_Salazar rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Character ,
                                                  LGBTQPortrayal:QueerProtagonistLeadRole ;
@@ -1114,42 +1138,42 @@ LGBTQPortrayal:Character_Victor_Salazar rdf:type owl:NamedIndividual ,
                                         rdfs:label "Victor Salazar" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#ComicSidekick
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#ComicSidekick
 LGBTQPortrayal:ComicSidekick rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Country_Canada
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Canada
 LGBTQPortrayal:Country_Canada rdf:type owl:NamedIndividual ,
                                        schema:Country ;
                               rdfs:label "Canada" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Country_Spain
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Spain
 LGBTQPortrayal:Country_Spain rdf:type owl:NamedIndividual ,
                                       schema:Country ;
                              rdfs:label "Spain" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Country_Sweden
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_Sweden
 LGBTQPortrayal:Country_Sweden rdf:type owl:NamedIndividual ,
                                        schema:Country ;
                               rdfs:label "Sweden" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Country_UK
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_UK
 LGBTQPortrayal:Country_UK rdf:type owl:NamedIndividual ,
                                    schema:Country ;
                           rdfs:label "UK" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Country_USA
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Country_USA
 LGBTQPortrayal:Country_USA rdf:type owl:NamedIndividual ,
                                     schema:Country ;
                            rdfs:label "USA" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Aziz_Ansari
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Aziz_Ansari
 LGBTQPortrayal:Creator_Aziz_Ansari rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1158,7 +1182,7 @@ LGBTQPortrayal:Creator_Aziz_Ansari rdf:type owl:NamedIndividual ,
                                    rdfs:label "Aziz Ansari" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Carlos_Montero
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Carlos_Montero
 LGBTQPortrayal:Creator_Carlos_Montero rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Creator ;
                                       LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1167,7 +1191,7 @@ LGBTQPortrayal:Creator_Carlos_Montero rdf:type owl:NamedIndividual ,
                                       rdfs:label "Carlos Montero" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Dana_Min_Goodman
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Dana_Min_Goodman
 LGBTQPortrayal:Creator_Dana_Min_Goodman rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Creator ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1176,7 +1200,7 @@ LGBTQPortrayal:Creator_Dana_Min_Goodman rdf:type owl:NamedIndividual ,
                                         rdfs:label "Dana Min Goodman" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Ed_Decter
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ed_Decter
 LGBTQPortrayal:Creator_Ed_Decter rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:Creator ;
                                  LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1185,7 +1209,7 @@ LGBTQPortrayal:Creator_Ed_Decter rdf:type owl:NamedIndividual ,
                                  rdfs:label "Ed Decter" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Eugene_Levy
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Eugene_Levy
 LGBTQPortrayal:Creator_Eugene_Levy rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1194,7 +1218,7 @@ LGBTQPortrayal:Creator_Eugene_Levy rdf:type owl:NamedIndividual ,
                                    rdfs:label "Eugene Levy" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Gloria_Calderon_Kellett
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Gloria_Calderon_Kellett
 LGBTQPortrayal:Creator_Gloria_Calderon_Kellett rdf:type owl:NamedIndividual ,
                                                         LGBTQPortrayal:Creator ;
                                                LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1203,7 +1227,7 @@ LGBTQPortrayal:Creator_Gloria_Calderon_Kellett rdf:type owl:NamedIndividual ,
                                                rdfs:label "Gloria Calderon Kellett" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Ina_Marlene_King
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ina_Marlene_King
 LGBTQPortrayal:Creator_Ina_Marlene_King rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Creator ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1212,7 +1236,7 @@ LGBTQPortrayal:Creator_Ina_Marlene_King rdf:type owl:NamedIndividual ,
                                         rdfs:label "Ina Marlene King" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Isaac_Aptaker
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Isaac_Aptaker
 LGBTQPortrayal:Creator_Isaac_Aptaker rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Creator ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1221,7 +1245,7 @@ LGBTQPortrayal:Creator_Isaac_Aptaker rdf:type owl:NamedIndividual ,
                                      rdfs:label "Isaac Aptaker" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Jason_Rothenberg
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jason_Rothenberg
 LGBTQPortrayal:Creator_Jason_Rothenberg rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Creator ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1230,7 +1254,7 @@ LGBTQPortrayal:Creator_Jason_Rothenberg rdf:type owl:NamedIndividual ,
                                         rdfs:label "Jason Rothenberg" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Jean-Marc_Vallee
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jean-Marc_Vallee
 LGBTQPortrayal:Creator_Jean-Marc_Vallee rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Creator ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1239,7 +1263,7 @@ LGBTQPortrayal:Creator_Jean-Marc_Vallee rdf:type owl:NamedIndividual ,
                                         rdfs:label "Jean-Marc Vallee" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Jenji_Leslie_Kohan
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Jenji_Leslie_Kohan
 LGBTQPortrayal:Creator_Jenji_Leslie_Kohan rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Creator ;
                                           LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1248,7 +1272,7 @@ LGBTQPortrayal:Creator_Jenji_Leslie_Kohan rdf:type owl:NamedIndividual ,
                                           rdfs:label "Jenji Leslie Kohan" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Joss_Whedon
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Joss_Whedon
 LGBTQPortrayal:Creator_Joss_Whedon rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1257,7 +1281,7 @@ LGBTQPortrayal:Creator_Joss_Whedon rdf:type owl:NamedIndividual ,
                                    rdfs:label "Joss Whedon" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Judd_Apatow
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Judd_Apatow
 LGBTQPortrayal:Creator_Judd_Apatow rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1266,7 +1290,7 @@ LGBTQPortrayal:Creator_Judd_Apatow rdf:type owl:NamedIndividual ,
                                    rdfs:label "Judd Apatow" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Lana_e_Lilly_Wachowski
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Lana_e_Lilly_Wachowski
 LGBTQPortrayal:Creator_Lana_e_Lilly_Wachowski rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:Creator ;
                                               LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1275,7 +1299,7 @@ LGBTQPortrayal:Creator_Lana_e_Lilly_Wachowski rdf:type owl:NamedIndividual ,
                                               rdfs:label "Lana e Lilly Wachowski" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Laurie_Nunn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Laurie_Nunn
 LGBTQPortrayal:Creator_Laurie_Nunn rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1284,7 +1308,7 @@ LGBTQPortrayal:Creator_Laurie_Nunn rdf:type owl:NamedIndividual ,
                                    rdfs:label "Laurie Nunn" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Lisa_Ambjorn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Lisa_Ambjorn
 LGBTQPortrayal:Creator_Lisa_Ambjorn rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Creator ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1293,7 +1317,7 @@ LGBTQPortrayal:Creator_Lisa_Ambjorn rdf:type owl:NamedIndividual ,
                                     rdfs:label "Lisa Ambjorn" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Michael_Schur
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Michael_Schur
 LGBTQPortrayal:Creator_Michael_Schur rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Creator ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1302,7 +1326,7 @@ LGBTQPortrayal:Creator_Michael_Schur rdf:type owl:NamedIndividual ,
                                      rdfs:label "Michael Schur" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Owen_Harris
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Owen_Harris
 LGBTQPortrayal:Creator_Owen_Harris rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1311,7 +1335,7 @@ LGBTQPortrayal:Creator_Owen_Harris rdf:type owl:NamedIndividual ,
                                    rdfs:label "Owen Harris" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Peter_Nowalk
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Peter_Nowalk
 LGBTQPortrayal:Creator_Peter_Nowalk rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Creator ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1320,7 +1344,7 @@ LGBTQPortrayal:Creator_Peter_Nowalk rdf:type owl:NamedIndividual ,
                                     rdfs:label "Peter Nowalk" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Roberto_Aguirre-Sacasa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Roberto_Aguirre-Sacasa
 LGBTQPortrayal:Creator_Roberto_Aguirre-Sacasa rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:Creator ;
                                               LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1329,7 +1353,7 @@ LGBTQPortrayal:Creator_Roberto_Aguirre-Sacasa rdf:type owl:NamedIndividual ,
                                               rdfs:label "Roberto Aguirre-Sacasa" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Robia_Rashid
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Robia_Rashid
 LGBTQPortrayal:Creator_Robia_Rashid rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Creator ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1338,7 +1362,7 @@ LGBTQPortrayal:Creator_Robia_Rashid rdf:type owl:NamedIndividual ,
                                     rdfs:label "Robia Rashid" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Ryan_Murphy
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Ryan_Murphy
 LGBTQPortrayal:Creator_Ryan_Murphy rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Creator ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1347,7 +1371,7 @@ LGBTQPortrayal:Creator_Ryan_Murphy rdf:type owl:NamedIndividual ,
                                    rdfs:label "Ryan Murphy" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Sam_Levinson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Sam_Levinson
 LGBTQPortrayal:Creator_Sam_Levinson rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Creator ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1356,7 +1380,7 @@ LGBTQPortrayal:Creator_Sam_Levinson rdf:type owl:NamedIndividual ,
                                     rdfs:label "Sam Levinson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Creator_Sarah_Watson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Creator_Sarah_Watson
 LGBTQPortrayal:Creator_Sarah_Watson rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Creator ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1365,522 +1389,522 @@ LGBTQPortrayal:Creator_Sarah_Watson rdf:type owl:NamedIndividual ,
                                     rdfs:label "Sarah Watson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Detailed
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Detailed
 LGBTQPortrayal:Detailed rdf:type owl:NamedIndividual ,
                                  LGBTQPortrayal:CharacterDepth .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Female
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Female
 LGBTQPortrayal:Female rdf:type owl:NamedIndividual ,
                                LGBTQPortrayal:Gender .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Gay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Gay
 LGBTQPortrayal:Gay rdf:type owl:NamedIndividual ,
                             LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#GayBestFriend_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend_Kevin_Keller
 LGBTQPortrayal:GayBestFriend_Kevin_Keller rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:GayBestFriend .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#GayBestFriend_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#GayBestFriend_Shane_Harvey
 LGBTQPortrayal:GayBestFriend_Shane_Harvey rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:GayBestFriend .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Comedy
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy
 LGBTQPortrayal:Genre_Comedy rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:Genre ;
                             rdfs:label "Comedy" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Comedy-Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy-Drama
 LGBTQPortrayal:Genre_Comedy-Drama rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:Genre ;
                                   rdfs:label "Comedy-Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Comedy_Drama_Romance
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Comedy_Drama_Romance
 LGBTQPortrayal:Genre_Comedy_Drama_Romance rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Genre ;
                                           rdfs:label "Comedy, Drama, Romance" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama
 LGBTQPortrayal:Genre_Drama rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:Genre ;
                            rdfs:label "Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Drama_Horror_Fantasy
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Horror_Fantasy
 LGBTQPortrayal:Genre_Drama_Horror_Fantasy rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Genre ;
                                           rdfs:label "Drama, Horror, Fantasy" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Drama_Mystery
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Mystery
 LGBTQPortrayal:Genre_Drama_Mystery rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Genre ;
                                    rdfs:label "Drama, Mystery" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Drama_Thriller_Mystery
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Drama_Thriller_Mystery
 LGBTQPortrayal:Genre_Drama_Thriller_Mystery rdf:type owl:NamedIndividual ,
                                                      LGBTQPortrayal:Genre ;
                                             rdfs:label "Drama, Thriller, Mystery" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Fantasy_Drama_Action
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Fantasy_Drama_Action
 LGBTQPortrayal:Genre_Fantasy_Drama_Action rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Genre ;
                                           rdfs:label "Fantasy, Drama, Action" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Legal_Drama_Thriller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Legal_Drama_Thriller
 LGBTQPortrayal:Genre_Legal_Drama_Thriller rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Genre ;
                                           rdfs:label "Legal Drama, Thriller" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Musical_Comedy-Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Musical_Comedy-Drama
 LGBTQPortrayal:Genre_Musical_Comedy-Drama rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Genre ;
                                           rdfs:label "Musical, Comedy-Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Science_Fiction_Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Science_Fiction_Drama
 LGBTQPortrayal:Genre_Science_Fiction_Drama rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:Genre ;
                                            rdfs:label "Science Fiction, Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Supernatural_Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Supernatural_Drama
 LGBTQPortrayal:Genre_Supernatural_Drama rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Genre ;
                                         rdfs:label "Supernatural, Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Teen_Drama_Romance
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Teen_Drama_Romance
 LGBTQPortrayal:Genre_Teen_Drama_Romance rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Genre ;
                                         rdfs:label "Teen Drama, Romance" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Genre_Thriller_Teen_Drama
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Genre_Thriller_Teen_Drama
 LGBTQPortrayal:Genre_Thriller_Teen_Drama rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:Genre ;
                                          rdfs:label "Thriller, Teen Drama" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Adam_Groff
 LGBTQPortrayal:Impact_Adam_Groff rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:LGBTQCommunityImpact ,
                                           LGBTQPortrayal:PositiveRoleModel ;
                                  rdfs:comment "Highlights importance of addressing repression." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Alice
 LGBTQPortrayal:Impact_Alice rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:LGBTQCommunityImpact ,
                                      LGBTQPortrayal:PositiveRoleModel ;
                             rdfs:comment "Tackles internal struggles and empowerment." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Blaine_Anderson
 LGBTQPortrayal:Impact_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:LGBTQCommunityImpact ,
                                                LGBTQPortrayal:PositiveRoleModel ;
                                       rdfs:comment "Helped normalize LGBTQ+ relationships in mainstream media." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Casey_Gardner
 LGBTQPortrayal:Impact_Casey_Gardner rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:LGBTQCommunityImpact ,
                                              LGBTQPortrayal:PositiveRoleModel ;
                                     rdfs:comment "Positively portrays bisexuality, showcasing complexity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Connor_Walsh
 LGBTQPortrayal:Impact_Connor_Walsh rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:PositiveRoleModel ;
                                    rdfs:comment "Tackles issues of societal bias and personal redemption." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_David_Rose
 LGBTQPortrayal:Impact_David_Rose rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:LGBTQCommunityImpact ,
                                           LGBTQPortrayal:PositiveRoleModel ;
                                  rdfs:comment "Celebrates LGBTQ+ lives through humor and acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Denise
 LGBTQPortrayal:Impact_Denise rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:LGBTQCommunityImpact ,
                                       LGBTQPortrayal:PositiveRoleModel ;
                              rdfs:comment "Challenges heteronormative narratives and broadens representation." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Emily_Fields
 LGBTQPortrayal:Impact_Emily_Fields rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:PositiveRoleModel ;
                                    rdfs:comment "Normalizes LGBTQ+ relationships, empowering LGBTQ+ women." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Eric_Effiong
 LGBTQPortrayal:Impact_Eric_Effiong rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:PositiveRoleModel ;
                                    rdfs:comment "Broadens intersectional representation, showing complexity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Jules_Vaughn
 LGBTQPortrayal:Impact_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:PositiveRoleModel ;
                                    rdfs:comment "Positive role model for transgender youth, promoting understanding." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kat_Edison
 LGBTQPortrayal:Impact_Kat_Edison rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:LGBTQCommunityImpact ,
                                           LGBTQPortrayal:PositiveRoleModel ;
                                  rdfs:comment "Promotes bisexual visibility and challenges workplace discrimination." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kelly
 LGBTQPortrayal:Impact_Kelly rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:LGBTQCommunityImpact ,
                                      LGBTQPortrayal:PositiveRoleModel ;
                             rdfs:comment "Breaks stereotypes by showing LGBTQ+ love in a positive light." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Kevin_Keller
 LGBTQPortrayal:Impact_Kevin_Keller rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:NegativeRoleModel ;
                                    rdfs:comment "Reinforces cliches, adding little to LGBTQ+ visibility." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Lexa
 LGBTQPortrayal:Impact_Lexa rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:LGBTQCommunityImpact ,
                                     LGBTQPortrayal:NegativeRoleModel ;
                            rdfs:comment "Sparked backlash for perpetuating harmful LGBTQ+ tropes." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Lito_Rodriguez
 LGBTQPortrayal:Impact_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:LGBTQCommunityImpact ,
                                               LGBTQPortrayal:PositiveRoleModel ;
                                      rdfs:comment "Highlights LGBTQ+ challenges in global contexts." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Magnus_Bane
 LGBTQPortrayal:Impact_Magnus_Bane rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:LGBTQCommunityImpact ,
                                            LGBTQPortrayal:PositiveRoleModel ;
                                   rdfs:comment "Celebrates LGBTQ+ identity with fantasy elements." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Mickey_Dobbs
 LGBTQPortrayal:Impact_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:NegativeRoleModel ;
                                    rdfs:comment "Lacks meaningful engagement with LGBTQ+ themes." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Nomi_Marks
 LGBTQPortrayal:Impact_Nomi_Marks rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:LGBTQCommunityImpact ,
                                           LGBTQPortrayal:PositiveRoleModel ;
                                  rdfs:comment "One of the first trans characters portrayed positively in mainstream sci-fi." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Omar_Shanaa
 LGBTQPortrayal:Impact_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:LGBTQCommunityImpact ,
                                            LGBTQPortrayal:PositiveRoleModel ;
                                   rdfs:comment "Highlights intersectionality, addressing sexuality in cultural contexts." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Patrick_Brewer
 LGBTQPortrayal:Impact_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:LGBTQCommunityImpact ,
                                               LGBTQPortrayal:PositiveRoleModel ;
                                      rdfs:comment "Breaks stereotypes with a positive LGBTQ+ relationship on screen." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Ray_Holt
 LGBTQPortrayal:Impact_Ray_Holt rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:LGBTQCommunityImpact ,
                                         LGBTQPortrayal:PositiveRoleModel ;
                                rdfs:comment "Subverts stereotypes and challenges workplace biases." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Santana_Lopez
 LGBTQPortrayal:Impact_Santana_Lopez rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:LGBTQCommunityImpact ,
                                              LGBTQPortrayal:PositiveRoleModel ;
                                     rdfs:comment "Normalized LGBTQ+ relationships in mainstream teen TV." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Shane_Harvey
 LGBTQPortrayal:Impact_Shane_Harvey rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:LGBTQCommunityImpact ,
                                             LGBTQPortrayal:NegativeRoleModel ;
                                    rdfs:comment "Reinforces outdated stereotypes without subverting them." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Simon_Eriksson
 LGBTQPortrayal:Impact_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:LGBTQCommunityImpact ,
                                               LGBTQPortrayal:PositiveRoleModel ;
                                      rdfs:comment "Provides positive representation of a gay teenager navigating love." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Sophia_Burset
 LGBTQPortrayal:Impact_Sophia_Burset rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:LGBTQCommunityImpact ,
                                              LGBTQPortrayal:PositiveRoleModel ;
                                     rdfs:comment "Illuminates systemic challenges for trans individuals, fostering empathy." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Syd
 LGBTQPortrayal:Impact_Syd rdf:type owl:NamedIndividual ,
                                    LGBTQPortrayal:LGBTQCommunityImpact ,
                                    LGBTQPortrayal:PositiveRoleModel ;
                           rdfs:comment "Increases visibility for non-binary individuals and promotes acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Tara_Maclay
 LGBTQPortrayal:Impact_Tara_Maclay rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:LGBTQCommunityImpact ,
                                            LGBTQPortrayal:NegativeRoleModel ;
                                   rdfs:comment "Controversial portrayal, perpetuating harmful LGBTQ+ tropes." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Theo_Putnam
 LGBTQPortrayal:Impact_Theo_Putnam rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:LGBTQCommunityImpact ,
                                            LGBTQPortrayal:NegativeRoleModel ;
                                   rdfs:comment "Missed opportunity to delve into meaningful trans representation." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Impact_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Impact_Victor_Salazar
 LGBTQPortrayal:Impact_Victor_Salazar rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:LGBTQCommunityImpact ,
                                               LGBTQPortrayal:PositiveRoleModel ;
                                      rdfs:comment "Highlights intersectionality and the nuances of coming out in traditional families." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Adam_Groff
 LGBTQPortrayal:Lens_Adam_Groff rdf:type owl:NamedIndividual ,
                                         persp:Lens ,
                                         LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Alice
 LGBTQPortrayal:Lens_Alice rdf:type owl:NamedIndividual ,
                                    persp:Lens ,
                                    LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Blaine_Anderson
 LGBTQPortrayal:Lens_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                              persp:Lens ,
                                              LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Casey_Gardner
 LGBTQPortrayal:Lens_Casey_Gardner rdf:type owl:NamedIndividual ,
                                            persp:Lens ,
                                            LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Connor_Walsh
 LGBTQPortrayal:Lens_Connor_Walsh rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_David_Rose
 LGBTQPortrayal:Lens_David_Rose rdf:type owl:NamedIndividual ,
                                         persp:Lens ,
                                         LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Denise
 LGBTQPortrayal:Lens_Denise rdf:type owl:NamedIndividual ,
                                     persp:Lens ,
                                     LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Emily_Fields
 LGBTQPortrayal:Lens_Emily_Fields rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Eric_Effiong
 LGBTQPortrayal:Lens_Eric_Effiong rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Jules_Vaughn
 LGBTQPortrayal:Lens_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kat_Edison
 LGBTQPortrayal:Lens_Kat_Edison rdf:type owl:NamedIndividual ,
                                         persp:Lens ,
                                         LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kelly
 LGBTQPortrayal:Lens_Kelly rdf:type owl:NamedIndividual ,
                                    persp:Lens ,
                                    LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Kevin_Keller
 LGBTQPortrayal:Lens_Kevin_Keller rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Lexa
 LGBTQPortrayal:Lens_Lexa rdf:type owl:NamedIndividual ,
                                   persp:Lens ,
                                   LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Lito_Rodriguez
 LGBTQPortrayal:Lens_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                             persp:Lens ,
                                             LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Magnus_Bane
 LGBTQPortrayal:Lens_Magnus_Bane rdf:type owl:NamedIndividual ,
                                          persp:Lens ,
                                          LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Mickey_Dobbs
 LGBTQPortrayal:Lens_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Nomi_Marks
 LGBTQPortrayal:Lens_Nomi_Marks rdf:type owl:NamedIndividual ,
                                         persp:Lens ,
                                         LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Omar_Shanaa
 LGBTQPortrayal:Lens_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                          persp:Lens ,
                                          LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Patrick_Brewer
 LGBTQPortrayal:Lens_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                             persp:Lens ,
                                             LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Ray_Holt
 LGBTQPortrayal:Lens_Ray_Holt rdf:type owl:NamedIndividual ,
                                       persp:Lens ,
                                       LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Santana_Lopez
 LGBTQPortrayal:Lens_Santana_Lopez rdf:type owl:NamedIndividual ,
                                            persp:Lens ,
                                            LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Shane_Harvey
 LGBTQPortrayal:Lens_Shane_Harvey rdf:type owl:NamedIndividual ,
                                           persp:Lens ,
                                           LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Simon_Eriksson
 LGBTQPortrayal:Lens_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                             persp:Lens ,
                                             LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Sophia_Burset
 LGBTQPortrayal:Lens_Sophia_Burset rdf:type owl:NamedIndividual ,
                                            persp:Lens ,
                                            LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Syd
 LGBTQPortrayal:Lens_Syd rdf:type owl:NamedIndividual ,
                                  persp:Lens ,
                                  LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Tara_Maclay
 LGBTQPortrayal:Lens_Tara_Maclay rdf:type owl:NamedIndividual ,
                                          persp:Lens ,
                                          LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Theo_Putnam
 LGBTQPortrayal:Lens_Theo_Putnam rdf:type owl:NamedIndividual ,
                                          persp:Lens ,
                                          LGBTQPortrayal:ProfitDrivenLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lens_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lens_Victor_Salazar
 LGBTQPortrayal:Lens_Victor_Salazar rdf:type owl:NamedIndividual ,
                                             persp:Lens ,
                                             LGBTQPortrayal:SocialImpactLens .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Lesbian
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Lesbian
 LGBTQPortrayal:Lesbian rdf:type owl:NamedIndividual ,
                                 LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Male
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Male
 LGBTQPortrayal:Male rdf:type owl:NamedIndividual ,
                              LGBTQPortrayal:Gender .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NegativeRoleModel
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NegativeRoleModel
 LGBTQPortrayal:NegativeRoleModel rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NonBinary
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NonBinary
 LGBTQPortrayal:NonBinary rdf:type owl:NamedIndividual ,
                                   LGBTQPortrayal:Gender .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#NotSpecified
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#NotSpecified
 LGBTQPortrayal:NotSpecified rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Pansexual
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Pansexual
 LGBTQPortrayal:Pansexual rdf:type owl:NamedIndividual ,
                                   LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Aisha_Dee
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Aisha_Dee
 LGBTQPortrayal:Performer_Aisha_Dee rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Performer ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1889,7 +1913,7 @@ LGBTQPortrayal:Performer_Aisha_Dee rdf:type owl:NamedIndividual ,
                                    rdfs:label "Aisha Dee" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Alycia_Debnam-Carey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Alycia_Debnam-Carey
 LGBTQPortrayal:Performer_Alycia_Debnam-Carey rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:Performer ;
                                              LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1898,7 +1922,7 @@ LGBTQPortrayal:Performer_Alycia_Debnam-Carey rdf:type owl:NamedIndividual ,
                                              rdfs:label "Alycia Debnam-Carey" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Amber_Benson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Amber_Benson
 LGBTQPortrayal:Performer_Amber_Benson rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Performer ;
                                       LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1907,7 +1931,7 @@ LGBTQPortrayal:Performer_Amber_Benson rdf:type owl:NamedIndividual ,
                                       rdfs:label "Amber Benson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Andre_Braugher
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Andre_Braugher
 LGBTQPortrayal:Performer_Andre_Braugher rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1916,7 +1940,7 @@ LGBTQPortrayal:Performer_Andre_Braugher rdf:type owl:NamedIndividual ,
                                         rdfs:label "Andre Braugher" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Brigette_Lundy-Paine
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Brigette_Lundy-Paine
 LGBTQPortrayal:Performer_Brigette_Lundy-Paine rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:Performer ;
                                               LGBTQPortrayal:hasGender LGBTQPortrayal:NonBinary ;
@@ -1925,7 +1949,7 @@ LGBTQPortrayal:Performer_Brigette_Lundy-Paine rdf:type owl:NamedIndividual ,
                                               rdfs:label "Brigette Lundy-Paine" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Casey_Cott
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Casey_Cott
 LGBTQPortrayal:Performer_Casey_Cott rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Performer ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1934,7 +1958,7 @@ LGBTQPortrayal:Performer_Casey_Cott rdf:type owl:NamedIndividual ,
                                     rdfs:label "Casey Cott" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Connor_Swindells
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Connor_Swindells
 LGBTQPortrayal:Performer_Connor_Swindells rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:Performer ;
                                           LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1943,7 +1967,7 @@ LGBTQPortrayal:Performer_Connor_Swindells rdf:type owl:NamedIndividual ,
                                           rdfs:label "Connor Swindells" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Dan_Levy
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Dan_Levy
 LGBTQPortrayal:Performer_Dan_Levy rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:Performer ;
                                   LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1952,7 +1976,7 @@ LGBTQPortrayal:Performer_Dan_Levy rdf:type owl:NamedIndividual ,
                                   rdfs:label "Dan Levy" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Darren_Criss
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Darren_Criss
 LGBTQPortrayal:Performer_Darren_Criss rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Performer ;
                                       LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -1961,7 +1985,7 @@ LGBTQPortrayal:Performer_Darren_Criss rdf:type owl:NamedIndividual ,
                                       rdfs:label "Darren Criss" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Gillian_Jacobs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Gillian_Jacobs
 LGBTQPortrayal:Performer_Gillian_Jacobs rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1970,7 +1994,7 @@ LGBTQPortrayal:Performer_Gillian_Jacobs rdf:type owl:NamedIndividual ,
                                         rdfs:label "Gillian Jacobs" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Gugu_Mbatha-Raw
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Gugu_Mbatha-Raw
 LGBTQPortrayal:Performer_Gugu_Mbatha-Raw rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:Performer ;
                                          LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1979,16 +2003,7 @@ LGBTQPortrayal:Performer_Gugu_Mbatha-Raw rdf:type owl:NamedIndividual ,
                                          rdfs:label "Gugu Mbatha-Raw" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Harry_Shum_Jr.
-<http://www.semanticweb.org/LGBTQPortrayal#Performer_Harry_Shum_Jr.> rdf:type owl:NamedIndividual ,
-                                                                              LGBTQPortrayal:Performer ;
-                                                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
-                                                                     LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
-                                                                     LGBTQPortrayal:isTransgender "false"^^xsd:boolean ;
-                                                                     rdfs:label "Harry Shum Jr." .
-
-
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Hunter_Schafer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Hunter_Schafer
 LGBTQPortrayal:Performer_Hunter_Schafer rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -1997,7 +2012,7 @@ LGBTQPortrayal:Performer_Hunter_Schafer rdf:type owl:NamedIndividual ,
                                         rdfs:label "Hunter Schafer" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Jack_Falahee
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Jack_Falahee
 LGBTQPortrayal:Performer_Jack_Falahee rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Performer ;
                                       LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2006,7 +2021,7 @@ LGBTQPortrayal:Performer_Jack_Falahee rdf:type owl:NamedIndividual ,
                                       rdfs:label "Jack Falahee" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Jamie_Clayton
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Jamie_Clayton
 LGBTQPortrayal:Performer_Jamie_Clayton rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:Performer ;
                                        LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2015,7 +2030,7 @@ LGBTQPortrayal:Performer_Jamie_Clayton rdf:type owl:NamedIndividual ,
                                        rdfs:label "Jamie Clayton" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Lachlan_Watson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Lachlan_Watson
 LGBTQPortrayal:Performer_Lachlan_Watson rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:NonBinary ;
@@ -2024,7 +2039,7 @@ LGBTQPortrayal:Performer_Lachlan_Watson rdf:type owl:NamedIndividual ,
                                         rdfs:label "Lachlan Watson" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Laverne_Cox
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Laverne_Cox
 LGBTQPortrayal:Performer_Laverne_Cox rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Performer ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2033,7 +2048,7 @@ LGBTQPortrayal:Performer_Laverne_Cox rdf:type owl:NamedIndividual ,
                                      rdfs:label "Laverne Cox" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Lena_Waithe
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Lena_Waithe
 LGBTQPortrayal:Performer_Lena_Waithe rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Performer ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2042,7 +2057,7 @@ LGBTQPortrayal:Performer_Lena_Waithe rdf:type owl:NamedIndividual ,
                                      rdfs:label "Lena Waithe" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Michael_Cimino
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Michael_Cimino
 LGBTQPortrayal:Performer_Michael_Cimino rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2051,7 +2066,7 @@ LGBTQPortrayal:Performer_Michael_Cimino rdf:type owl:NamedIndividual ,
                                         rdfs:label "Michael Cimino" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Michael_Willett
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Michael_Willett
 LGBTQPortrayal:Performer_Michael_Willett rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:Performer ;
                                          LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2060,7 +2075,7 @@ LGBTQPortrayal:Performer_Michael_Willett rdf:type owl:NamedIndividual ,
                                          rdfs:label "Michael Willett" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Miguel_Angel_Silvestre
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Miguel_Angel_Silvestre
 LGBTQPortrayal:Performer_Miguel_Angel_Silvestre rdf:type owl:NamedIndividual ,
                                                          LGBTQPortrayal:Performer ;
                                                 LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2069,7 +2084,7 @@ LGBTQPortrayal:Performer_Miguel_Angel_Silvestre rdf:type owl:NamedIndividual ,
                                                 rdfs:label "Miguel Angel Silvestre" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Naya_Rivera
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Naya_Rivera
 LGBTQPortrayal:Performer_Naya_Rivera rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Performer ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2078,7 +2093,7 @@ LGBTQPortrayal:Performer_Naya_Rivera rdf:type owl:NamedIndividual ,
                                      rdfs:label "Naya Rivera" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Ncuti_Gatwa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Ncuti_Gatwa
 LGBTQPortrayal:Performer_Ncuti_Gatwa rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:Performer ;
                                      LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2087,7 +2102,7 @@ LGBTQPortrayal:Performer_Ncuti_Gatwa rdf:type owl:NamedIndividual ,
                                      rdfs:label "Ncuti Gatwa" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Noah_Reid
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Noah_Reid
 LGBTQPortrayal:Performer_Noah_Reid rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:Performer ;
                                    LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2096,7 +2111,7 @@ LGBTQPortrayal:Performer_Noah_Reid rdf:type owl:NamedIndividual ,
                                    rdfs:label "Noah Reid" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Omar_Ayuso
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Omar_Ayuso
 LGBTQPortrayal:Performer_Omar_Ayuso rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:Performer ;
                                     LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2105,7 +2120,7 @@ LGBTQPortrayal:Performer_Omar_Ayuso rdf:type owl:NamedIndividual ,
                                     rdfs:label "Omar Ayuso" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Omar_Rudberg
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Omar_Rudberg
 LGBTQPortrayal:Performer_Omar_Rudberg rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:Performer ;
                                       LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
@@ -2114,7 +2129,7 @@ LGBTQPortrayal:Performer_Omar_Rudberg rdf:type owl:NamedIndividual ,
                                       rdfs:label "Omar Rudberg" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Shay_Mitchell
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Shay_Mitchell
 LGBTQPortrayal:Performer_Shay_Mitchell rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:Performer ;
                                        LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2123,7 +2138,7 @@ LGBTQPortrayal:Performer_Shay_Mitchell rdf:type owl:NamedIndividual ,
                                        rdfs:label "Shay Mitchell" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Sheridan_Pierce
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Sheridan_Pierce
 LGBTQPortrayal:Performer_Sheridan_Pierce rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:Performer ;
                                          LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2132,7 +2147,7 @@ LGBTQPortrayal:Performer_Sheridan_Pierce rdf:type owl:NamedIndividual ,
                                          rdfs:label "Sheridan Pierce" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Performer_Sydney_Sweeney
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Sydney_Sweeney
 LGBTQPortrayal:Performer_Sydney_Sweeney rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:Performer ;
                                         LGBTQPortrayal:hasGender LGBTQPortrayal:Female ;
@@ -2141,7 +2156,7 @@ LGBTQPortrayal:Performer_Sydney_Sweeney rdf:type owl:NamedIndividual ,
                                         rdfs:label "Sydney Sweeney" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Adam_Groff
 LGBTQPortrayal:Portrayal_Adam_Groff rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AffirmationOfIdentity ,
                                              LGBTQPortrayal:Authenticity ,
@@ -2156,7 +2171,7 @@ LGBTQPortrayal:Portrayal_Adam_Groff rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Adam_Groff .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Alice
 LGBTQPortrayal:Portrayal_Alice rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:AffirmationOfIdentity ,
                                         LGBTQPortrayal:Authenticity ,
@@ -2171,7 +2186,7 @@ LGBTQPortrayal:Portrayal_Alice rdf:type owl:NamedIndividual ,
                                LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Alice .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Blaine_Anderson
 LGBTQPortrayal:Portrayal_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:AffirmationOfIdentity ,
                                                   LGBTQPortrayal:Authenticity ,
@@ -2186,7 +2201,7 @@ LGBTQPortrayal:Portrayal_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Blaine_Anderson .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Casey_Gardner
 LGBTQPortrayal:Portrayal_Casey_Gardner rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:AffirmationOfIdentity ,
                                                 LGBTQPortrayal:Authenticity ,
@@ -2201,7 +2216,7 @@ LGBTQPortrayal:Portrayal_Casey_Gardner rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Casey_Gardner .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Connor_Walsh
 LGBTQPortrayal:Portrayal_Connor_Walsh rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AffirmationOfIdentity ,
                                                LGBTQPortrayal:Authenticity ,
@@ -2216,7 +2231,7 @@ LGBTQPortrayal:Portrayal_Connor_Walsh rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Connor_Walsh .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_David_Rose
 LGBTQPortrayal:Portrayal_David_Rose rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AffirmationOfIdentity ,
                                              LGBTQPortrayal:Authenticity ,
@@ -2231,7 +2246,7 @@ LGBTQPortrayal:Portrayal_David_Rose rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_David_Rose .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Denise
 LGBTQPortrayal:Portrayal_Denise rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:AffirmationOfIdentity ,
                                          LGBTQPortrayal:Authenticity ,
@@ -2246,7 +2261,7 @@ LGBTQPortrayal:Portrayal_Denise rdf:type owl:NamedIndividual ,
                                 LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Denise .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Emily_Fields
 LGBTQPortrayal:Portrayal_Emily_Fields rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AffirmationOfIdentity ,
                                                LGBTQPortrayal:Authenticity ,
@@ -2261,7 +2276,7 @@ LGBTQPortrayal:Portrayal_Emily_Fields rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Emily_Fields .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Eric_Effiong
 LGBTQPortrayal:Portrayal_Eric_Effiong rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AffirmationOfIdentity ,
                                                LGBTQPortrayal:Authenticity ,
@@ -2276,7 +2291,7 @@ LGBTQPortrayal:Portrayal_Eric_Effiong rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Eric_Effiong .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Jules_Vaughn
 LGBTQPortrayal:Portrayal_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:AffirmationOfIdentity ,
                                                LGBTQPortrayal:Authenticity ,
@@ -2291,7 +2306,7 @@ LGBTQPortrayal:Portrayal_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Jules_Vaughn .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kat_Edison
 LGBTQPortrayal:Portrayal_Kat_Edison rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AffirmationOfIdentity ,
                                              LGBTQPortrayal:Authenticity ,
@@ -2306,7 +2321,7 @@ LGBTQPortrayal:Portrayal_Kat_Edison rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kat_Edison .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kelly
 LGBTQPortrayal:Portrayal_Kelly rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:AffirmationOfIdentity ,
                                         LGBTQPortrayal:Authenticity ,
@@ -2321,7 +2336,7 @@ LGBTQPortrayal:Portrayal_Kelly rdf:type owl:NamedIndividual ,
                                LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kelly .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Kevin_Keller
 LGBTQPortrayal:Portrayal_Kevin_Keller rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:PortrayalofLgbtqCharacter ,
                                                LGBTQPortrayal:Static ,
@@ -2333,7 +2348,7 @@ LGBTQPortrayal:Portrayal_Kevin_Keller rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Kevin_Keller .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Lexa
 LGBTQPortrayal:Portrayal_Lexa rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:AffirmationOfIdentity ,
                                        LGBTQPortrayal:PortrayalofLgbtqCharacter ,
@@ -2346,7 +2361,7 @@ LGBTQPortrayal:Portrayal_Lexa rdf:type owl:NamedIndividual ,
                               LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Lexa .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Lito_Rodriguez
 LGBTQPortrayal:Portrayal_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:AffirmationOfIdentity ,
                                                  LGBTQPortrayal:Authenticity ,
@@ -2361,7 +2376,7 @@ LGBTQPortrayal:Portrayal_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Lito_Rodriguez .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Magnus_Bane
 LGBTQPortrayal:Portrayal_Magnus_Bane rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:AffirmationOfIdentity ,
                                               LGBTQPortrayal:Authenticity ,
@@ -2376,7 +2391,7 @@ LGBTQPortrayal:Portrayal_Magnus_Bane rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Magnus_Bane .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Mickey_Dobbs
 LGBTQPortrayal:Portrayal_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:PortrayalofLgbtqCharacter ,
                                                LGBTQPortrayal:Static ,
@@ -2388,7 +2403,7 @@ LGBTQPortrayal:Portrayal_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Mickey_Dobbs .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Nomi_Marks
 LGBTQPortrayal:Portrayal_Nomi_Marks rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:AffirmationOfIdentity ,
                                              LGBTQPortrayal:Authenticity ,
@@ -2403,7 +2418,7 @@ LGBTQPortrayal:Portrayal_Nomi_Marks rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Nomi_Marks .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Omar_Shanaa
 LGBTQPortrayal:Portrayal_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:AffirmationOfIdentity ,
                                               LGBTQPortrayal:Authenticity ,
@@ -2418,7 +2433,7 @@ LGBTQPortrayal:Portrayal_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Omar_Shanaa .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Patrick_Brewer
 LGBTQPortrayal:Portrayal_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:AffirmationOfIdentity ,
                                                  LGBTQPortrayal:Authenticity ,
@@ -2433,7 +2448,7 @@ LGBTQPortrayal:Portrayal_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Patrick_Brewer .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Ray_Holt
 LGBTQPortrayal:Portrayal_Ray_Holt rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:AffirmationOfIdentity ,
                                            LGBTQPortrayal:Authenticity ,
@@ -2448,7 +2463,7 @@ LGBTQPortrayal:Portrayal_Ray_Holt rdf:type owl:NamedIndividual ,
                                   LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Ray_Holt .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Santana_Lopez
 LGBTQPortrayal:Portrayal_Santana_Lopez rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:AffirmationOfIdentity ,
                                                 LGBTQPortrayal:Authenticity ,
@@ -2463,7 +2478,7 @@ LGBTQPortrayal:Portrayal_Santana_Lopez rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Santana_Lopez .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Shane_Harvey
 LGBTQPortrayal:Portrayal_Shane_Harvey rdf:type owl:NamedIndividual ,
                                                LGBTQPortrayal:PortrayalofLgbtqCharacter ,
                                                LGBTQPortrayal:Static ,
@@ -2475,7 +2490,7 @@ LGBTQPortrayal:Portrayal_Shane_Harvey rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Shane_Harvey .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Simon_Eriksson
 LGBTQPortrayal:Portrayal_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:AffirmationOfIdentity ,
                                                  LGBTQPortrayal:Authenticity ,
@@ -2490,7 +2505,7 @@ LGBTQPortrayal:Portrayal_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Simon_Eriksson .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Sophia_Burset
 LGBTQPortrayal:Portrayal_Sophia_Burset rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:AffirmationOfIdentity ,
                                                 LGBTQPortrayal:Authenticity ,
@@ -2505,7 +2520,7 @@ LGBTQPortrayal:Portrayal_Sophia_Burset rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Sophia_Burset .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Syd
 LGBTQPortrayal:Portrayal_Syd rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:AffirmationOfIdentity ,
                                       LGBTQPortrayal:Authenticity ,
@@ -2520,7 +2535,7 @@ LGBTQPortrayal:Portrayal_Syd rdf:type owl:NamedIndividual ,
                              LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Syd .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Tara_Maclay
 LGBTQPortrayal:Portrayal_Tara_Maclay rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:AffirmationOfIdentity ,
                                               LGBTQPortrayal:NormalizationOfRelationship ,
@@ -2534,7 +2549,7 @@ LGBTQPortrayal:Portrayal_Tara_Maclay rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Tara_Maclay .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Theo_Putnam
 LGBTQPortrayal:Portrayal_Theo_Putnam rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:PortrayalofLgbtqCharacter ,
                                               LGBTQPortrayal:Static ,
@@ -2546,7 +2561,7 @@ LGBTQPortrayal:Portrayal_Theo_Putnam rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Theo_Putnam .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Portrayal_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Portrayal_Victor_Salazar
 LGBTQPortrayal:Portrayal_Victor_Salazar rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:AffirmationOfIdentity ,
                                                  LGBTQPortrayal:Authenticity ,
@@ -2561,313 +2576,313 @@ LGBTQPortrayal:Portrayal_Victor_Salazar rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:hasRepresentationType LGBTQPortrayal:Representation_Victor_Salazar .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#PositiveRoleModel
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#PositiveRoleModel
 LGBTQPortrayal:PositiveRoleModel rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_ABC
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_ABC
 LGBTQPortrayal:Production_ABC rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
                               rdfs:label "ABC" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_CBC
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_CBC
 LGBTQPortrayal:Production_CBC rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
                               rdfs:label "CBC" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_Fox
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox
 LGBTQPortrayal:Production_Fox rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
                               rdfs:label "Fox" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_Freeform
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Freeform
 LGBTQPortrayal:Production_Freeform rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:ProductionAndIndustryFactory ;
                                    rdfs:label "Freeform" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_HBO
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_HBO
 LGBTQPortrayal:Production_HBO rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
                               rdfs:label "HBO" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_Hulu
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Hulu
 LGBTQPortrayal:Production_Hulu rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:ProductionAndIndustryFactory ;
                                rdfs:label "Hulu" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_MTV
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_MTV
 LGBTQPortrayal:Production_MTV rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
                               rdfs:label "MTV" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_Netflix
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Netflix
 LGBTQPortrayal:Production_Netflix rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:ProductionAndIndustryFactory ;
                                   rdfs:label "Netflix" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_The_CW
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_The_CW
 LGBTQPortrayal:Production_The_CW rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:ProductionAndIndustryFactory ;
                                  rdfs:label "The CW" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_The_WB
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_The_WB
 LGBTQPortrayal:Production_The_WB rdf:type owl:NamedIndividual ,
                                           LGBTQPortrayal:ProductionAndIndustryFactory ;
                                  rdfs:label "The WB" .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Queer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Queer
 LGBTQPortrayal:Queer rdf:type owl:NamedIndividual ,
                               LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#QueerProtagonistLeadRole
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#QueerProtagonistLeadRole
 LGBTQPortrayal:QueerProtagonistLeadRole rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Questioning
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Questioning
 LGBTQPortrayal:Questioning rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:SexOrientation .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Adam_Groff
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Adam_Groff
 LGBTQPortrayal:Representation_Adam_Groff rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:FairRepresentation ,
                                                   LGBTQPortrayal:RepresentationType ;
                                          rdfs:comment "Subtle exploration of internalized homophobia and self-acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Alice
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Alice
 LGBTQPortrayal:Representation_Alice rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:FairRepresentation ,
                                              LGBTQPortrayal:RepresentationType ;
                                     rdfs:comment "Queer character with a complex relationship to the protagonist, portraying both vulnerability and strength." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Blaine_Anderson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Blaine_Anderson
 LGBTQPortrayal:Representation_Blaine_Anderson rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:FairRepresentation ,
                                                        LGBTQPortrayal:RepresentationType ;
                                               rdfs:comment "Central gay character with a detailed portrayal of relationships and identity struggles." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Casey_Gardner
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Casey_Gardner
 LGBTQPortrayal:Representation_Casey_Gardner rdf:type owl:NamedIndividual ,
                                                      LGBTQPortrayal:FairRepresentation ,
                                                      LGBTQPortrayal:RepresentationType ;
                                             rdfs:comment "Explores the struggles and triumphs of a bisexual teenager navigating her identity and relationships." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Connor_Walsh
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Connor_Walsh
 LGBTQPortrayal:Representation_Connor_Walsh rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:FairRepresentation ,
                                                     LGBTQPortrayal:RepresentationType ;
                                            rdfs:comment "Gay character with complex relationships and moral struggles." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_David_Rose
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_David_Rose
 LGBTQPortrayal:Representation_David_Rose rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:FairRepresentation ,
                                                   LGBTQPortrayal:RepresentationType ;
                                          rdfs:comment "Pansexual character portrayed with humor and depth, showing evolving relationships." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Denise
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Denise
 LGBTQPortrayal:Representation_Denise rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:FairRepresentation ,
                                               LGBTQPortrayal:RepresentationType ;
                                      rdfs:comment "Lesbian Black woman exploring love, career, and friendships, portrayed with emotional complexity and humor." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Emily_Fields
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Emily_Fields
 LGBTQPortrayal:Representation_Emily_Fields rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:FairRepresentation ,
                                                     LGBTQPortrayal:RepresentationType ;
                                            rdfs:comment "Lesbian character with nuanced relationships and complex storylines." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Eric_Effiong
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Eric_Effiong
 LGBTQPortrayal:Representation_Eric_Effiong rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:FairRepresentation ,
                                                     LGBTQPortrayal:RepresentationType ;
                                            rdfs:comment "Gay, Black character portrayed with depth, navigating relationships and family dynamics." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Jules_Vaughn
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Jules_Vaughn
 LGBTQPortrayal:Representation_Jules_Vaughn rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:FairRepresentation ,
                                                     LGBTQPortrayal:RepresentationType ;
                                            rdfs:comment "Multi-dimensional transgender character portrayed authentically with emotional depth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Kat_Edison
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kat_Edison
 LGBTQPortrayal:Representation_Kat_Edison rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:FairRepresentation ,
                                                   LGBTQPortrayal:RepresentationType ;
                                          rdfs:comment "Bisexual character with an empowering storyline and meaningful exploration of her sexual identity." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Kelly
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kelly
 LGBTQPortrayal:Representation_Kelly rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:FairRepresentation ,
                                              LGBTQPortrayal:RepresentationType ;
                                     rdfs:comment "Bisexual character with an empowering love story and a rare happy ending." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Kevin_Keller
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Kevin_Keller
 LGBTQPortrayal:Representation_Kevin_Keller rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:RepresentationType ,
                                                     LGBTQPortrayal:UnfairRepresentation ;
                                            rdfs:comment "Portrayed in the \"gay best friend\" trope with minimal character development." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Lexa
 LGBTQPortrayal:Representation_Lexa rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:RepresentationType ,
                                             LGBTQPortrayal:UnfairRepresentation ;
                                    rdfs:comment "Lesbian character killed off shortly after a meaningful relationship, reinforcing the \"bury your gays\" trope." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Lito_Rodriguez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Lito_Rodriguez
 LGBTQPortrayal:Representation_Lito_Rodriguez rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:FairRepresentation ,
                                                       LGBTQPortrayal:RepresentationType ;
                                              rdfs:comment "Gay character portrayed with depth, exploring his career struggles, relationship, and coming out." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Magnus_Bane
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Magnus_Bane
 LGBTQPortrayal:Representation_Magnus_Bane rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:FairRepresentation ,
                                                    LGBTQPortrayal:RepresentationType ;
                                           rdfs:comment "Bisexual character portrayed with emotional depth and a rich backstory, exploring love and conflict." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Mickey_Dobbs
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Mickey_Dobbs
 LGBTQPortrayal:Representation_Mickey_Dobbs rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:RepresentationType ,
                                                     LGBTQPortrayal:UnfairRepresentation ;
                                            rdfs:comment "Queer character whose storyline remains ambiguous and underdeveloped, falling into tokenism." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Nomi_Marks
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Nomi_Marks
 LGBTQPortrayal:Representation_Nomi_Marks rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:FairRepresentation ,
                                                   LGBTQPortrayal:RepresentationType ;
                                          rdfs:comment "Transgender hacker portrayed with depth, exploring her relationships and challenges." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Omar_Shanaa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Omar_Shanaa
 LGBTQPortrayal:Representation_Omar_Shanaa rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:FairRepresentation ,
                                                    LGBTQPortrayal:RepresentationType ;
                                           rdfs:comment "Gay Muslim character navigating societal and cultural pressures while pursuing a meaningful relationship." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Patrick_Brewer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Patrick_Brewer
 LGBTQPortrayal:Representation_Patrick_Brewer rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:FairRepresentation ,
                                                       LGBTQPortrayal:RepresentationType ;
                                              rdfs:comment "Gay character portrayed in a healthy, supportive, and normalized relationship." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Ray_Holt
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Ray_Holt
 LGBTQPortrayal:Representation_Ray_Holt rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:FairRepresentation ,
                                                 LGBTQPortrayal:RepresentationType ;
                                        rdfs:comment "Gay Black police captain portrayed with dignity, humor, and depth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Santana_Lopez
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Santana_Lopez
 LGBTQPortrayal:Representation_Santana_Lopez rdf:type owl:NamedIndividual ,
                                                      LGBTQPortrayal:FairRepresentation ,
                                                      LGBTQPortrayal:RepresentationType ;
                                             rdfs:comment "Lesbian character who evolves from repression and denial to pride and self-acceptance." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Shane_Harvey
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Shane_Harvey
 LGBTQPortrayal:Representation_Shane_Harvey rdf:type owl:NamedIndividual ,
                                                     LGBTQPortrayal:RepresentationType ,
                                                     LGBTQPortrayal:UnfairRepresentation ;
                                            rdfs:comment "Gay best friend trope with little character depth or growth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Simon_Eriksson
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Simon_Eriksson
 LGBTQPortrayal:Representation_Simon_Eriksson rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:FairRepresentation ,
                                                       LGBTQPortrayal:RepresentationType ;
                                              rdfs:comment "Openly gay character with emotional complexity, navigating love, class struggles, and societal expectations." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Sophia_Burset
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Sophia_Burset
 LGBTQPortrayal:Representation_Sophia_Burset rdf:type owl:NamedIndividual ,
                                                      LGBTQPortrayal:FairRepresentation ,
                                                      LGBTQPortrayal:RepresentationType ;
                                             rdfs:comment "Transgender character navigating systemic discrimination in prison." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Syd
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Syd
 LGBTQPortrayal:Representation_Syd rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:FairRepresentation ,
                                            LGBTQPortrayal:RepresentationType ;
                                   rdfs:comment "Non-binary character portrayed authentically with respect and humor in a multi-generational family dynamic." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Tara_Maclay
 LGBTQPortrayal:Representation_Tara_Maclay rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:RepresentationType ,
                                                    LGBTQPortrayal:UnfairRepresentation ;
                                           rdfs:comment "Lesbian character killed suddenly, reinforcing the \"bury your gays\" trope." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Theo_Putnam
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Theo_Putnam
 LGBTQPortrayal:Representation_Theo_Putnam rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:RepresentationType ,
                                                    LGBTQPortrayal:UnfairRepresentation ;
                                           rdfs:comment "Trans character whose storyline is largely underexplored and lacks emotional depth." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Representation_Victor_Salazar
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Representation_Victor_Salazar
 LGBTQPortrayal:Representation_Victor_Salazar rdf:type owl:NamedIndividual ,
                                                       LGBTQPortrayal:FairRepresentation ,
                                                       LGBTQPortrayal:RepresentationType ;
                                              rdfs:comment "Gay Latinx teenager navigating coming out and family acceptance in a conservative environment." .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#SexOrientation
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#SexOrientation
 LGBTQPortrayal:SexOrientation rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Superficial
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Superficial
 LGBTQPortrayal:Superficial rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:CharacterDepth .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TokenCharacter
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TokenCharacter
 LGBTQPortrayal:TokenCharacter rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:CharacterType .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TragicTrope_Lexa
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope_Lexa
 LGBTQPortrayal:TragicTrope_Lexa rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:TragicTrope .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TragicTrope_Tara_Maclay
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TragicTrope_Tara_Maclay
 LGBTQPortrayal:TragicTrope_Tara_Maclay rdf:type owl:NamedIndividual ,
                                                 LGBTQPortrayal:TragicTrope .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Atypical
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Atypical
 LGBTQPortrayal:TvShow_Atypical rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:TvShow ;
                                schema:character LGBTQPortrayal:Character_Casey_Gardner ;
@@ -2879,19 +2894,19 @@ LGBTQPortrayal:TvShow_Atypical rdf:type owl:NamedIndividual ,
                                schema:datePublished "2017"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Brooklyn_Nine-Nine
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Brooklyn_Nine-Nine
 LGBTQPortrayal:TvShow_Brooklyn_Nine-Nine rdf:type owl:NamedIndividual ,
                                                   LGBTQPortrayal:TvShow ;
                                          schema:character LGBTQPortrayal:Character_Ray_Holt ;
                                          schema:countryOfOrigin LGBTQPortrayal:Country_USA ;
                                          schema:creator LGBTQPortrayal:Creator_Michael_Schur ;
                                          schema:genre LGBTQPortrayal:Genre_Comedy ;
-                                         schema:productionCompany <http://www.semanticweb.org/LGBTQPortrayal#Production_Fox/NBC> ;
+                                         schema:productionCompany <https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC> ;
                                          rdfs:label "Brooklyn Nine-Nine" ;
                                          schema:datePublished "2013"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Buffy_the_Vampire_Slayer
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Buffy_the_Vampire_Slayer
 LGBTQPortrayal:TvShow_Buffy_the_Vampire_Slayer rdf:type owl:NamedIndividual ,
                                                         LGBTQPortrayal:TvShow ;
                                                schema:character LGBTQPortrayal:Character_Tara_Maclay ;
@@ -2903,7 +2918,7 @@ LGBTQPortrayal:TvShow_Buffy_the_Vampire_Slayer rdf:type owl:NamedIndividual ,
                                                schema:datePublished "1999"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Chilling_Adventures_of_Sabrina
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Chilling_Adventures_of_Sabrina
 LGBTQPortrayal:TvShow_Chilling_Adventures_of_Sabrina rdf:type owl:NamedIndividual ,
                                                               LGBTQPortrayal:TvShow ;
                                                      schema:character LGBTQPortrayal:Character_Theo_Putnam ;
@@ -2915,7 +2930,7 @@ LGBTQPortrayal:TvShow_Chilling_Adventures_of_Sabrina rdf:type owl:NamedIndividua
                                                      schema:datePublished "2018"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Elite
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Elite
 LGBTQPortrayal:TvShow_Elite rdf:type owl:NamedIndividual ,
                                      LGBTQPortrayal:TvShow ;
                             schema:character LGBTQPortrayal:Character_Omar_Shanaa ;
@@ -2927,7 +2942,7 @@ LGBTQPortrayal:TvShow_Elite rdf:type owl:NamedIndividual ,
                             schema:datePublished "2018"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Euphoria
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Euphoria
 LGBTQPortrayal:TvShow_Euphoria rdf:type owl:NamedIndividual ,
                                         LGBTQPortrayal:TvShow ;
                                schema:character LGBTQPortrayal:Character_Jules_Vaughn ;
@@ -2939,7 +2954,7 @@ LGBTQPortrayal:TvShow_Euphoria rdf:type owl:NamedIndividual ,
                                schema:datePublished "2019"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Faking_It
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Faking_It
 LGBTQPortrayal:TvShow_Faking_It rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:TvShow ;
                                 schema:character LGBTQPortrayal:Character_Shane_Harvey ;
@@ -2951,7 +2966,7 @@ LGBTQPortrayal:TvShow_Faking_It rdf:type owl:NamedIndividual ,
                                 schema:datePublished "2014"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Glee
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Glee
 LGBTQPortrayal:TvShow_Glee rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:TvShow ;
                            schema:character LGBTQPortrayal:Character_Blaine_Anderson ,
@@ -2964,7 +2979,7 @@ LGBTQPortrayal:TvShow_Glee rdf:type owl:NamedIndividual ,
                            schema:datePublished "2009"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_How_to_Get_Away_with_Murder
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_How_to_Get_Away_with_Murder
 LGBTQPortrayal:TvShow_How_to_Get_Away_with_Murder rdf:type owl:NamedIndividual ,
                                                            LGBTQPortrayal:TvShow ;
                                                   schema:character LGBTQPortrayal:Character_Connor_Walsh ;
@@ -2976,7 +2991,7 @@ LGBTQPortrayal:TvShow_How_to_Get_Away_with_Murder rdf:type owl:NamedIndividual ,
                                                   schema:datePublished "2014"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Love
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Love
 LGBTQPortrayal:TvShow_Love rdf:type owl:NamedIndividual ,
                                     LGBTQPortrayal:TvShow ;
                            schema:character LGBTQPortrayal:Character_Mickey_Dobbs ;
@@ -2988,7 +3003,7 @@ LGBTQPortrayal:TvShow_Love rdf:type owl:NamedIndividual ,
                            schema:datePublished "2016"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Love_Victor
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Love_Victor
 LGBTQPortrayal:TvShow_Love_Victor rdf:type owl:NamedIndividual ,
                                            LGBTQPortrayal:TvShow ;
                                   schema:character LGBTQPortrayal:Character_Victor_Salazar ;
@@ -3000,7 +3015,7 @@ LGBTQPortrayal:TvShow_Love_Victor rdf:type owl:NamedIndividual ,
                                   schema:datePublished "2020"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Master_of_None
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Master_of_None
 LGBTQPortrayal:TvShow_Master_of_None rdf:type owl:NamedIndividual ,
                                               LGBTQPortrayal:TvShow ;
                                      schema:character LGBTQPortrayal:Character_Denise ;
@@ -3012,7 +3027,7 @@ LGBTQPortrayal:TvShow_Master_of_None rdf:type owl:NamedIndividual ,
                                      schema:datePublished "2015"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_One_Day_at_a_Time
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_One_Day_at_a_Time
 LGBTQPortrayal:TvShow_One_Day_at_a_Time rdf:type owl:NamedIndividual ,
                                                  LGBTQPortrayal:TvShow ;
                                         schema:character LGBTQPortrayal:Character_Syd ;
@@ -3024,7 +3039,7 @@ LGBTQPortrayal:TvShow_One_Day_at_a_Time rdf:type owl:NamedIndividual ,
                                         schema:datePublished "2017"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Orange_Is_the_New_Black
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Orange_Is_the_New_Black
 LGBTQPortrayal:TvShow_Orange_Is_the_New_Black rdf:type owl:NamedIndividual ,
                                                        LGBTQPortrayal:TvShow ;
                                               schema:character LGBTQPortrayal:Character_Sophia_Burset ;
@@ -3036,7 +3051,7 @@ LGBTQPortrayal:TvShow_Orange_Is_the_New_Black rdf:type owl:NamedIndividual ,
                                               schema:datePublished "2013"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Pretty_Little_Liars
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Pretty_Little_Liars
 LGBTQPortrayal:TvShow_Pretty_Little_Liars rdf:type owl:NamedIndividual ,
                                                    LGBTQPortrayal:TvShow ;
                                           schema:character LGBTQPortrayal:Character_Emily_Fields ;
@@ -3048,7 +3063,7 @@ LGBTQPortrayal:TvShow_Pretty_Little_Liars rdf:type owl:NamedIndividual ,
                                           schema:datePublished "2010"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Riverdale
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Riverdale
 LGBTQPortrayal:TvShow_Riverdale rdf:type owl:NamedIndividual ,
                                          LGBTQPortrayal:TvShow ;
                                 schema:character LGBTQPortrayal:Character_Kevin_Keller ;
@@ -3060,7 +3075,7 @@ LGBTQPortrayal:TvShow_Riverdale rdf:type owl:NamedIndividual ,
                                 schema:datePublished "2017"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Sense8
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sense8
 LGBTQPortrayal:TvShow_Sense8 rdf:type owl:NamedIndividual ,
                                       LGBTQPortrayal:TvShow ;
                              schema:character LGBTQPortrayal:Character_Lito_Rodriguez ,
@@ -3073,7 +3088,7 @@ LGBTQPortrayal:TvShow_Sense8 rdf:type owl:NamedIndividual ,
                              schema:datePublished "2015"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Sex_Education
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sex_Education
 LGBTQPortrayal:TvShow_Sex_Education rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:TvShow ;
                                     schema:character LGBTQPortrayal:Character_Adam_Groff ,
@@ -3086,7 +3101,7 @@ LGBTQPortrayal:TvShow_Sex_Education rdf:type owl:NamedIndividual ,
                                     schema:datePublished "2019"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Shadowhunters
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Shadowhunters
 LGBTQPortrayal:TvShow_Shadowhunters rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:TvShow ;
                                     schema:character LGBTQPortrayal:Character_Magnus_Bane ;
@@ -3098,7 +3113,7 @@ LGBTQPortrayal:TvShow_Shadowhunters rdf:type owl:NamedIndividual ,
                                     schema:datePublished "2016"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Sharp_Objects
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Sharp_Objects
 LGBTQPortrayal:TvShow_Sharp_Objects rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:TvShow ;
                                     schema:character LGBTQPortrayal:Character_Alice ;
@@ -3110,7 +3125,7 @@ LGBTQPortrayal:TvShow_Sharp_Objects rdf:type owl:NamedIndividual ,
                                     schema:datePublished "2018"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_The_100
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_The_100
 LGBTQPortrayal:TvShow_The_100 rdf:type owl:NamedIndividual ,
                                        LGBTQPortrayal:TvShow ;
                               schema:character LGBTQPortrayal:Character_Lexa ;
@@ -3122,7 +3137,7 @@ LGBTQPortrayal:TvShow_The_100 rdf:type owl:NamedIndividual ,
                               schema:datePublished "2014"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_The_Bold_Type
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_The_Bold_Type
 LGBTQPortrayal:TvShow_The_Bold_Type rdf:type owl:NamedIndividual ,
                                              LGBTQPortrayal:TvShow ;
                                     schema:character LGBTQPortrayal:Character_Kat_Edison ;
@@ -3134,7 +3149,7 @@ LGBTQPortrayal:TvShow_The_Bold_Type rdf:type owl:NamedIndividual ,
                                     schema:datePublished "2017"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Young_Royals
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Young_Royals
 LGBTQPortrayal:TvShow_Young_Royals rdf:type owl:NamedIndividual ,
                                             LGBTQPortrayal:TvShow ;
                                    schema:character LGBTQPortrayal:Character_Simon_Eriksson ;
@@ -3146,13 +3161,7 @@ LGBTQPortrayal:TvShow_Young_Royals rdf:type owl:NamedIndividual ,
                                    schema:datePublished "2021"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#Production_Fox/NBC
-<http://www.semanticweb.org/LGBTQPortrayal#Production_Fox/NBC> rdf:type owl:NamedIndividual ,
-                                                                        LGBTQPortrayal:ProductionAndIndustryFactory ;
-                                                               rdfs:label "Fox/NBC" .
-
-
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Black_Mirror:_San_Junipero
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Black_Mirror:_San_Junipero
 LGBTQPortrayal:TvShow_Black_Mirror:_San_Junipero rdf:type owl:NamedIndividual ,
                                                           LGBTQPortrayal:TvShow ;
                                                  schema:character LGBTQPortrayal:Character_Kelly ;
@@ -3164,38 +3173,53 @@ LGBTQPortrayal:TvShow_Black_Mirror:_San_Junipero rdf:type owl:NamedIndividual ,
                                                  schema:datePublished "2016"^^xsd:gYear .
 
 
-###  http://www.semanticweb.org/LGBTQPortrayal#TvShow_Schitt's_Creek
-<http://www.semanticweb.org/LGBTQPortrayal#TvShow_Schitt's_Creek> rdf:type owl:NamedIndividual ,
-                                                                           LGBTQPortrayal:TvShow ;
-                                                                  schema:character LGBTQPortrayal:Character_David_Rose ,
-                                                                                   LGBTQPortrayal:Character_Patrick_Brewer ;
-                                                                  schema:countryOfOrigin LGBTQPortrayal:Country_Canada ;
-                                                                  schema:creator LGBTQPortrayal:Creator_Eugene_Levy ;
-                                                                  schema:genre LGBTQPortrayal:Genre_Comedy ;
-                                                                  schema:productionCompany LGBTQPortrayal:Production_CBC ;
-                                                                  rdfs:label "Schitt's Creek" ;
-                                                                  schema:datePublished "2015"^^xsd:gYear ,
-                                                                                       "2017"^^xsd:gYear .
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Performer_Harry_Shum_Jr.> rdf:type owl:NamedIndividual ,
+                                                                                                            LGBTQPortrayal:Performer ;
+                                                                                                   LGBTQPortrayal:hasGender LGBTQPortrayal:Male ;
+                                                                                                   LGBTQPortrayal:hasSexOrientation LGBTQPortrayal:SexOrientation ;
+                                                                                                   LGBTQPortrayal:isTransgender "false"^^xsd:boolean ;
+                                                                                                   rdfs:label "Harry Shum Jr." .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#Production_Fox/NBC> rdf:type owl:NamedIndividual ,
+                                                                                                      LGBTQPortrayal:ProductionAndIndustryFactory ;
+                                                                                             rdfs:label "Fox/NBC" .
+
+
+###  https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Schitt's_Creek
+<https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl#TvShow_Schitt's_Creek> rdf:type owl:NamedIndividual ,
+                                                                                                         LGBTQPortrayal:TvShow ;
+                                                                                                schema:character LGBTQPortrayal:Character_David_Rose ,
+                                                                                                                 LGBTQPortrayal:Character_Patrick_Brewer ;
+                                                                                                schema:countryOfOrigin LGBTQPortrayal:Country_Canada ;
+                                                                                                schema:creator LGBTQPortrayal:Creator_Eugene_Levy ;
+                                                                                                schema:genre LGBTQPortrayal:Genre_Comedy ;
+                                                                                                schema:productionCompany LGBTQPortrayal:Production_CBC ;
+                                                                                                rdfs:label "Schitt's Creek" ;
+                                                                                                schema:datePublished "2015"^^xsd:gYear ,
+                                                                                                                     "2017"^^xsd:gYear .
 
 
 [ ns1:IRI "http://www.w3.org/2001/XMLSchema#" ;
   ns1:name "xsd"
 ] .
 
-[ ns1:IRI "http://www.w3.org/XML/1998/namespace" ;
-   ns1:name "xml"
- ] .
-
 [ ns1:IRI "http://www.w3.org/2000/01/rdf-schema#" ;
    ns1:name "rdfs"
  ] .
 
-[ ns1:IRI "http://www.w3.org/2002/07/owl#" ;
-   ns1:name "owl"
+[ ns1:IRI "http://www.w3.org/XML/1998/namespace" ;
+   ns1:name "xml"
  ] .
 
-[ ns1:IRI "http://www.semanticweb.org/LGBTQPortrayal/" ;
+[ ns1:IRI "https://raw.githubusercontent.com/Gang-Gems/QTV/main/LGBTQPortrayal.ttl/" ;
    ns1:name ""
+ ] .
+
+[ ns1:IRI "http://www.w3.org/2002/07/owl#" ;
+   ns1:name "owl"
  ] .
 
 [ ns1:IRI "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
